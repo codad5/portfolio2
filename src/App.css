@@ -1,38 +1,169 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --tw-text-opacity: 1;
+  color: #5E635E;
+  font-family: 'Poppins',
+  sans-serif;
+
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+\
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(186 195 184/var(--tw-text-opacity));
+}
+.text-secondary {
+  --tw-text-opacity: 1;
+  color: rgb(186 195 184/var(--tw-text-opacity));
+}
+.App{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #141414;
+}
+.App-header{
+  width: 100%;
+  height:100px;
   text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  background: #141414;
+  gap:2px;
+  
+}
+.App-header h1{
+  font-size: 40px;
+  /* padding-top: 5px; */
+  font-weight: bold;
+  color: #5E635E;
+  margin-bottom: 0;
+  height: 70%;
+  width: 100%;
+  display:inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  
+}
+.App-header .time-show{
+  font-size: 0.5rem;
+  font-weight: bold;
+  color: #5E635E;
+  margin-bottom: 0;
+  height: 30%;
+  display:inline-flex;
+  align-items: flex-start;
+  justify-content: center;
+  
+}
+.main{
+  flex-basis: calc(100% - 105px);
+  margin: 0 auto;
+  margin-top: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(9, 96%);
+  gap: 5px;
+  height: calc(100% - 105px);
+  padding: 0.5rem 5px;
+  padding-top:0;
+  padding-left: 12px;
+  width: 100vw;
+  max-width: 600px;
+  overflow:scroll;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  place-items: center;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main ::-webkit-scrollbar {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.intro-card {
+  writing-mode: vertical-rl;
+  padding: 0;
+  height: 100%;
+  /* min-width: 100%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: center;
+  background: var(--main-bg-color);
 }
 
-.App-link {
-  color: #61dafb;
+.welcomeCard{
+  /* background: red !important; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.welcomeCardImage{
+  width:100%;
+  height:40%;
+  border-bottom:solid 2px #555;
+  /* display:inline-grid; */
+  place-items: center;
+  padding-top: 10px;
+  line-height: 1;
+  text-align: center;
+   text-transform: uppercase;
+  
+}
+.welcomeCardImage img{
+  width:95%;
+  height:95%;
+  object-fit: cover;
+  /* background:#555; */
+}
+
+.welcomeCardTitle{
+  width:100%;
+  height:40%;
+  display:inline-block;
+  padding: 0.5rem 20px;
+  line-height: 1;
+  text-transform: uppercase;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:0.5rem;
+  
+}
+.welcomeCardTitle .smallText{
+  font-size:1.5rem;
+  font-weight:bold;
+  color: #5E635E;
+  height: 60px;
+  width: 75%;
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.welcomeCardTitle h2{
+  font-size:3.0rem;
+  font-weight:bold;
+  color: #5E635E;
+  width: 75%;
+  line-height: 1;
+  word-break: wrap;
+  height: calc(100% - 62px);
+  display: inline-flex;
+  align-items: flex-start;
+  justify-content: center;
 }

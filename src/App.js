@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './Card';
+import logo from './logo.svg'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Codad5</h1>
+        <div className="time-show">
+          <h2>{new Date().toLocaleTimeString()}</h2>
+        </div>
+        </header>
+      <main className="main">
+        
+        <Card className="welcomeCard">
+          <div className="welcomeCardImage">
+            <img src={logo } />
+          </div>
+          <div className="welcomeCardTitle .text-primary ">
+            <div className="smallText">
+              I AM
+            </div>
+            <h2>Chibueze Aniezeofor Michael</h2>
+          </div>
+        </Card>
+        <Card>
+          Hello World
+        </Card>
+        <Card>
+          Hello World
+        </Card>
+      </main>
     </div>
   );
 }
