@@ -100,10 +100,53 @@ function App() {
           <article class="w-full text-sm p-6 pt-0 leading-6 ">
             lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
             <ul class="list-none p-6 pl-0  pb-2">
-            <li class="w-full ">
-              <span class="font-bold text-xl pt-3">Federal Government College</span>
+            <li class="w-full pt-2">
+              <div class="font-bold text-xl pt-3">Federal Government College</div>
+              <div class="text-sm">2014 - 2020 (secondary school)</div>
 
               </li>
+            <li class="w-full pt-2 leading-10">
+              <div class="font-bold text-xl pt-3">University of Nigeria</div>
+              <div class="text-sm">2014 - 2020 (B.Eng)</div>
+              <div class="text-sm">Mechanical Engineering</div>
+
+              </li>
+              
+            </ul>
+            
+            </article>
+          <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
+            <a href="#exp_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+              $page->next();
+            </a>
+          </div>
+        </Card>
+        <Card id="exp_card">
+          <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
+              Experience
+          </div>
+          <article class="w-full text-sm p-6 pt-0 leading-6 ">
+            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
+            <ul class="list-none p-6 pl-0  pb-2">
+            <li class="w-full pt-2">
+              <div class="font-bold text-xl pt-3 pb-1"><a class="underline" href="https://listmining.com/">Listmining.com</a></div>
+              <div class="text-sm">2021 ( Freelance ) </div>
+              <div class="text-sm">Stack: PHP | WORDPRESS</div>
+
+              </li>
+            <li class="w-full pt-2">
+              <div class="font-bold text-xl pt-3 pb-1"><a class="underline" href="https://Sanctablog.com/">Sanctablog.com</a></div>
+              <div class="text-sm">2021-2022 ( Freelance ) </div>
+              <div class="text-sm">Stack: PHP | WORDPRESS</div>
+
+              </li>
+            <li class="w-full pt-2">
+              <div class="font-bold text-xl pt-3 pb-1"><a class="underline" href="https://sidehustle.ng/">Side hustle</a></div>
+              <div class="text-sm">Aug 2022- Sept 2022 ( Intership ) </div>
+              <div class="text-sm">Stack: Node.js - BACKEND </div>
+
+              </li>
+            
               
             </ul>
             
