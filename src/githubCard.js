@@ -1,6 +1,6 @@
 export default function GithubCard(props){
     return (
-        <div class="w-[19%]  bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-center inline-block">
+        <div class="w-[95%] h-[60%] snap-center bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 text-center inline-block shrink-0">
             <div class="w-full p-5">
                 <a href="#">
                     <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>

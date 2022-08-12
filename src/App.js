@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react'
 import './App.css';
 import Card from './Card';
 import GithubCard from './githubCard'
-import logo from './logo.svg'
 
 
 function App() {
@@ -185,7 +184,7 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Projects
           </div>
-          <article class="w-[500%] text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2">
+          <article class="snap-mandatory  snap-x w-full flex flex-nowrap  text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2">
             <GithubCard/> 
             <GithubCard/>
             <GithubCard/>
@@ -193,6 +192,11 @@ function App() {
 
             
             </article>
+          <div className="font-light oldstyle-nums w-full p-6 text-base pb-6 pt-8 text-center">
+            <a href="https://github.com/codad5?tab=repositories" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+              $page->redirect('view more')
+            </a>
+          </div>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
             <a href="#about_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
