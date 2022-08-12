@@ -1,21 +1,25 @@
 import {useState, useEffect} from 'react'
 import './App.css';
 import Card from './Card';
+import GithubCard from './githubCard'
 import logo from './logo.svg'
+
 
 function App() {
   const [date, setDate] = useState(new Date())
   const [cardPosition, setCardPosition] = useState(0)
-  const cardID = ["wel_card", "about_card"];
+  const cardID = ["wel_card", "about_card", "skill_card", "edu_card", "exp_card", "prg_card"];
   const refreshClock = () => {
     setDate(new Date());
   }
 
   const updatecurrenctCard = (right = true) => {
     if(right){
+      if(cardPosition >= cardID.length - 1) return
       setCardPosition(old => old+1);
       return
     } 
+    if(cardPosition <= 0) return
     setCardPosition(old => old-1);
 
   }
@@ -30,8 +34,8 @@ function App() {
           <h2 class="text-sm">{date.toLocaleTimeString()}</h2>
         </div>
         </header>
-      <a onClick={(e) =>{updatecurrenctCard(false)}} href={`#${cardID.at(cardPosition-1)}`} class="fixed top-[50%] left-8   p-4 rounded-full border-4 border-indigo-500/50" > L </a>
-      <a onClick={(e) =>{updatecurrenctCard()}} href={`#${cardID.at(cardPosition+1)}`} class="fixed top-[50%] right-8   p-4 rounded-full border-4 border-indigo-500/50" > R </a>
+      <a onClick={(e) =>{updatecurrenctCard(false)}} href={`#${cardID.at(cardPosition)}`} class="fixed top-[50%] left-8   p-4 rounded-full border-4 border-indigo-500/50" > L </a>
+      <a onClick={(e) =>{updatecurrenctCard()}} href={`#${cardID.at(cardPosition)}`} class="fixed top-[50%] right-8   p-4 rounded-full border-4 border-indigo-500/50" > R </a>
       <main className="main scroll-smooth">
         <Card id="wel_card"class="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
 
@@ -169,6 +173,24 @@ function App() {
             
               
             </ul>
+            
+            </article>
+          <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
+            <a href="#about_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+              $page->next();
+            </a>
+          </div>
+        </Card>
+        <Card id="prg_card">
+          <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
+              Projects
+          </div>
+          <article class="w-[500%] text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2">
+            <GithubCard/> 
+            <GithubCard/>
+            <GithubCard/>
+            
+
             
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
