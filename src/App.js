@@ -1,19 +1,39 @@
+import {useState, useEffect} from 'react'
 import './App.css';
 import Card from './Card';
 import logo from './logo.svg'
 
 function App() {
+  const [date, setDate] = useState(new Date())
+  const [cardPosition, setCardPosition] = useState(0)
+  const cardID = ["wel_card", "about_card"];
+  const refreshClock = () => {
+    setDate(new Date());
+  }
+
+  const updatecurrenctCard = (right = true) => {
+    if(right){
+      setCardPosition(old => old+1);
+      return
+    } 
+    setCardPosition(old => old-1);
+
+  }
+  const timerId = setInterval(refreshClock, 1000);
+  
   return (
-    <div className="App scroll-smooth">
+    <div className="App scroll-smooth relative">
       <header className="App-header">
         <h1>Codad5</h1>
         <div className="time-show">
-          <h2>{new Date().toLocaleTimeString()}</h2>
+          
+          <h2 class="text-sm">{date.toLocaleTimeString()}</h2>
         </div>
         </header>
+      <a onClick={(e) =>{updatecurrenctCard(false)}} href={`#${cardID.at(cardPosition-1)}`} class="fixed top-[50%] left-8   p-4 rounded-full border-4 border-indigo-500/50" > L </a>
+      <a onClick={(e) =>{updatecurrenctCard()}} href={`#${cardID.at(cardPosition+1)}`} class="fixed top-[50%] right-8   p-4 rounded-full border-4 border-indigo-500/50" > R </a>
       <main className="main scroll-smooth">
-        Copy
-        <Card class="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <Card id="wel_card"class="w-full max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
 
           <div class="vw-full md:w-auto h-1/3 flex justify-center items-center">
             <pre class="leading-loose py-12 text-center">
@@ -64,7 +84,7 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Skills
           </div>
-          <article class="w-full text-sm p-6 pt-0 leading-6 ">
+          <article class="w-full text-sm p-6 pt-0 leading-6 h-4/6 overflow-hidden overflow-y-scroll ">
             lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
             <div class="w-full font-bold text-lg pt-3">Backend</div>
             <ul class="list-disc p-6 pt-2 pb-2">
@@ -78,7 +98,7 @@ function App() {
               <li>Unit Testing</li>
             </ul>
             <div class="w-full font-bold text-lg pt-3">Frontend & Others</div>
-            <ul class="list-disc p-6 pt-2">
+            <ul class="list-disc p-6 pt-2 " style={{maxHeight:'20%'}}>
               <li>React.js</li>
               <li>HTML</li>
               <li>CSS</li>

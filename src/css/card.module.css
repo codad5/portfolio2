@@ -6,7 +6,7 @@
     height: 100%;
     width: 100%;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
     scroll-snap-align: center;
     background: var(--main-bg-color);
     background: #141414;
