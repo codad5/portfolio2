@@ -85,7 +85,7 @@ function App() {
           </div>
           <article class="w-full text-sm p-6 pt-0 leading-6">
             I am a mechanical engineer who is passionate about software development. I have a strong passion for learning new technologies and I am always looking for new ways to improve my skills.
-            during my years of experience, I have developed a  <span class="font-black underline decoration-dotted">nucleus</span> for <span class="font-black">backend Technologies</span> and a strong understanding of the software development process and have gained valuable experience in the field of software development.
+            during my years of experience, I have developed a  <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend Technologies</span> and a strong understanding of the software development process and have gained valuable experience in the field of software development.
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
             <a href="#skill_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
