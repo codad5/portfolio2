@@ -61,7 +61,7 @@ function App() {
             
           </div>
           <div class="vw-full md:w-auto h-1/3 flex justify-center items-center">
-            <a href="#about_card"class="border border-slate-300 hover:border-indigo-300 p-6">
+            <a onClick={(e) =>{updatecurrenctCard()}} href="#about_card"class="border border-slate-300 hover:border-indigo-300 p-6">
               $page->next();
             </a>
             
@@ -88,7 +88,7 @@ function App() {
             during my years of experience, I have developed a  <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend Technologies</span> and a strong understanding of the software development process and have gained valuable experience in the field of software development.
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a href="#skill_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a onClick={(e) =>{updatecurrenctCard()}} href="#skill_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
@@ -121,7 +121,7 @@ function App() {
             </ul>
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a href="#edu_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a  onClick={(e) =>{updatecurrenctCard()}} href="#edu_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
@@ -149,7 +149,7 @@ function App() {
             
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a href="#exp_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a onClick={(e) =>{updatecurrenctCard()}} href="#exp_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
@@ -185,7 +185,7 @@ function App() {
             
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a href="#about_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a onClick={(e) =>{updatecurrenctCard()}} href="#prg_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
@@ -210,7 +210,7 @@ function App() {
             </a>
           </div>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a href="#about_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a  onClick={(e) =>{updatecurrenctCard()}} href="#about_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
