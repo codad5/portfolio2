@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import axios from 'axios'
 import './App.css';
 import Card from './Card';
 import GithubCard from './githubCard'
@@ -8,10 +9,11 @@ function App() {
   const [date, setDate] = useState(new Date())
   const [cardPosition, setCardPosition] = useState(0)
   const cardID = ["wel_card", "about_card", "skill_card", "edu_card", "exp_card", "prg_card"];
+  const [pinnedRepo , setPinnedRepo] = useState(false)
   const refreshClock = () => {
     setDate(new Date());
   }
-
+  
   const updatecurrenctCard = (right = true) => {
     if(right){
       if(cardPosition >= cardID.length - 1) return
@@ -23,6 +25,15 @@ function App() {
 
   }
   const timerId = setInterval(refreshClock, 1000);
+  useEffect(() => {
+    axios.get('https://gh-pinned-repos.egoist.dev/?username=codad5')
+    .then(res => {
+       console.log(res.data)
+      setPinnedRepo(res.data)
+      })
+    .catch(err => { console.log(err)})
+    
+  } , [])
   
   return (
     <div className="App scroll-smooth relative">
@@ -61,8 +72,8 @@ function App() {
             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Aniezeofor Chibueze</h5>
             <span class="text-sm text-gray-500 dark:text-gray-400">Software Developer</span>
             <div class="flex mt-4 space-x-3 md:mt-6">
-              <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Resume</a>
-              <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white">Message</a>
+              <a href="https://drive.google.com/file/d/12kectPqTy3WLon5FwOJE2IiNPcHURe1N/view" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Resume</a>
+              <a href="mailto:aniezeoformic@gmail.com" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-white">Message</a>
             </div>
         </div>
         </Card  >
@@ -73,9 +84,8 @@ function App() {
               About
           </div>
           <article class="w-full text-sm p-6 pt-0 leading-6">
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example, use hover:text-base to only apply the text-base utility on hover.
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example, use hover:text-base to only apply the text-base utility on hover.
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example, use hover:text-base to only apply the text-base utility on hover.
+            I am a mechanical engineer who is passionate about software development. I have a strong passion for learning new technologies and I am always looking for new ways to improve my skills.
+            during my years of experience, I have developed a  <span class="font-black underline decoration-dotted">nucleus</span> for <span class="font-black">backend Technologies</span> and a strong understanding of the software development process and have gained valuable experience in the field of software development.
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
             <a href="#skill_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
@@ -185,9 +195,11 @@ function App() {
               Projects
           </div>
           <article class="snap-mandatory  snap-x w-full flex flex-nowrap  text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2">
-            <GithubCard/> 
+            {pinnedRepo ? pinnedRepo.map((repo, index) => <GithubCard repo={repo} key={index} /> ) : 'lo'}
+            
+            {/* <GithubCard/> 
             <GithubCard/>
-            <GithubCard/>
+            <GithubCard/> */}
             
 
             
