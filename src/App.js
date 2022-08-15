@@ -25,6 +25,9 @@ function App() {
 
   }
   const timerId = setInterval(refreshClock, 1000);
+  if(timerId == null){
+    console.log('ignored this piece of code above')
+  }
   useEffect(() => {
     axios.get('https://gh-pinned-repos.egoist.dev/?username=codad5')
     .then(res => {
@@ -68,7 +71,7 @@ function App() {
           </div>
           
           <div class="flex flex-col items-center pb-10 h-1/3 flex justify-center px-4 pt-4">
-            <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://avatars.githubusercontent.com/u/66634814?v=4" alt="Bonnie image" />
+            <img class="mb-3 w-24 h-24 rounded-full shadow-lg" src="https://avatars.githubusercontent.com/u/66634814?v=4" alt="Bonnie "/>
             <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Aniezeofor Chibueze</h5>
             <span class="text-sm text-gray-500 dark:text-gray-400">Software Developer</span>
             <div class="flex mt-4 space-x-3 md:mt-6">
@@ -83,9 +86,10 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               About
           </div>
-          <article class="w-full text-sm p-6 pt-0 leading-6">
-            I am a mechanical engineer who is passionate about software development. I have a strong passion for learning new technologies and I am always looking for new ways to improve my skills.
-            during my years of experience, I have developed a  <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend Technologies</span> and a strong understanding of the software development process and have gained valuable experience in the field of software development.
+          <article class="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+            I am a mechanical engineering student who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
+            During my years of experience, I have developed a <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
+            <p>Aside from my passion for software development, I aspire to create innovations that benefit the people of Earth or possibly aliens (if they exist). </p>
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
             <a onClick={(e) =>{updatecurrenctCard()}} href="#skill_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
@@ -97,8 +101,9 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Skills
           </div>
-          <article class="w-full text-sm p-6 pt-0 leading-6 h-4/6 overflow-hidden overflow-y-scroll ">
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
+          <article class="w-full text-sm p-6 pt-0 leading-6 h-4/6 overflow-hidden overflow-y-scroll scroll-smooth">
+            Due to the force of attraction between the  <span class="font-black underline decoration-dotted">nucleus (ME)</span> and my <span class="font-bold">my first level  eletrons  (backend  development)</span>,  I consider myself a <span class="font-black underline decoration-dotted">backend  developer</span> although i also learn technologies outside my field.
+            Below are the technologies I have worked with. <a class="font-black underline decoration-dotted" href="#endingof"> scroll down for more</a>
             <div class="w-full font-bold text-lg pt-3">Backend</div>
             <ul class="list-disc p-6 pt-2 pb-2">
               <li>PHP</li>
@@ -117,7 +122,7 @@ function App() {
               <li>CSS</li>
               <li>Bootstrap & Tailwind Css</li>
               <li>Redis</li>
-              <li>Git & Github, OOPs ...more</li>
+              <li id='endingof'>Git & Github, OOPs ...more</li>
             </ul>
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
@@ -130,8 +135,8 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Education
           </div>
-          <article class="w-full text-sm p-6 pt-0 leading-6 ">
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
+          <article class="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+            I beleive <span class="font-bold">education</span> is a necessary part of a man's life. 
             <ul class="list-none p-6 pl-0  pb-2">
             <li class="w-full pt-2">
               <div class="font-bold text-xl pt-3">Federal Government College</div>
@@ -158,8 +163,8 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Experience
           </div>
-          <article class="w-full text-sm p-6 pt-0 leading-6 ">
-            lorem is reallTailwind lets you conditionally apply utility classes in different states using variant modifiers. For example,
+          <article class="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+            
             <ul class="list-none p-6 pl-0  pb-2">
             <li class="w-full pt-2">
               <div class="font-bold text-xl pt-3 pb-1"><a class="underline" href="https://listmining.com/">Listmining.com</a></div>
@@ -185,7 +190,7 @@ function App() {
             
             </article>
           <div className="font-light oldstyle-nums w-full p-6 text-xl pb-2 pt-8 text-center">
-            <a onClick={(e) =>{updatecurrenctCard()}} href="#prg_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
+            <a onClick={(e) => { updatecurrenctCard() }} href="#prg_card" class="border border-slate-300 hover:border-indigo-300 p-4 ">
               $page->next();
             </a>
           </div>
@@ -194,12 +199,10 @@ function App() {
           <div className="font-bold oldstyle-nums w-full p-6 text-xl pb-2 pt-8 ">
               Projects
           </div>
-          <article class="snap-mandatory  snap-x w-full flex flex-nowrap  text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2">
-            {pinnedRepo ? pinnedRepo.map((repo, index) => <GithubCard repo={repo} key={index} /> ) : 'lo'}
+          <article class="snap-mandatory  snap-x w-full flex flex-nowrap  text-sm p-6 pl-3 pt-0 leading-6 overflow-scroll space-x-2 scroll-smooth">
+            {pinnedRepo ? pinnedRepo.map((repo, index) => <GithubCard repo={repo} key={index} /> ) : (<div class="text-center font-bold w-full h-[50px] text-lg">Loading...</div>)}
             
-            {/* <GithubCard/> 
-            <GithubCard/>
-            <GithubCard/> */}
+            
             
 
             
