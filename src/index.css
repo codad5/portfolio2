@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.accordion-button:not(.collapsed) {
+    background-color: #ECF5F8;
+    color: black;
+}
