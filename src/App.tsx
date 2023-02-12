@@ -1,11 +1,51 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import GithubLogo from './assets/Github.svg'
+import LinkedinLogo from './assets/Linkedin.svg'
+import TwitterLogo from './assets/Twitter.svg'
 import './App.css'
 import DropSection from './components/DropSection'
 import ProjectCard from './components/ProjectCard'
 
 function App() {
   const [count, setCount] = useState(0)
+  type contactsType = {
+    label:string,
+    value:string,
+    link:string,
+  }
+  const contactsText: contactsType[] = [
+    {
+      label : "Email",
+      value : "Aniezeoformic@gmail.com",
+      link : "mailto:aniezeoformic@gmail.com"
+    }, 
+    {
+      label: "Phone",
+      value: "+234(0)8142572488",
+      link: "tel:+2348142572488"
+    }
+  ]
+  
+  const contactLogo : contactsType[] =  [
+    {
+      label:"Github",
+      value: GithubLogo,
+      link : "https://github.com/codad5"
+    },
+    {
+      label: "Twitter",
+      value: TwitterLogo,
+      link: "https://twitter.com/codad5_"
+    },
+    {
+      label: "Linkedin",
+      value: LinkedinLogo,
+      link: "https://www.linkedin.com/in/chibueze-aniezeofor/"
+    }
+  ]
+
+  
 
   return (
     <div className="App w-full h-screen">
@@ -20,18 +60,40 @@ function App() {
         </DropSection>
         <DropSection title={"About"}>
           <div className='w-full py-4 px-5'>
-              <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
-                I am a mechanical engineering student who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
-                During my years of experience, I have developed a <span className="font-black underline decoration-dotted">nucleus energy</span> towards <span className="font-black">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
+            <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+              <p>
+                Hola!, I am <span className="font-black underline decoration-dotted">Chibueze Michael Aniezeofor</span> ,a mechanical engineering student at the <span className="font-bold underline decoration-dotted">University of Nigeria</span> who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
+                During my years of experience, I have developed a <span className="font-bold underline decoration-dotted">nucleus energy</span> towards <span className="font-bold">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
                 <p>Aside from my passion for software development, I aspire to create innovations that benefit the people of Earth or possibly aliens (if they exist). </p>
-              </article>
-              <h4 className='bold'>Here are list of my stacks below</h4>
-              <ul>
-                <h6>Languages.</h6>
+                
+              </p>
+              <br/>
+              <p>
+              Due to the force of attraction between the  <span className="font-bold underline decoration-dotted">nucleus (ME)</span> and my <span className="font-bold">my first level  eletrons  (backend  development)</span>,  I consider myself a <span className="font-bold underline decoration-dotted">backend  developer</span> although i also learn technologies outside my field.
+              Below are the technologies I have worked with.
+              </p>
+              <div className="w-full font-bold text-lg pt-3">Backend</div>
+              <ul className="list-disc p-6 pt-2 pb-2">
                 <li>PHP</li>
-                <li>TypeScript</li>
-                <li>JavaScript</li>
+                <li>JAVASCRIPT</li>
+                <li>TYPESCRIPT</li>
+                <li>NODE.JS</li>
+                <li>Express.js</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+                <li>Unit Testing</li>
               </ul>
+              <div className="w-full font-bold text-lg pt-3">Frontend & Others</div>
+              <ul className="list-disc p-6 pt-2 " style={{ maxHeight: '20%' }}>
+                <li>React.js</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Bootstrap & Tailwind Css</li>
+                <li>Redis</li>
+                <li id='endingof'>Git & Github, OOPs ...more</li>
+              </ul>
+            </article>
                
             </div>
         </DropSection>
@@ -46,12 +108,40 @@ function App() {
             <div className='w-full'>
               Hello
             </div>
-        </DropSection>
-        <DropSection title={"Contact"}>
-            <div className='w-full'>
-              Hello
+        </DropSection><DropSection title={"Blog"}>
+          <div className='w-full grid place-items-center h-[50vh]'>
+              <b className='text-3xl'>
+                Coming Soon
+              </b>
             </div>
         </DropSection>
+        <DropSection title={"Contact"} style={"min-h-[40vh]"}>
+            <div className='w-full'>
+              {
+                contactsText.map((element, index) => (
+                  <div className='p-5'>
+                    <div className='w-full text-center space-y-2'>
+                      <label htmlFor={`#${element.label}`} className='font-bold w-4/5 inline-block text-left underline text-2xl'>{element.label}:</label>
+                      <a href={element.link} id={element.label} className='font-semibold w-4/5 inline-block text-left underline decoration-dotted'>{element.value}</a>
+                    </div>
+                  </div>
+                ))
+              }
+              <div className='w-full p-5 text-center space-x-10'>
+                {
+                  contactLogo.map((values, index) => (
+                      <div className='w-auto h-auto  inline-block text-center' title={values.label}>
+                          <a href={values.link}><img srcSet={values.value} /></a>
+                      </div>
+                    ))
+                }
+              </div>
+              
+            </div>
+        </DropSection>
+        <footer className='w-full h-15 bg-slate-600 text-center text-white p-4'>
+          Designed by <a href='https://github.com/codad5' className='underline decoration-dotted font-bold'>Codad5</a>
+        </footer>
       </div>
 
 
