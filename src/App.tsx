@@ -14,6 +14,7 @@ function App() {
           <div className="w-full bg-hero-pattern bg-cover bg-center h-full relative">
             <div className='text-3xl  absolute text-white w-8 left-3 bottom-3 left-3 font-semibold' style={{color:"#fff"}}>
               Chibueze Michael Aniezeofor
+              
             </div>  
           </div>
         </DropSection>
