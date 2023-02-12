@@ -13,7 +13,6 @@ function App() {
   const refreshClock = () => {
     setDate(new Date());
   }
-  
   const updatecurrenctCard = (right = true) => {
     if(right){
       if(cardPosition >= cardID.length - 1) return
@@ -108,6 +107,7 @@ function App() {
             <ul class="list-disc p-6 pt-2 pb-2">
               <li>PHP</li>
               <li>JAVASCRIPT</li>
+              <li>TYPESCRIPT</li>
               <li>NODE.JS</li>
               <li>Express.js</li>
               <li>Laravel</li>
