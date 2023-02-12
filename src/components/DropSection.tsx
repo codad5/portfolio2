@@ -1,6 +1,6 @@
 import { MouseEvent, useState } from 'react'
 
-function DropSection({ title , children, expanded = false , style = " "}) {
+function DropSection({ title, children, expanded = false, style = " " }: { title: string, children: React.ReactNode , expanded?:boolean, style?:string}) {
     const [count, setCount] = useState(0)
     const ELEMENT_ID = `Collapse${title}`
     const showHeroAuto = () => {
