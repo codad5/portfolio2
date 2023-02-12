@@ -13,7 +13,7 @@ function DropSection({ title , children, expanded = false , style = " "}) {
     }
     return (
         <section className={`accordion-item border bg-white border-gray-200 shrink-0`}>
-            <h2 className="accordion-header mb-0 bg-mainblue sticky top-0 z-9" id={`headingOne${ELEMENT_ID}`}>
+            <h2 className="accordion-header mb-0 bg-mainblue sticky top-0 z-50" id={`headingOne${ELEMENT_ID}`}>
                 <button className={`
         accordion-button
         collapsed  
