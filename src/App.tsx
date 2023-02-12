@@ -19,11 +19,11 @@ function App() {
         </DropSection>
         <DropSection title={"About"}>
           <div className='w-full py-4 px-5'>
-              Hello, I am Chibueze Michael Aniezeofor , a Nigerian based software developer,
-              I am currently studying at the University of Nigeria, Nsukka, 
-              I have been developing for the past 3 years and during my years of development,
-              i have worked with diffrent technologies and stack , i have also worked on several projects for personal development and for client satisfaction
-              <br/>
+              <article class="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+                I am a mechanical engineering student who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
+                During my years of experience, I have developed a <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
+                <p>Aside from my passion for software development, I aspire to create innovations that benefit the people of Earth or possibly aliens (if they exist). </p>
+              </article>
               <h4 className='bold'>Here are list of my stacks below</h4>
               <ul>
                 <h6>Languages.</h6>
