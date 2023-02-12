@@ -35,7 +35,7 @@ function App() {
             </div>
         </DropSection>
         <DropSection title={"Projects"}>
-          <div className='w-full py-[60px] px-5  text-center flex flex-wrap justify-center gap-y-[65px] gap-x-6'>
+          <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
               <ProjectCard></ProjectCard>
               <ProjectCard></ProjectCard>
               <ProjectCard></ProjectCard>
