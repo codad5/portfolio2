@@ -19,9 +19,9 @@ function App() {
         </DropSection>
         <DropSection title={"About"}>
           <div className='w-full py-4 px-5'>
-              <article class="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+              <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
                 I am a mechanical engineering student who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
-                During my years of experience, I have developed a <span class="font-black underline decoration-dotted">nucleus energy</span> towards <span class="font-black">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
+                During my years of experience, I have developed a <span className="font-black underline decoration-dotted">nucleus energy</span> towards <span className="font-black">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
                 <p>Aside from my passion for software development, I aspire to create innovations that benefit the people of Earth or possibly aliens (if they exist). </p>
               </article>
               <h4 className='bold'>Here are list of my stacks below</h4>
