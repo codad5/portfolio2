@@ -45,7 +45,6 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
 
             </div>
             </div>
-
         </div>
     )
 }
