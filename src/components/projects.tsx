@@ -139,7 +139,7 @@ export const projects: projectsDetails[] = [
         A PHP based librarythat aid easy file uplaoding and verification in PHP
       </div>
     )
-  }
+  },
   {
     name:'U-secret (Node.js)',
     main_lang:'javascript (Express.js)',
