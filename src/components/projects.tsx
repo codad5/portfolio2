@@ -1,5 +1,8 @@
 import { Children } from "react";
 import { projectsDetails } from "./types";
+import Currencynet from '../assets/currencynet.png'
+import Sanctablog from '../assets/sanctablog.jpeg' 
+import WemallF from '../assets/wemall-f.jpeg'
 
 export const projects: projectsDetails[] = [
     {
@@ -7,6 +10,7 @@ export const projects: projectsDetails[] = [
         type: 'dev',
         tags: ['typescript', 'chrome'],
         main_lang: 'typescript',
+        image: 'https://img.youtube.com/vi/lfLIXIBuCJs/hqdefault.jpg',
         links: {
           github : "https://github.com/codad5/keybinder",
         },
@@ -34,6 +38,7 @@ export const projects: projectsDetails[] = [
       name: "CurrrencyNet",
       type:'dev',
       tags:['currency', 'javascript', 'library', 'api'],
+      image: Currencynet,
       main_lang:'javascript',
       links:{
         github:"https://github.com/codad5/currencynet",
@@ -58,6 +63,7 @@ export const projects: projectsDetails[] = [
     {
       name:"sanctablog.com",
       main_lang:'wordpress',
+      image:Sanctablog,
       type:'fullstack',
       tags:['paid', 'blog', 'wordpress'],
       links:{
@@ -73,6 +79,7 @@ export const projects: projectsDetails[] = [
     name: "CurrrencyNet (for React.js)",
     type: 'dev',
     main_lang:'typescript',
+    image:Currencynet,
     tags: ['javascript', 'library', 'typescript'],
     links: {
       github: "https://github.com/codad5/currencynet-react",
@@ -186,6 +193,7 @@ export const projects: projectsDetails[] = [
     name:"Test Wemall shop (frontend)",
     main_lang: "Javascript (React.js)",
     type:'frontend',
+    image : WemallF,
     tags:['api'],
     links:{
       website:'https://wemall.vercel.app',
