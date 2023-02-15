@@ -1,17 +1,18 @@
 import { MouseEvent } from "react"
 import { projectsDetails } from "./types"
+import DefaultImage from '../assets/default.jpg'
 
-export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = "https://avatars.githubusercontent.com/u/66634814?v=41"}: projectsDetails)
+export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage}: projectsDetails)
 {
-    const default_image = "https://avatars.githubusercontent.com/u/66634814?v=41"
     const default_style_main = {
-        background: "linear-gradient(to right bottom, rgba(89, 86, 86, 0.44), rgba(101, 89, 89, 0.81)), url('"+image ?? default_image+"'))",
-        color:'red'
+        background: "linear-gradient(to right bottom, rgba(89, 86, 86, 0.44), rgba(101, 89, 89, 0.81)), url('"+image ?? DefaultImage+"'))",
+        color:'red',
+        backgroundSize:image != DefaultImage ? 'contain' : 'cover'
     }
     return (
         <div className="w-[300px] min-h-[300px] bg-mainblue inline-block relative">
             {main_lang ? <span className="absolute top-0 right-0 p-2 bg-black text-white z-30">{main_lang}</span> : null }
-            <div className={`w-full  bg-cover bg-center relative h-[250px] bg-hero- `} style={default_style_main}>
+            <div className={`w-full  bg-cover bg-center relative h-[250px] bg-hero- bg-cover `} style={default_style_main}>
                 <div className="w-full absolute bottom-0 p-4 text-white text-left">
                     <div className="w-full relative">
                         <div>
