@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { ReactHTMLElement, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import GithubLogo from './assets/Github.svg'
 import LinkedinLogo from './assets/Linkedin.svg'
@@ -6,14 +6,12 @@ import TwitterLogo from './assets/Twitter.svg'
 import './App.css'
 import DropSection from './components/DropSection'
 import ProjectCard from './components/ProjectCard'
+import { contactsType, projectsDetails } from './components/types'
+import { projects } from './components/projects'
 
 function App() {
   const [count, setCount] = useState(0)
-  type contactsType = {
-    label:string,
-    value:string,
-    link:string,
-  }
+  
   const contactsText: contactsType[] = [
     {
       label : "Email",
@@ -46,7 +44,7 @@ function App() {
   ]
 
   
-
+ 
   return (
     <div className="App w-full h-screen">
       <div className="accordion h-full w-full flex flex-col relative" id="Main">
@@ -99,9 +97,13 @@ function App() {
         </DropSection>
         <DropSection title={"Projects"}>
           <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
-              <ProjectCard></ProjectCard>
-              <ProjectCard></ProjectCard>
-              <ProjectCard></ProjectCard>
+              {
+                projects.length > 0 ? projects.map((value, index) => (
+                  <ProjectCard name={value.name} tags={value.tags} main_lang={value.main_lang} links={value.links} type={value.type} key={index} image={value.image}>
+                    {value.children}
+                  </ProjectCard>
+                )) : <h2> No project</h2>
+              }
             </div>
         </DropSection>
         <DropSection title={"Work"}>
@@ -119,7 +121,7 @@ function App() {
             <div className='w-full'>
               {
                 contactsText.map((element, index) => (
-                  <div className='p-5'>
+                  <div className='p-5' key={index}>
                     <div className='w-full text-center space-y-2'>
                       <label htmlFor={`#${element.label}`} className='font-bold w-4/5 inline-block text-left underline text-2xl'>{element.label}:</label>
                       <a href={element.link} id={element.label} className='font-semibold w-4/5 inline-block text-left underline decoration-dotted'>{element.value}</a>
@@ -130,7 +132,7 @@ function App() {
               <div className='w-full p-5 text-center space-x-10'>
                 {
                   contactLogo.map((values, index) => (
-                      <div className='w-auto h-auto  inline-block text-center' title={values.label}>
+                      <div className='w-auto h-auto  inline-block text-center' title={values.label} key={index}>
                           <a href={values.link}><img srcSet={values.value} /></a>
                       </div>
                     ))
