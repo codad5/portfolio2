@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { ReactHTMLElement, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import GithubLogo from './assets/Github.svg'
@@ -161,7 +160,7 @@ function App() {
         </DropSection>
         <DropSection title={"Work"} shortcutSwitches={['W']}>
             <div className='w-full p-3 text-center py-5'>
-            <a className='inline-block bg-black text-white p-3  border-double border-4 border-white' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
+            <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
             </div>
             <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
               <WorkCard title='Sanctablog.com' timeline='Jan 2022 - Dec 2022' position='Web developer' href='https://sanctablog.com'>
@@ -328,36 +327,6 @@ function App() {
           </div>
         </div>
       </div> */}
-=======
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import DropSection from './components/DropSection'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      
-      <div className="accordion" id="Main">
-        <DropSection title={"Home"} expanded={true}>
-            <div className='w-full'>
-              Hello
-            </div>
-        </DropSection>
-        <DropSection title={"About"}>
-            <div className='w-full'>
-              Hello
-            </div>
-        </DropSection>
-        <DropSection title={"Projects"}>
-            <div className='w-full'>
-              Hello
-            </div>
-        </DropSection>
-      </div>
->>>>>>> db4b2c4 (error merge)
     </div>
   )
 }
