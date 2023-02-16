@@ -1,7 +1,8 @@
 import { MouseEvent, useState } from 'react'
+import {  isBrowser, isMobile } from 'react-device-detect';
 
-function DropSection({ title, children, expanded = false, style = " " }: { title: string, children: React.ReactNode , expanded?:boolean, style?:string}) {
-    const [count, setCount] = useState(0)
+
+function DropSection({ title, children, expanded = false, style = " ", shortcutSwitches}: { title: string, children: React.ReactNode, shortcutSwitches?: string[], expanded?:boolean, style?:string}) {
     const ELEMENT_ID = `Collapse${title}`
     const showHeroAuto = () => {
         let any_open = false;
@@ -10,7 +11,13 @@ function DropSection({ title, children, expanded = false, style = " " }: { title
             if(!e.classList.contains('collapsed')) any_open = true;
         })  
         if(!any_open) accordion_bs[0].click()
+        setIsOpen(DropSectionIsOpen(title))
     }
+    const DropSectionIsOpen = (title: string) => {
+        return document.querySelector(`#btn_${title}`)?.classList.contains('collapsed') ?? false
+    }
+    const [isOpen, setIsOpen] = useState(!expanded)
+    
     return (
         <section className={`accordion-item border bg-white border-gray-200 shrink-0`}>
             <h2 className="accordion-header mb-0 bg-mainblue sticky top-0 z-50" id={`headingOne${ELEMENT_ID}`}>
@@ -31,9 +38,9 @@ function DropSection({ title, children, expanded = false, style = " " }: { title
         transition
         focus:outline-none
         min-h-[10vh]
-      `} type="button" data-bs-toggle="collapse" data-bs-target={`#${ELEMENT_ID}`} aria-expanded={expanded}
+      `} type="button" id={`btn_${title}`} data-bs-toggle="collapse" data-bs-target={`#${ELEMENT_ID}`} aria-expanded={expanded}
                     aria-controls={`${ELEMENT_ID}`} onClick={e => showHeroAuto()}>
-                    {title}
+                    {title} <sub className='font-light text-xs ml-2'>{isBrowser && shortcutSwitches ? `Press ${shortcutSwitches.join(',')} to ${isOpen ? 'open' : 'close'}` : null}</sub>
                 </button>
             </h2>
             <div id={ELEMENT_ID} className={`accordion-collapse collapse ${expanded ? 'show' : ''}`} aria-labelledby={`headingOne${ELEMENT_ID}`}

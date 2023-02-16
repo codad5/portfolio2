@@ -16,11 +16,11 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
                 <div className="w-full absolute bottom-0 p-4 text-white text-left">
                     <div className="w-full relative">
                         <div>
-                            <h4 className="inline-block text-2xl p-2"> {name} </h4> {type ? <span className="bg-black text-white radius-4 absolute top-3 right-5">{type}</span> : null}
+                            <h4 className="inline-block text-2xl p-2 break-words"> {name} </h4> {type ? <span className="bg-black rounded-full px-2 text-white radius-4 absolute bottom-7 right-5">{type}</span> : null}
                         </div>
                         <div>
                             {tags.map((key, index) => (
-                                <span className="text-sm p-1 lowercase underline text-white hover:text-slate-700">
+                                <span className="text-sm p-1 lowercase underline text-white hover:text-slate-700 ">
                                     #{key}
                                 </span>
                             ))}
