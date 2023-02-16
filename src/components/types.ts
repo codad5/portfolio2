@@ -1,6 +1,6 @@
 export type projectsDetails = {
     name: string,
-    type: 'dev' | 'frontend' | 'backend' | 'cloud' | 'command-line' | 'fullstack' ,
+    type: 'dev' | 'frontend' | 'backend' | 'cloud' | 'command-line' | 'fullstack' | 'chrome-ext',
     tags: string[],
     main_lang ?: string,
     image?: string,

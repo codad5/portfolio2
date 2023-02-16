@@ -12,11 +12,12 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
     return (
         <div className="w-[300px] min-h-[300px] bg-mainblue inline-block relative">
             {main_lang ? <span className="absolute top-0 right-0 p-2 bg-black text-white z-30">{main_lang}</span> : null }
+            {type ? <span className="bg-black rounded-full px-2 text-white radius-4 absolute top-5 left-4 z-30">{type}</span> : null}
             <div className={`w-full  bg-cover bg-center relative h-[250px] bg-hero- bg-cover `} style={default_style_main}>
                 <div className="w-full absolute bottom-0 p-4 text-white text-left">
-                    <div className="w-full relative">
+                    <div className="w-full ">
                         <div>
-                            <h4 className="inline-block text-2xl p-2 break-words"> {name} </h4> {type ? <span className="bg-black rounded-full px-2 text-white radius-4 absolute bottom-7 right-5">{type}</span> : null}
+                            <h4 className="inline-block text-2xl p-2 break-words"> {name} </h4>
                         </div>
                         <div>
                             {tags.map((key, index) => (
