@@ -36,6 +36,11 @@ function App() {
     })
 
     // for Blog section
+    keyController.ListenToKey('W', () => {
+      (document.querySelector('#btn_Work') as HTMLButtonElement).click();
+    })
+
+    // for Blog section
     keyController.ListenToKey('B', () => {
       (document.querySelector('#btn_Blog') as HTMLButtonElement).click();
     })
@@ -139,19 +144,19 @@ function App() {
               }
             </div>
         </DropSection>
-        <DropSection title={"Work"}>
+        <DropSection title={"Work"} shortcutSwitches={['W']}>
             <div className='w-full'>
               Hello
             </div>
         </DropSection>
-        <DropSection title={"Blog"}>
+        <DropSection title={"Blog"} shortcutSwitches={['B']}>
           <div className='w-full grid place-items-center h-[50vh]'>
               <b className='text-3xl'>
                 Coming Soon
               </b>
             </div>
         </DropSection>
-        <DropSection title={"Contact"} style={"min-h-[40vh]"}>
+        <DropSection title={"Contact"} style={"min-h-[40vh]"} shortcutSwitches={['C']}>
             <div className='w-full'>
               {
                 contactsText.map((element, index) => (
