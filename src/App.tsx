@@ -27,31 +27,28 @@ function App() {
     keyController.ListenToKey('H', 'I', () => {
       (document.querySelector('#btn_Intro') as HTMLButtonElement).click();
     })
-    
     // for About section
-    keyController.ListenToKey('A', () => {
+    .ListenToKey('A', () => {
       (document.querySelector('#btn_About') as HTMLButtonElement).click();
     })
-
     // for Projects section
-    keyController.ListenToKey('P', () => {
+    .ListenToKey('P', () => {
       (document.querySelector('#btn_Projects') as HTMLButtonElement).click();
     })
-
     // for Blog section
-    keyController.ListenToKey('W', () => {
+    .ListenToKey('W', () => {
       (document.querySelector('#btn_Work') as HTMLButtonElement).click();
     })
-
     // for Blog section
-    keyController.ListenToKey('B', () => {
+    .ListenToKey('B', () => {
       (document.querySelector('#btn_Blog') as HTMLButtonElement).click();
     })
-    
     // for Contact section
-    keyController.ListenToKey('C','/', () => {
+    .ListenToKey('C','/', () => {
       (document.querySelector('#btn_Contact') as HTMLButtonElement).click();
     })
+
+    
   }, [])
   const contactsText: contactsType[] = [
     {
@@ -130,6 +127,7 @@ function App() {
                 <li>NODE.JS</li>
                 <li>Express.js</li>
                 <li>Laravel</li>
+                <li>Rust ( Currently learning )</li>
                 <li>MySQL</li>
                 <li>MongoDB</li>
                 <li>Unit Testing</li>
@@ -141,7 +139,9 @@ function App() {
                 <li>CSS</li>
                 <li>Bootstrap & Tailwind Css</li>
                 <li>Redis</li>
-                <li id='endingof'>Git & Github, OOPs ...more</li>
+                <li>Git & Github</li>
+                <li>OOPs</li>
+                <li>CI/CD</li>
               </ul>
             </article>
                
@@ -220,113 +220,6 @@ function App() {
           /></div>
         </footer>
       </div>
-
-
-
-
-      {/* <div class="accordion" id="accordionExample">
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingOne">
-            <button class="
-        accordion-button
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-              aria-controls="collapseOne">
-              Accordion Item #1
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body py-4 px-5">
-              <strong>This is the first item's accordion body.</strong> It is shown by default,
-              until the collapse plugin adds the appropriate classes that we use to style each
-              element. These classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-              our default variables. It's also worth noting that just about any HTML can go within
-              the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingTwo">
-            <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-              aria-controls="collapseTwo">
-              Accordion Item #2
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body py-4 px-5">
-              <strong>This is the second item's accordion body.</strong> It is hidden by default,
-              until the collapse plugin adds the appropriate classes that we use to style each
-              element. These classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-              our default variables. It's also worth noting that just about any HTML can go within
-              the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingThree">
-            <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-              aria-controls="collapseThree">
-              Accordion Item #3
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body py-4 px-5">
-              <strong>This is the third item's accordion body.</strong> It is hidden by default,
-              until the collapse plugin adds the appropriate classes that we use to style each
-              element. These classes control the overall appearance, as well as the showing and
-              hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-              our default variables. It's also worth noting that just about any HTML can go within
-              the <code>.accordion-body</code>, though the transition does limit overflow.
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   )
 }
