@@ -94,15 +94,16 @@ export const projects: projectsDetails[] = [
         The React.js based version of Currencynet written in <b>Typescript</b>
         <br/>
         <p>
-          <h6>Here is a usage of the library</h6>
-          <CurrencyNet buildCurrency="NGN" value={5000} />
-          <details className="break-all w-full">
+          <br/>
+          <h6 className="font-bold">Here is a usage of the library (  converting ₦5000(Nigeria Naira) to your country currency :</h6>
+          <div>₦5000 == <CurrencyNet buildCurrency="NGN" value={5000} /> </div>
+          <br/>
+          {/* <details className="jsx" innerHTML={true}>
             <summary>see code</summary>
             <Highlight className='break-all'>
-              {'import { CurrencyNet } from "currencynet";'}
               {'<CurrencyNet buildCurrency="NGN" value={5000} />'}
             </Highlight>
-          </details>
+          </details> */}
         </p>
       </div>  
     )
@@ -252,5 +253,35 @@ export const projects: projectsDetails[] = [
         What you are viewing, <a href="https://preview.codad5.me" className="underline">click to see currrent beta version</a>
       </div>
     )
+  },
+  {
+    name : 'clog',
+    main_lang:'PHP (laravel)',
+    type: 'backend',
+    tags:['blog', 'php', 'laravel'],
+    links: {
+      github : 'https://github.com/codad5/clog'
+    },
+    children:(
+      <div>
+          This is a blog built with PHP laravel
+      </div>
+    )
+  },
+  {
+    name:'webpdf',
+    main_lang:'typescript',
+    type:'chrome-ext',
+    image:'https://github.com/codad5/webpdf/raw/master/assets/preview.png',
+    tags:['pdf', 'web-to-pdf'],
+    links: {
+      github:'https://github.com/codad5/webpdf'
+    },
+    children:(
+      <div>
+        This is a chrome extension that helps to convert set of webpages as one PDF
+      </div>
+    )
   }
+
   ]
