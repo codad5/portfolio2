@@ -11,6 +11,7 @@ import { Typewriter } from 'react-simple-typewriter'
 import { projects } from './components/projects'
 import Keybinder from 'domkeybinder'
 import { animated, useSpring } from '@react-spring/web'
+import WorkCard from './components/Wordcard'
 const keyController = new Keybinder({
     default_listener : 'keyup',
     element : window,
@@ -158,8 +159,18 @@ function App() {
             </div>
         </DropSection>
         <DropSection title={"Work"} shortcutSwitches={['W']}>
-            <div className='w-full'>
-              Hello
+            <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
+              <WorkCard title='Sanctablog.com' timeline='Jan 2022 - Dec 2022' position='Web developer' href='https://sanctablog.com'>
+                <ul className='list-disc'>
+                  <li>I build and manage the website domain</li>
+                  <li>I created and manage the professional email</li>
+                </ul>
+              </WorkCard>
+              <WorkCard title='Listmining.com' timeline='Sept 2021 - Feb 2022' position='Web developer' href='https://listmining.com'>
+                <ul className='list-disc'>
+                  <li>I build and manage the website domain</li>
+                </ul>
+            </WorkCard>
             </div>
         </DropSection>
         <DropSection title={"Blog"} shortcutSwitches={['B']}>
@@ -196,8 +207,8 @@ function App() {
         <footer className='w-full h-15 bg-slate-600 text-center text-white p-4'>
           <div>Designed by <a href='https://github.com/codad5' className='underline decoration-dotted font-bold'>Codad5</a></div>
           <div><Typewriter
-            words={['Eat', 'Sleep', 'Code', 'Repeat!']}
-            loop={5}
+            words={['Eat', 'Sleep', 'Code', 'Repeat!', 'Thanks']}
+            loop={false}
             cursor
             cursorStyle='_'
             typeSpeed={70}
