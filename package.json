@@ -9,12 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^9.6.1",
     "currencynet": "^2.0.8",
     "domkeybinder": "^1.0.8",
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
+    "react-simple-typewriter": "^5.0.1",
     "tw-elements": "^1.0.0-alpha13"
   },
   "devDependencies": {

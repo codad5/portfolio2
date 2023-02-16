@@ -7,8 +7,10 @@ import './App.css'
 import DropSection from './components/DropSection'
 import ProjectCard from './components/ProjectCard'
 import { contactsType, projectsDetails } from './components/types'
+import { Typewriter } from 'react-simple-typewriter'
 import { projects } from './components/projects'
 import Keybinder from 'domkeybinder'
+import { animated, useSpring } from '@react-spring/web'
 const keyController = new Keybinder({
     default_listener : 'keyup',
     element : window,
@@ -81,7 +83,16 @@ function App() {
     }
   ]
 
-  
+  const styles = useSpring({
+    from: {
+      opacity:  0,
+      y:  124,
+    },
+    to: {
+      opacity:  1 ,
+      y: 0 ,
+    }
+  })
  
   return (
     <div className="App w-full h-screen">
@@ -89,7 +100,9 @@ function App() {
         <DropSection title={"Intro"} expanded={true} style={"h-[48vh]"} shortcutSwitches={['H', 'I']}>
           <div className="w-full bg-hero-pattern bg-cover bg-center h-full relative">
             <div className='text-3xl  absolute text-white w-8 left-3 bottom-3 left-3 font-semibold' style={{color:"#fff"}}>
-              <h1>Chibueze Michael Aniezeofor</h1>
+              <animated.div style={styles}>
+                <h1>Chibueze Michael Aniezeofor</h1>
+              </animated.div>
               
             </div>  
           </div>
@@ -181,7 +194,16 @@ function App() {
             </div>
         </DropSection>
         <footer className='w-full h-15 bg-slate-600 text-center text-white p-4'>
-          Designed by <a href='https://github.com/codad5' className='underline decoration-dotted font-bold'>Codad5</a>
+          <div>Designed by <a href='https://github.com/codad5' className='underline decoration-dotted font-bold'>Codad5</a></div>
+          <div><Typewriter
+            words={['Eat', 'Sleep', 'Code', 'Repeat!']}
+            loop={5}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          /></div>
         </footer>
       </div>
 
