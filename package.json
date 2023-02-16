@@ -4,11 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+<<<<<<< HEAD
     "dev": "vite --host",
+=======
+    "dev": "vite",
+>>>>>>> db4b2c4 (error merge)
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@react-spring/web": "^9.6.1",
     "currencynet": "^2.0.8",
     "domkeybinder": "^1.0.8",
@@ -17,12 +22,19 @@
     "react-dom": "^18.2.0",
     "react-highlight": "^0.15.0",
     "react-simple-typewriter": "^5.0.1",
+=======
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+>>>>>>> db4b2c4 (error merge)
     "tw-elements": "^1.0.0-alpha13"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+<<<<<<< HEAD
     "@types/react-highlight": "^0.12.5",
+=======
+>>>>>>> db4b2c4 (error merge)
     "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
