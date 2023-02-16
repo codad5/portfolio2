@@ -1,4 +1,4 @@
-import { ReactHTMLElement, useState } from 'react'
+import { ReactHTMLElement, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import GithubLogo from './assets/Github.svg'
 import LinkedinLogo from './assets/Linkedin.svg'
@@ -8,10 +8,43 @@ import DropSection from './components/DropSection'
 import ProjectCard from './components/ProjectCard'
 import { contactsType, projectsDetails } from './components/types'
 import { projects } from './components/projects'
+import Keybinder from 'domkeybinder'
+const keyController = new Keybinder({
+    default_listener : 'keyup',
+    element : window,
+    allow_default : false
+})
+
+
 
 function App() {
   const [count, setCount] = useState(0)
-  
+  useEffect(() => {
+    // short cut to open intro drop section
+    keyController.ListenToKey('H', 'I', () => {
+      (document.querySelector('#btn_Intro') as HTMLButtonElement).click();
+    })
+    
+    // for About section
+    keyController.ListenToKey('A', () => {
+      (document.querySelector('#btn_About') as HTMLButtonElement).click();
+    })
+
+    // for Projects section
+    keyController.ListenToKey('P', () => {
+      (document.querySelector('#btn_Projects') as HTMLButtonElement).click();
+    })
+
+    // for Blog section
+    keyController.ListenToKey('B', () => {
+      (document.querySelector('#btn_Blog') as HTMLButtonElement).click();
+    })
+    
+    // for Contact section
+    keyController.ListenToKey('C','/', () => {
+      (document.querySelector('#btn_Contact') as HTMLButtonElement).click();
+    })
+  }, [])
   const contactsText: contactsType[] = [
     {
       label : "Email",
@@ -48,7 +81,7 @@ function App() {
   return (
     <div className="App w-full h-screen">
       <div className="accordion h-full w-full flex flex-col relative" id="Main">
-        <DropSection title={"Home"} expanded={true} style={"h-[48vh]"}>
+        <DropSection title={"Intro"} expanded={true} style={"h-[48vh]"} shortcutSwitches={['H', 'I']}>
           <div className="w-full bg-hero-pattern bg-cover bg-center h-full relative">
             <div className='text-3xl  absolute text-white w-8 left-3 bottom-3 left-3 font-semibold' style={{color:"#fff"}}>
               <h1>Chibueze Michael Aniezeofor</h1>
@@ -56,7 +89,7 @@ function App() {
             </div>  
           </div>
         </DropSection>
-        <DropSection title={"About"}>
+        <DropSection title={"About"} shortcutSwitches={['A']}>
           <div className='w-full py-4 px-5'>
             <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
               <p>
@@ -95,7 +128,7 @@ function App() {
                
             </div>
         </DropSection>
-        <DropSection title={"Projects"}>
+        <DropSection title={"Projects"} shortcutSwitches={['P']}>
           <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
               {
                 projects.length > 0 ? projects.map((value, index) => (
@@ -110,7 +143,8 @@ function App() {
             <div className='w-full'>
               Hello
             </div>
-        </DropSection><DropSection title={"Blog"}>
+        </DropSection>
+        <DropSection title={"Blog"}>
           <div className='w-full grid place-items-center h-[50vh]'>
               <b className='text-3xl'>
                 Coming Soon

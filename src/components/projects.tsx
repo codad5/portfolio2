@@ -13,6 +13,7 @@ export const projects: projectsDetails[] = [
         image: 'https://img.youtube.com/vi/lfLIXIBuCJs/hqdefault.jpg',
         links: {
           github : "https://github.com/codad5/keybinder",
+          website: 'https://www.npmjs.com/package/domkeybinder'
         },
         children: (
             <div>
@@ -83,7 +84,7 @@ export const projects: projectsDetails[] = [
     tags: ['javascript', 'library', 'typescript'],
     links: {
       github: "https://github.com/codad5/currencynet-react",
-      website: 'https://codad5.github.io/currencynet'
+      website: 'https://www.npmjs.com/package/currencynet'
     },
     children: (
       <div>
@@ -111,7 +112,8 @@ export const projects: projectsDetails[] = [
     main_lang: 'PHP',
     tags: ['php', ''],
     links:{
-      github:"https://github.com/codad5/php-inex"
+      github:"https://github.com/codad5/php-inex",
+      website:'https://packagist.org/packages/codad5/php-inex'
     },
     children: (
       <div>
@@ -139,7 +141,8 @@ export const projects: projectsDetails[] = [
     type:'dev',
     tags:['php', 'file uploader'],
     links:{
-      github:''
+      github:'https://github.com/codad5/php-file-uploader',
+      website: 'https://packagist.org/packages/codad5/file-helper'
     },
     children:(
       <div>
@@ -153,7 +156,8 @@ export const projects: projectsDetails[] = [
     type:'fullstack',
     tags:['messaging service'],
     links:{
-      github:'https://github.com/codad5/usecret-node-version'
+      github:'https://github.com/codad5/usecret-node-version',
+      website:'https://helpful-cuff-links-deer.cyclic.app/home'
     },
     children: (
       <div>
