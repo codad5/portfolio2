@@ -20,7 +20,7 @@ export const projects: projectsDetails[] = [
         },
         children: (
             <div>
-              This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser. {isBrowser ? 'which i use in this project for shortcuts' : 'Try using a Desktop to use this library here!'}
+            This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser. <span className="underline decoration-dotted font-bold"> {isBrowser ? 'which i use in this project for shortcuts' : 'Try using a Desktop to use this library here!'}</span>
             </ div >
       )
     },
