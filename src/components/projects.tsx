@@ -3,6 +3,9 @@ import { projectsDetails } from "./types";
 import Currencynet from '../assets/currencynet.png'
 import Sanctablog from '../assets/sanctablog.jpeg' 
 import WemallF from '../assets/wemall-f.jpeg'
+import { isBrowser } from "react-device-detect";
+import { CurrencyNet } from "currencynet";
+import Highlight from 'react-highlight'
 
 export const projects: projectsDetails[] = [
     {
@@ -17,7 +20,7 @@ export const projects: projectsDetails[] = [
         },
         children: (
             <div>
-              This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser.
+              This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser. {isBrowser ? 'which i use in this project for shortcuts' : 'Try using a Desktop to use this library here!'}
             </ div >
       )
     },
@@ -83,12 +86,24 @@ export const projects: projectsDetails[] = [
     image:Currencynet,
     tags: ['javascript', 'library', 'typescript'],
     links: {
-      github: "https://github.com/codad5/currencynet-react",
+      github: "https://github.com/codad5/react-currencynet",
       website: 'https://www.npmjs.com/package/currencynet'
     },
     children: (
       <div>
         The React.js based version of Currencynet written in <b>Typescript</b>
+        <br/>
+        <p>
+          <h6>Here is a usage of the library</h6>
+          <CurrencyNet buildCurrency="NGN" value={5000} />
+          <details className="break-all w-full">
+            <summary>see code</summary>
+            <Highlight className='break-all'>
+              {'import { CurrencyNet } from "currencynet";'}
+              {'<CurrencyNet buildCurrency="NGN" value={5000} />'}
+            </Highlight>
+          </details>
+        </p>
       </div>  
     )
   },
