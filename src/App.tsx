@@ -99,8 +99,8 @@ function App() {
     <div className="App w-full h-screen">
       <div className="accordion h-full w-full flex flex-col relative" id="Main">
         <DropSection title={"Intro"} expanded={true} style={"h-[48vh]"} shortcutSwitches={['H', 'I']}>
-          <div className="w-full bg-hero-pattern bg-cover bg-center h-full relative">
-            <div className='text-3xl  absolute text-white w-8 left-3 bottom-3 left-3 font-semibold' style={{color:"#fff"}}>
+          <div className="w-full bg-hero-pattern text-white bg-cover bg-center h-full relative  lg:hover:bg-contain bg-no-repeat transition ease-in-out delay-150 duration-300">
+            <div className='text-3xl  absolute  w-8 left-3 bottom-3 left-3 font-semibold' style={{color:"#fff"}}>
               <animated.div style={styles}>
                 <h1>Chibueze Michael Aniezeofor</h1>
               </animated.div>
