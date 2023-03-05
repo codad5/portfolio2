@@ -42,8 +42,8 @@ function App() {
     <div className="App scroll-smooth relative">
       <header className="App-header">
         <h1>Codad5</h1>
-        <div className='bg-red fixed top-7 left-5 p-5 text-center white font-md'>
-          This is v1 of my portfolio click <a href="www.codad5.me" className='font-bold underline'>Here</a> to see latest
+        <div className='bg-yellow fixed top-7 left-5 p-5 text-center white font-md w-[200px]'>
+          This is v1 of my portfolio click <a href="https://codad5.me" className='font-bold underline'>Here</a> to see latest
         </div>
         <div className="time-show">
           
