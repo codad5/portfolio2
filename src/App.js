@@ -42,7 +42,7 @@ function App() {
     <div className="App scroll-smooth relative">
       <header className="App-header">
         <h1>Codad5</h1>
-        <div className='bg-yellow-500 animate-ping fixed top-7 left-5 p-5 text-center white font-md w-[200px] z-50'>
+        <div className='bg-yellow-500 fixed top-7 left-5 p-5 text-center white font-md w-[200px] z-50'>
           This is v1 of my portfolio click <a href="https://codad5.me" className='font-bold underline'>Here</a> to see latest
         </div>
         <div className="time-show">
