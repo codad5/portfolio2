@@ -1,3 +1,4 @@
+'use client'
 import { MouseEvent, useState } from 'react'
 import {  isBrowser, isMobile } from 'react-device-detect';
 
