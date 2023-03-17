@@ -2,7 +2,6 @@
 'use client';
 
 import { ReactHTMLElement, useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import GithubLogo from './assets/Github.svg'
 import LinkedinLogo from './assets/Linkedin.svg'
 import TwitterLogo from './assets/Twitter.svg'
@@ -119,7 +118,7 @@ function Home() {
               </p>
               <br />
               <p>
-                Due to the force of attraction between the  <span className="font-bold underline decoration-dotted">nucleus (ME)</span> and my <span className="font-bold">my first level  eletrons  (backend  development)</span>,  I consider myself a <span className="font-bold underline decoration-dotted">backend  developer</span> although i also learn technologies outside my field.
+                Due to the force of attraction between the <span className="font-bold underline decoration-dotted">nucleus (ME)</span> and my <span className="font-bold">my first level  eletrons  (backend  development)</span>,  I consider myself a <span className="font-bold underline decoration-dotted">backend  developer</span> although i also learn technologies outside my field.
                 Below are the technologies I have worked with.
               </p>
               <div className="w-full font-bold text-lg pt-3">Backend</div>
@@ -224,7 +223,7 @@ function Home() {
         </footer>
         <a className='fixed bottom-10 right-10 z-50' href='#footername'>
           <div className="animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-violet-500" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6 text-violet-500" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
           </div>
