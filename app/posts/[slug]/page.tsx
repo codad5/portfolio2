@@ -11,7 +11,7 @@ export const generateStaticParams = () => {
             slug: post.slug     
     }))
 }
- const PostPage = ({params}) => {
+ const PostPage = ({params}:{params:any}) => {
     const {slug} = params;
     const {content, data} = matter(getPostContent(slug));
     const { title, date, image , tags} = data as postsType
