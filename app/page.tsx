@@ -1,7 +1,7 @@
 import App from "./components/App";
-import { getPosts } from "./helpers/post";
+import { getPosts, getPostsAndMetadata } from "./helpers/post";
 
-const post = getPosts();
+const post = getPostsAndMetadata();
 
 
 export default function Home() {
