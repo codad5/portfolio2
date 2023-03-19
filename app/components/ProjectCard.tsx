@@ -3,7 +3,7 @@ import { projectsDetails } from "./types"
 import DefaultImage from '../assets/default.jpg'
 import Link from "next/link"
 
-export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage}: projectsDetails)
+export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage.src}: projectsDetails)
 {
     const default_style_main = {
         background: "linear-gradient(to right bottom, rgba(89, 86, 86, 0.44), rgba(101, 89, 89, 0.81)), url('"+image ?? DefaultImage+"'))",
