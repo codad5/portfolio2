@@ -20,7 +20,8 @@ export const getPostsAndMetadata = () : postsType[] => {
             title: data.title,
             date: data.date,
             description: data.description,
-            tags: data.tags
+            tags: data.tags,
+            image: data.image
         }
     })
 }

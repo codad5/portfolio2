@@ -24,5 +24,6 @@ export type postsType = {
     title: string,
     date: string,
     description: string,
-    tags: string[]
+    tags: string|string[]
+    image?: string
 }

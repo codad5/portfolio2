@@ -195,17 +195,23 @@ function App({ posts }: { posts: postsType[]}) {
                     </div>
                 </DropSection>
                 <DropSection title={"Blog"} expanded={open == 5} onClick={() => handleOpen(5)} shortcutSwitches={['B']}>
-                    <div className='w-full grid place-items-center h-[50vh]'>
-                        <b className='text-3xl'>
+                   
+                        
                             {
-                                posts.length > 0 ? posts.map((value, index) => (
-                                    <div key={index}>
-                                        
+                                posts.length > 0 ? (
+                                    <div className='w-full p-4 text-center'>
+
+                                    {posts.map((value, index) => (
+                                    <div key={index} className='w-4/5 text-left border-1'>
+                                        <div>{value.title}</div>
                                     </div>
-                                )) : <h2> No post</h2>
+                                ))}
+                                    </div>
+                                ) : <div className='w-full grid place-items-center h-[50vh]'>
+                                    <b className='text-3xl'> <h2> No post</h2></b>
+                                    </div>
                             }
-                        </b>
-                    </div>
+                        
                 </DropSection>
                 <DropSection title={"Contact"} style={"min-h-[40vh]"} expanded={open == 6} onClick={() => handleOpen(6)} shortcutSwitches={['C']}>
                     <div className='w-full'>

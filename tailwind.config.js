@@ -24,5 +24,9 @@ module.exports = withMT({
         "linear-gradient(to right bottom, rgba(89, 86, 86, 0.44), rgba(101, 89, 89, 0.81)), url('https://avatars.githubusercontent.com/u/66634814?v=41')",
     },
   },
-  plugins: [require("tw-elements/dist/plugin")]
+  plugins: [
+    // require tailwind topography
+    require("@tailwindcss/typography"),
+    require("tw-elements/dist/plugin")
+  ]
 })
