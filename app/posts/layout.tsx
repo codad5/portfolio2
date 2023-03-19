@@ -78,9 +78,12 @@ export default function RootLayout({
         </header>
         <main id="root">
           <article className='w-full text-center'>
-
+            {/* a paragraph with max width of 80% on large devices but full width on small devices*/}
+            <p className='w-full md:w-4/5 mx-auto text-justify text-lg text-grey-500 p-4 pt-[40px]'>
+              {children}
+            </p>
+            
           </article>
-          {children}
         </main>
         <Footer />
       </body>

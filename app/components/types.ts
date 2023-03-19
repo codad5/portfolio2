@@ -18,3 +18,11 @@ export type contactsType = {
     value: string,
     link: string,
 }
+
+export type postsType = {
+    slug: string,
+    title: string,
+    date: string,
+    description: string,
+    tags: string[]
+}

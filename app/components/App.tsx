@@ -7,7 +7,7 @@ import TwitterLogo from '../assets/Twitter.svg'
 import '../globals.css'
 import DropSection from './DropSection'
 import ProjectCard from './ProjectCard'
-import { contactsType, projectsDetails } from './types'
+import { contactsType, postsType, projectsDetails } from './types'
 import { Typewriter } from 'react-simple-typewriter'
 import { projects } from './projects'
 import Keybinder from 'domkeybinder'
@@ -31,7 +31,7 @@ const keyController = new Keybinder({
 
 
 
-function App({posts}: {posts: string[]}) {
+function App({ posts }: { posts: postsType[]}) {
     const [count, setCount] = useState(0)
     useEffect(() => {
         // short cut to open intro drop section
@@ -200,7 +200,7 @@ function App({posts}: {posts: string[]}) {
                             {
                                 posts.length > 0 ? posts.map((value, index) => (
                                     <div key={index}>
-                                        <Link href={`/posts/${value}`} className='underline decoration-dotted'>{value}</Link>
+                                        
                                     </div>
                                 )) : <h2> No post</h2>
                             }
