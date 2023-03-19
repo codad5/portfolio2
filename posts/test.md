@@ -1,6 +1,8 @@
 ---
 title: Generics, Generics everywhere. Explain generics with an example
 date: '2023-02-17'
+tags: Typescript
+description : Learning Typescript has been a major boost to your career.
 ---
 
 ## Introduction
