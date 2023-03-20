@@ -1,13 +1,14 @@
 import { MouseEvent } from "react"
 import { projectsDetails } from "./types"
-import DefaultImage from '../assets/default.jpg'
+import DefaultImage from '@/app/assets/default.jpg'
+import Link from "next/link"
 
-export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage}: projectsDetails)
+export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage.src}: projectsDetails)
 {
     const default_style_main = {
         background: "linear-gradient(to right bottom, rgba(89, 86, 86, 0.44), rgba(101, 89, 89, 0.81)), url('"+image ?? DefaultImage+"'))",
         color:'red',
-        backgroundSize:image != DefaultImage ? 'contain' : 'cover'
+        backgroundSize:image != (DefaultImage as unknown as string) ? 'contain' : 'cover'
     }
     return (
         <div className="w-[300px] min-h-[300px] bg-mainblue inline-block relative">
@@ -21,7 +22,7 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
                         </div>
                         <div>
                             {tags.map((key, index) => (
-                                <span className="text-sm p-1 lowercase underline text-white hover:text-slate-700 ">
+                                <span key={index} className="text-sm p-1 lowercase underline text-white hover:text-slate-700 ">
                                     #{key}
                                 </span>
                             ))}
@@ -31,16 +32,16 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
             </div>
                 { links ?
                     <div className="w-full p-3 px-5 text-left flex">
-                            {links.github ? (<a className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.github}>Github</a>) : null}
-                            {links.website ? (<a className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.website}>Website</a>) : null}
+                            {links.github ? (<Link className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.github}>Github</Link>) : null}
+                            {links.website ? (<Link className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.website}>Website</Link>) : null}
                     </div> : null
                 }
             <div className="w-full min-h-[50px]">
             {children ? <details className="w-full text-black h-max text-left px-4 py-3 bg-mainblue" >
                 <summary>About</summary>
-                <p className="p-4">
+                <article className="p-4">
                     {children}
-                </p>
+                </article>
             </details> : null}
             <div>
 

@@ -1,8 +1,8 @@
 import { Children } from "react";
 import { projectsDetails } from "./types";
-import Currencynet from '../assets/currencynet.png'
-import Sanctablog from '../assets/sanctablog.jpeg' 
-import WemallF from '../assets/wemall-f.jpeg'
+import Currencynet from '@/app/assets/currencynet.png'
+import Sanctablog from '@/app/assets/sanctablog.jpeg' 
+import WemallF from '@/app/assets/wemall-f.jpeg'
 import { isBrowser } from "react-device-detect";
 import { CurrencyNet } from "currencynet";
 import Highlight from 'react-highlight'
