@@ -19,7 +19,7 @@ function DropSection({ title, children, style,expanded = true, onClick = () => {
         text-base text-black text-left
         bg-mainblue
         border-0
-        rounded-none       transition
+        rounded-none       transition font-medium
      focus:outline-none
       min-h-[10vh]'>{title} <sub className='font-light text-xs ml-2'>{isBrowser && shortcutSwitches ? `Press ${shortcutSwitches.join(',')} to ${!expanded ? 'open' : 'close'}` : null}</sub> </button>
                 </AccordionHeader>

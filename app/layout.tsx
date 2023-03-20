@@ -6,7 +6,7 @@ export const metadata = {
   generator: 'Next.js',
   applicationName: 'Codad5',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Next.js', 'React', 'JavaScript', 'codad5', 'CHIBUEZE MICHAEL ANIEZEOFOR', 'Software Developer', 'Engineer', 'PHP', 'NODE', 'LARAVEL', 'REACT', 'NEXTJS', 'VUEJS', 'ANGULAR', 'MECHANICAL ENGINEERING', 'WEB DEVELOPER', 'WEB DESIGNER', 'GRAPHIC DESIGNER', 'UI/UX DESIGNER', 'MOBILE APP DEVELOPER', 'MOBILE'],
+  keywords: [ 'codad5', 'CHIBUEZE MICHAEL ANIEZEOFOR', 'Software Developer', 'Engineer', 'PHP', 'NODE', 'LARAVEL', 'REACT', 'NEXTJS', 'VUEJS', 'ANGULAR', 'MECHANICAL ENGINEERING', 'WEB DEVELOPER', 'WEB DESIGNER', 'GRAPHIC DESIGNER', 'UI/UX DESIGNER', 'MOBILE APP DEVELOPER', 'MOBILE'],
   authors: [{ name: 'Chibueze Michael Aniezeofor', url: 'https://codad5.me' }],
   // colorScheme: 'dark',
   creator: 'Chibueze Michael Aniezeofor',
@@ -19,17 +19,19 @@ export const metadata = {
   },
   openGraph: {
     title: 'CHibeze Michael Aniezeofor - Codad5',
-    description: 'The React Framework for the Web',
+    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
     url: 'https://codad5.me',
+    phoneNumbers: ['+234 814 257 2488'],
     siteName: 'Codad5: A Software Enginner',
     images: [
       {
         url: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
         width: 800,
         height: 600,
+        alt: 'Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE',
       },
       {
-        url: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
+        url: 'https://avatars.githubusercontent.com/u/66634814?v=41',
         width: 1800,
         height: 1600,
         alt: 'Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE',
@@ -52,9 +54,9 @@ export const metadata = {
     },
   },
   icons: {
-    icon: '/icon.png',
-    shortcut: '/shortcut-icon.png',
-    apple: '/apple-icon.png',
+    icon: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
+    shortcut: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
+    apple: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
     other: {
       rel: 'apple-touch-icon-precomposed',
       url: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
