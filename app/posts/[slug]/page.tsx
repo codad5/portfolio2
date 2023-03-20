@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import { postsType } from "@/app/components/types";
 import Link from "next/link";
 import { Metadata } from "next";
+import Image from "next/image";
 
 
 export const generateStaticParams = () => {
@@ -103,7 +104,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
  const PostPage = ({params}:{params:any}) => {
     const {slug} = params;
     const {content, data} = matter(getPostContent(slug));
-    const { title, date, image , tags} = data as postsType
+    const { title, date, image , tags, description} = data as postsType
     return (
         <div className="w-full text-left">
             
@@ -112,7 +113,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             {tags  ? <div> Tags : {tags}</div> : '' }
             {image ? 
             <div>
-
+                    <img src={image} alt={`${tags} ${description}`} className="w-full max-h-80 object-scale-down"/>
             </div> : ''}
             {/* tailwind topography article tag */}
             <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl w-full">  
