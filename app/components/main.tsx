@@ -1,96 +1,57 @@
 "use client";
-import { ReactHTMLElement, SetStateAction, useEffect, useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import GithubLogo from '../assets/Github.svg'
-import LinkedinLogo from '../assets/Linkedin.svg'
-import TwitterLogo from '../assets/Twitter.svg'
-import '../globals.css'
+import { SetStateAction, useState } from 'react'
+
+import '@/app/globals.css'
 import DropSection from './DropSection'
 import ProjectCard from './ProjectCard'
-import { contactsType, postsType, projectsDetails } from './types'
-import { Typewriter } from 'react-simple-typewriter'
+import { contactsType, postsType } from './types'
 import { projects } from './projects'
-import Keybinder from 'domkeybinder'
 import { animated, useSpring } from '@react-spring/web'
 import WorkCard from './Wordcard'
 //import next image
 import Image from 'next/image'
-import {
-    Accordion,
-    AccordionHeader,
-    AccordionBody,
-} from "@material-tailwind/react";
 import Link from 'next/link';
 import Footer from './footer';
 
-const keyController = new Keybinder({
-    default_listener: 'keyup',
-    element: window,
-    allow_default: false
-})
+// const keyController = new Keybinder({
+//     default_listener: 'keyup',
+//     element: window,
+//     allow_default: false
+// })
 
 
 
-function App({ posts }: { posts: postsType[]}) {
+function Main({ posts, contactsText, contactLogo }: { posts: postsType[], contactsText: contactsType[], contactLogo: contactsType[] }) {
     const [count, setCount] = useState(0)
-    useEffect(() => {
-        // short cut to open intro drop section
-        keyController.ListenToKey('H', 'I', () => {
-            (document.querySelector('#btn_Intro') as HTMLButtonElement)?.click();
-        })
-            // for About section
-            .ListenToKey('A', () => {
-                (document.querySelector('#btn_About') as HTMLButtonElement)?.click();
-            })
-            // for Projects section
-            .ListenToKey('P', () => {
-                (document.querySelector('#btn_Projects') as HTMLButtonElement)?.click();
-            })
-            // for Blog section
-            .ListenToKey('W', () => {
-                (document.querySelector('#btn_Work') as HTMLButtonElement)?.click();
-            })
-            // for Blog section
-            .ListenToKey('B', () => {
-                (document.querySelector('#btn_Blog') as HTMLButtonElement)?.click();
-            })
-            // for Contact section
-            .ListenToKey('C', '/', () => {
-                (document.querySelector('#btn_Contact') as HTMLButtonElement)?.click();
-            })
+    // useEffect(() => {
+    //     // short cut to open intro drop section
+    //     keyController.ListenToKey('H', 'I', () => {
+    //         (document.querySelector('#btn_Intro') as HTMLButtonElement)?.click();
+    //     })
+    //         // for About section
+    //         .ListenToKey('A', () => {
+    //             (document.querySelector('#btn_About') as HTMLButtonElement)?.click();
+    //         })
+    //         // for Projects section
+    //         .ListenToKey('P', () => {
+    //             (document.querySelector('#btn_Projects') as HTMLButtonElement)?.click();
+    //         })
+    //         // for Blog section
+    //         .ListenToKey('W', () => {
+    //             (document.querySelector('#btn_Work') as HTMLButtonElement)?.click();
+    //         })
+    //         // for Blog section
+    //         .ListenToKey('B', () => {
+    //             (document.querySelector('#btn_Blog') as HTMLButtonElement)?.click();
+    //         })
+    //         // for Contact section
+    //         .ListenToKey('C', '/', () => {
+    //             (document.querySelector('#btn_Contact') as HTMLButtonElement)?.click();
+    //         })
 
 
-    }, [])
-    const contactsText: contactsType[] = [
-        {
-            label: "Email",
-            value: "Aniezeoformic@gmail.com",
-            link: "mailto:aniezeoformic@gmail.com"
-        },
-        {
-            label: "Phone",
-            value: "+234(0)8142572488",
-            link: "tel:+2348142572488"
-        }
-    ]
-
-    const contactLogo: contactsType[] = [
-        {
-            label: "Github",
-            value: GithubLogo,
-            link: "https://github.com/codad5"
-        },
-        {
-            label: "Twitter",
-            value: TwitterLogo,
-            link: "https://twitter.com/codad5_"
-        },
-        {
-            label: "Linkedin",
-            value: LinkedinLogo,
-            link: "https://www.linkedin.com/in/chibueze-aniezeofor/"
-        }
-    ]
+    // }, [])
+    
 
     const styles = useSpring({
         from: {
@@ -195,23 +156,23 @@ function App({ posts }: { posts: postsType[]}) {
                     </div>
                 </DropSection>
                 <DropSection title={"Blog"} expanded={open == 5} onClick={() => handleOpen(5)} shortcutSwitches={['B']}>
-                   
-                        
-                            {
-                                posts.length > 0 ? (
-                                    <div className='w-full p-4 text-center'>
 
-                                    {posts.map((value, index) => (
+
+                    {
+                        posts.length > 0 ? (
+                            <div className='w-full p-4 text-center'>
+
+                                {posts.map((value, index) => (
                                     <div key={index} className='w-4/5 text-left border-1'>
                                         <div>{value.title}</div>
                                     </div>
                                 ))}
-                                    </div>
-                                ) : <div className='w-full grid place-items-center h-[50vh]'>
-                                    <b className='text-3xl'> <h2> No post</h2></b>
-                                    </div>
-                            }
-                        
+                            </div>
+                        ) : <div className='w-full grid place-items-center h-[50vh]'>
+                            <b className='text-3xl'> <h2> Coming Soon</h2></b>
+                        </div>
+                    }
+
                 </DropSection>
                 <DropSection title={"Contact"} style={"min-h-[40vh]"} expanded={open == 6} onClick={() => handleOpen(6)} shortcutSwitches={['C']}>
                     <div className='w-full'>
@@ -243,4 +204,4 @@ function App({ posts }: { posts: postsType[]}) {
     )
 }
 
-export default App
+export default Main

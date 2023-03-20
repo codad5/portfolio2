@@ -1,6 +1,6 @@
 import { MouseEvent } from "react"
 import { projectsDetails } from "./types"
-import DefaultImage from '../assets/default.jpg'
+import DefaultImage from '@/app/assets/default.jpg'
 import Link from "next/link"
 
 export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage.src}: projectsDetails)
