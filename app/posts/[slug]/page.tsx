@@ -106,7 +106,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
     const { title, date, image , tags} = data as postsType
     return (
         <div className="w-full text-left">
-            <Link href="/" className="px-4 py-2 bg-mainblue">Back</Link>
+            
             <h1 className="text-3xl font-black py-3">{title ?? slug}</h1>
             <div>Date : {date}</div>
             {tags  ? <div> Tags : {tags}</div> : '' }
