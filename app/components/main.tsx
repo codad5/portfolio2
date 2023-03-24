@@ -72,7 +72,7 @@ function Main({ posts, contactsText, contactLogo }: { posts: postsType[], contac
 
 
     return (
-        <div className="App w-full h-screen">
+        <div className="App w-full h-screen" id="accordion-collapse" data-accordion="collapse">
             <div className="accordion h-full w-full flex flex-col relative" id="Main">
                 <DropSection title={"Intro"} expanded={open == 1} onClick={() => handleOpen(1)} style={"h-[48vh]"} shortcutSwitches={['H', 'I']}>
                     <div className="w-full bg-hero-pattern text-white bg-cover bg-center h-full relative  lg:hover:bg-contain bg-no-repeat transition ease-in-out delay-150 duration-300">

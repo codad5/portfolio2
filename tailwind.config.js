@@ -11,7 +11,8 @@ module.exports = withMT({
     "./src/**/*.{js,ts,jsx,tsx}",
     //for tw-elements
     "./src/**/*.{html,js}",
-    "./node_modules/tw-elements/dist/js/**/*.js"
+    "./node_modules/tw-elements/dist/js/**/*.js",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {},
@@ -27,6 +28,7 @@ module.exports = withMT({
   plugins: [
     // require tailwind topography
     require("@tailwindcss/typography"),
-    require("tw-elements/dist/plugin")
+    require("tw-elements/dist/plugin"),
+    require('flowbite/plugin')
   ]
 })
