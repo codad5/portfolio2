@@ -1,11 +1,26 @@
-import App from "@/app/components/main";
+
 import { getPosts, getPostsAndMetadata } from "./helpers/post";
 import reactLogo from '@/app/assets/react.svg'
 import GithubLogo from '@/app/assets/Github.svg'
 import LinkedinLogo from '@/app/assets/Linkedin.svg'
 import TwitterLogo from '@/app/assets/Twitter.svg'
 import { contactsType } from "@/app/components/types";
-const post = getPostsAndMetadata();
+
+import '@/app/globals.css'
+import DropSection from '@/app/components/DropSection'
+import ProjectCard from '@/app/components/ProjectCard'
+import { projects } from '@/app/components/projects'
+import { animated, useSpring } from '@react-spring/web'
+import WorkCard from '@/app/components/Wordcard'
+//import next image
+import Image from 'next/image'
+import Link from 'next/link';
+import Footer from '@/app/components/footer';
+import dynamic from 'next/dynamic';
+import Intro from '@/app/components/sections/intro'
+import KeyBinder from "domkeybinder";
+
+const posts = getPostsAndMetadata();
 
 const contactsText: contactsType[] = [
   {
@@ -38,55 +53,148 @@ const contactLogo: contactsType[] = [
   }
 ]
 
-export default function Home() {
-  return (
-    <>
-      {/* <App posts={post} contactsText={contactsText} contactLogo={contactLogo}/> */}
-      <>
-        <div id="accordion-collapse" data-accordion="collapse">
-          <h2 id="accordion-collapse-heading-1">
-            <button type="button" className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-              <span>What is Flowbite?</span>
-              <svg data-accordion-icon className="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </button>
-          </h2>
-          <div id="accordion-collapse-body-1" className="hidden" aria-labelledby="accordion-collapse-heading-1">
-            <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-              <p className="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" className="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-            </div>
-          </div>
-          <h2 id="accordion-collapse-heading-2">
-            <button type="button" className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-              <span>Is there a Figma file available?</span>
-              <svg data-accordion-icon className="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </button>
-          </h2>
-          <div id="accordion-collapse-body-2" className="hidden" aria-labelledby="accordion-collapse-heading-2">
-            <div className="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700">
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-              <p className="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" className="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-            </div>
-          </div>
-          <h2 id="accordion-collapse-heading-3">
-            <button type="button" className="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
-              <span>What are the differences between Flowbite and Tailwind UI?</span>
-              <svg data-accordion-icon className="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </button>
-          </h2>
-          <div id="accordion-collapse-body-3" className="hidden" aria-labelledby="accordion-collapse-heading-3">
-            <div className="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
-              <p className="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-              <p className="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-              <ul className="pl-5 text-gray-500 list-disc dark:text-gray-400">
-                <li><a href="https://flowbite.com/pro/" className="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                <li><a href="https://tailwindui.com/" rel="nofollow" className="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-              </ul>
-            </div>
-          </div>
+const LoadAccordion = dynamic(
+  () => {
+    return import("./helpers/accordion");
+  },
+  { ssr: false }
+);
+// LoadAccordion()
+export default function(){
+
+return (
+  <div className="App w-full h-screen" id="accordion-collapse" data-accordion="collapse">
+    <LoadAccordion />
+    <div className="accordion h-full w-full flex flex-col relative accordion-main" id="Main">
+      <Intro />
+      <DropSection title={"About"} shortcutSwitches={['A']}>
+        <div className='w-full py-4 px-5'>
+          <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
+            <p>
+              Hola!, I am <span className="font-black underline decoration-dotted">Chibueze Michael Aniezeofor</span> ,a mechanical engineering student at the <span className="font-bold underline decoration-dotted">University of Nigeria</span> who is passionate about software development.I have a strong passion for learning about new technologies, and I am always looking for new ways to improve my skills.
+              During my years of experience, I have developed a <span className="font-bold underline decoration-dotted">nucleus energy</span> towards <span className="font-bold">backend technologies</span>, a strong understanding of the software development process, and have gained valuable experience in the field of software development.
+
+            </p>
+            <p>Aside from my passion for software development, I aspire to create innovations that benefit the people of Earth or possibly aliens (if they exist). </p>
+            <br />
+            <p>
+              Due to the force of attraction between the  <span className="font-bold underline decoration-dotted">nucleus (ME)</span> and my <span className="font-bold">my first level  eletrons  (backend  development)</span>,  I consider myself a <span className="font-bold underline decoration-dotted">backend  developer</span> although i also learn technologies outside my field.
+              Below are the technologies I have worked with.
+            </p>
+            <div className="w-full font-bold text-lg pt-3">Backend</div>
+            <ul className="list-disc p-6 pt-2 pb-2">
+              <li>PHP</li>
+              <li>JAVASCRIPT</li>
+              <li>TYPESCRIPT</li>
+              <li>NODE.JS</li>
+              <li>Express.js</li>
+              <li>Laravel</li>
+              <li>Rust ( Currently learning )</li>
+              <li>MySQL</li>
+              <li>MongoDB</li>
+              <li>Unit Testing</li>
+            </ul>
+            <div className="w-full font-bold text-lg pt-3">Frontend & Others</div>
+            <ul className="list-disc p-6 pt-2 " style={{ maxHeight: '20%' }}>
+              <li>React.js</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>Bootstrap & Tailwind Css</li>
+              <li>Redis</li>
+              <li>Git & Github</li>
+              <li>OOPs</li>
+              <li>CI/CD</li>
+            </ul>
+          </article>
+
         </div>
-      </>
-    </>
-  )
+      </DropSection>
+      <DropSection title={"Projects"} shortcutSwitches={['P']}>
+        <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
+          {
+            projects.length > 0 ? projects.map((value, index) => (
+              <ProjectCard key={index} name={value.name} tags={value.tags} main_lang={value.main_lang} links={value.links} type={value.type} image={value.image}>
+                {value.children}
+              </ProjectCard>
+            )) : <h2> No project</h2>
+          }
+        </div>
+      </DropSection>
+      <DropSection title={"Work"} shortcutSwitches={['W']}>
+        <div className='w-full p-3 text-center py-5'>
+          <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
+        </div>
+        <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
+          <WorkCard title='Sanctablog.com' timeline='Jan 2022 - Dec 2022' position='Web developer' href='https://sanctablog.com'>
+            <ul className='list-disc'>
+              <li>I build and manage the website domain</li>
+              <li>I created and manage the professional email</li>
+            </ul>
+          </WorkCard>
+          <WorkCard title='Listmining.com' timeline='Sept 2021 - Feb 2022' position='Web developer' href='https://listmining.com'>
+            <ul className='list-disc'>
+              <li>I build and manage the website domain</li>
+            </ul>
+          </WorkCard>
+        </div>
+      </DropSection>
+      <DropSection title={"Blog"} shortcutSwitches={['B']}>
+
+
+        {
+          posts.length > 0 ? (
+            <>
+              <div className='w-full p-3 text-center py-5'>
+                <Link className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='/posts'>All Posts</Link>
+              </div>
+              <div className='w-full p-4 text-center grid place-items-center py-9'>
+                <ul className='list-disc w-full md:w-4/5'>
+                  {posts.slice(0, 5).map((value, index) => (
+                    <li key={index} className='w-4/5 text-left border-1 py-4'>
+                      <div>
+                        <Link href={`posts/${value.slug}`} className='underline text-lg'>{value.title}</Link>
+                        <p className='text-sm'>{value.date}</p>
+                        <p className='text-sm'>Date: {value.date}</p>
+                        <p className='text-sm'>Tags: {value.tags}</p>
+                      </div>
+
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          ) : <div className='w-full grid place-items-center h-[50vh]'>
+            <b className='text-3xl'> <h2> Coming Soon</h2></b>
+          </div>
+        }
+
+      </DropSection>
+      <DropSection title={"Contact"} style={"min-h-[40vh]"} shortcutSwitches={['C']}>
+        <div className='w-full'>
+          {
+            contactsText.map((element, index) => (
+              <div className='p-5' key={index}>
+                <div className='w-full text-center space-y-2'>
+                  <label htmlFor={`#${element.label}`} className='font-bold w-4/5 inline-block text-left underline text-2xl'>{element.label}:</label>
+                  <a href={element.link} id={element.label} className='font-semibold w-4/5 inline-block text-left underline decoration-dotted'>{element.value}</a>
+                </div>
+              </div>
+            ))
+          }
+          <div className='w-full p-5 text-center space-x-10'>
+            {
+              contactLogo.map((values, index) => (
+                <div className='w-auto h-auto  inline-block text-center' title={values.label} key={index}>
+                  <Link href={values.link}><Image alt={`codad5 ${values.label}`} src={values.value} /></Link>
+                </div>
+              ))
+            }
+          </div>
+
+        </div>
+      </DropSection>
+      <Footer />
+    </div>
+  </div>
+)
 }
