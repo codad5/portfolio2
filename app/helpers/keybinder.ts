@@ -4,3 +4,5 @@ export const keyController = new Keybinder({
     element: window,
     allow_default: false
 })
+
+export const ListenToKey = (key: string, ...data: any) => keyController.ListenToKey(key, ...data)

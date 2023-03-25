@@ -65,7 +65,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
             title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
             creator: '@codad5_',
-            images : [ image ?? 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg'],
+            images :  image ?? 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
             creatorId: '1283149384872599553',
             app: {
                 name: 'Codad5',

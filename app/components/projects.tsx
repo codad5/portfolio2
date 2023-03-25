@@ -20,7 +20,8 @@ export const projects: projectsDetails[] = [
         },
         children: (
             <div>
-            This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser. <span className="underline decoration-dotted font-bold"> {isBrowser ? 'which i use in this project for shortcuts' : 'Try using a Desktop to use this library here!'}</span>
+            This is a Frontend tool(Library: any) used to manipulate keyboard action in the browser. 
+            {/* <span className="underline decoration-dotted font-bold"> {isBrowser && false ? 'which i use in this project for shortcuts' : 'Try using a Desktop to use this library here!'}</span> */}
             </ div >
       )
     },
@@ -96,7 +97,7 @@ export const projects: projectsDetails[] = [
         <p>
           <br/>
           <h6 className="font-bold">Here is a usage of the library (  converting ₦5000(Nigeria Naira) to your country currency :</h6>
-          <div>₦5000 == <CurrencyNet buildCurrency="NGN" value={5000} /> </div>
+          {/* <div>₦5000 == <CurrencyNet buildCurrency="NGN" value={5000} /> </div> */}
           <br/>
           {/* <details className="jsx" innerHTML={true}>
             <summary>see code</summary>

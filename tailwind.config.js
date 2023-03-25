@@ -1,7 +1,7 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
+// const withMT = require("@material-tailwind/react/utils/withMT");
 const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
-module.exports = withMT({
+module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -29,7 +29,7 @@ module.exports = withMT({
   plugins: [
     // require tailwind topography
     require("@tailwindcss/typography"),
-    // require("tw-elements/dist/plugin"),
+    require("tw-elements/dist/plugin"),
     require('flowbite/plugin')
   ]
-})
+}
