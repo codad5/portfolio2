@@ -73,7 +73,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className='transition-all'>
         <header className='w-full bg-mainblue sticky top-0 h-[60px] p-4'>
             <h3 className='underline text-grey-500 h-full w-2/5 text-xl font-bold'>
               <Link href={'/'}>codad5</Link>

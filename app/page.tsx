@@ -63,7 +63,7 @@ const LoadAccordion = dynamic(
 export default function(){
 
 return (
-  <div className="App w-full h-screen" id="accordion-collapse" data-accordion="collapse">
+  <div className="App w-full h-screen transition-all" id="accordion-collapse" data-accordion="collapse">
     <LoadAccordion />
     <div className="accordion h-full w-full flex flex-col relative accordion-main" id="Main">
       <Intro />
