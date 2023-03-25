@@ -12,7 +12,7 @@ After much considerations i have decided to start blogging , i know it might be 
 
 ## Why i am doing this
 
-I have been thinking about this for a while now, i have been thinking about how i can grow as a developer, and i think this is one of the ways i can do that. I have been thinking about how i can help others, and i think this is one of the ways i can do that. I have been thinking about how i can help myself, and i think this is one of the ways i can do that.
+I have been thinking about this for a while now, i have been thinking about how i can grow as a developer, and i think this is one of the ways i can do that. I have been thinking about how i can help others, and i think this is one of the ways i can do that. 
 
 I also love teaching, and i think this is one of the ways i can do that. In the past few months i have been teaching myself how to code, and i have been teaching my friends how to code, and i end up repeating myself a lot teaching them the same things over and over again, so doing this would help me to teach them once and they can read it over and over again.
 
