@@ -112,7 +112,9 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             <div>Date : {date}</div>
             {tags  ? <div> Tags : {tags}</div> : '' }
             {image ? 
-            <div>
+            // <div className="">
+            // a div to hold the image with padding
+            <div className="w-full max-h-80 object-scale-down p-4">
                     <img src={image} alt={`${tags} ${description}`} className="w-full max-h-80 object-scale-down"/>
             </div> : ''}
             {/* tailwind topography article tag */}
