@@ -11,7 +11,7 @@ function DropSection({ title, children, style, shortcutSwitches, active: default
   //   (document.querySelector(`#btn_${title}`) as HTMLButtonElement)?.click()
   // })  
   return (
-      <section className={`accordion-item border bg-white border-gray-200 shrink-0`} data-accordion-default={default_active}>
+    <section className={`transition-all accordion-item border bg-white border-gray-200 shrink-0`} data-accordion-default={default_active}>
             {/* <div className="border-0"> */}
                 <div className="mb-0 bg-mainblue sticky top-0 z-50" id={`btn_${title}`}>
                     <button className={`relative
