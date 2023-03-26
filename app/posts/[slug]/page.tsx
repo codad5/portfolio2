@@ -124,7 +124,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
                     <img src={image} alt={`${tags} ${description}`} className="w-full max-h-80 object-scale-down"/>
             </div> : ''}
             {/* tailwind topography article tag */}
-            <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl w-full">  
+            <article className="prose prose-base prose-zinc sm:prose lg:prose-lg xl:prose-xl w-full">  
             <Markdown>{content}</Markdown>
             </article>
         </div>
