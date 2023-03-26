@@ -80,14 +80,16 @@ export default function RootLayout({
             </h3>
         </header>
         <main id="root" className='min-h-screen'>
-          <article className='w-full text-center'>
+          <div className='w-full text-center'>
             {/* a paragraph with max width of 80% on large devices but full width on small devices*/}
             <p className='w-full md:w-4/5 mx-auto text-justify text-lg text-grey-500 p-4 pt-[40px]'>
               <Link href="/" className="px-4 py-2 bg-mainblue">Back</Link>
-              {children}
+             <article className='py-4'>
+                {children}
+             </article>
             </p>
             
-          </article>
+          </div>
         </main>
         <Footer />
       </body>

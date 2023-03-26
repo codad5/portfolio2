@@ -5,7 +5,9 @@ import { postsType } from "@/app/components/types";
 import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
-
+import { notFound, usePathname, useRouter } from 'next/navigation'
+import { text } from "stream/consumers";
+import ShareButton from "@/app/components/shareButton";
 
 export const generateStaticParams = () => {
     const posts = getPostsAndMetadata();
@@ -15,7 +17,9 @@ export const generateStaticParams = () => {
 }
 
 export async function generateMetadata({ params, searchParams } : { params:{slug: string}, searchParams : any }) : Promise<Metadata> {
-    const { title, date, description , tags, image} = getPostMetadata(params.slug)
+    const postdata = getPostMetadata(params.slug)
+    if(!postdata) return {};
+    const { title, date, description, tags, image } = postdata
     return {
         title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
         description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
@@ -103,11 +107,13 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
 
  const PostPage = ({params}:{params:any}) => {
     const {slug} = params;
-    const {content, data} = matter(getPostContent(slug));
+    const postContents = getPostContent(slug);
+    if(!postContents) notFound()
+    const { content, data } = matter(postContents);
     const { title, date, image , tags, description} = data as postsType
     return (
         <div className="w-full text-left">
-            
+            <ShareButton title={title} description={description} />
             <h1 className="text-3xl font-black py-3">{title ?? slug}</h1>
             <div>Date : {date}</div>
             {tags  ? <div> Tags : {tags}</div> : '' }
