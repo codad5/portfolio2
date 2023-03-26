@@ -2,7 +2,7 @@
 title: 2 accounts, same email?
 date: "25-03-2023"
 tags: email, authentication
-description : Email validation   
+description : How i created multiple accounts with the same email address   
 ---
 
 ## Introduction
@@ -51,3 +51,8 @@ console.log(normalizedEmail);
 ```
 
 ## Conclusion
+I hope you enjoyed this article, and i hope you learned something new, and i hope you can now prevent it from happening in your software.
+
+Please share and Happy coding.
+
+
