@@ -1,6 +1,6 @@
 ---
 title: Getting started with blogging
-date: '2023-02-17'
+date: '2023-03-25'
 tags: Biography
 description : I have decided to get into blogging to help me grow (i think!).
 image: https://avatars.githubusercontent.com/u/66634814?v=41
@@ -9,7 +9,7 @@ image: https://avatars.githubusercontent.com/u/66634814?v=41
 ## Introduction
 
 After much considerations i have decided to start blogging , i know it might be difficult (would be difficult), but i think i need to take this bold step
-
+2
 ## Why i am doing this
 
 I have been thinking about this for a while now, i have been thinking about how i can grow as a developer, and i think this is one of the ways i can do that. I have been thinking about how i can help others, and i think this is one of the ways i can do that. 
