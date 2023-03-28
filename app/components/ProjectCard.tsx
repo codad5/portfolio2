@@ -18,7 +18,7 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
                 <div className="w-full absolute bottom-0 p-4 text-white text-left">
                     <div className="w-full ">
                         <div>
-                            <h4 className="inline-block text-2xl p-2 break-words"> {name} </h4>
+                            <h3 className="inline-block text-2xl p-2 break-words"> {name} </h3>
                         </div>
                         <div>
                             {tags.map((key, index) => (
