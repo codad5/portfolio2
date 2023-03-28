@@ -18,7 +18,7 @@ export const getPostsAndMetadata = () : postsType[] => {
         const bTime = fs.statSync(`posts/${b}`).mtime.getTime()
         // return bTime - aTime
         // the newest post will be first
-        return aTime - bTime
+        return bTime - aTime
     })
     .map((fn) => {
         const fileContent = fs.readFileSync(`posts/${fn}`, 'utf-8')

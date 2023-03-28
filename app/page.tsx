@@ -19,6 +19,7 @@ import Footer from '@/app/components/footer';
 import dynamic from 'next/dynamic';
 import Intro from '@/app/components/sections/intro'
 import KeyBinder from "domkeybinder";
+import ContactSection from "./components/sections/contact";
 
 const posts = getPostsAndMetadata();
 
@@ -67,7 +68,7 @@ return (
     <LoadAccordion />
     <div className="accordion h-full w-full flex flex-col relative accordion-main" id="Main">
       <Intro />
-      <DropSection title={"About"} shortcutSwitches={['A']}>
+      <DropSection title={"About"} display_title={"Chibueze Aniezeofor"} shortcutSwitches={['A']}>
         <div className='w-full py-4 px-5'>
           <article className="w-full text-sm p-6 pt-0 leading-6 scroll-smooth">
             <p>
@@ -170,28 +171,7 @@ return (
 
       </DropSection>
       <DropSection title={"Contact"} style={"min-h-[40vh]"} shortcutSwitches={['C']}>
-        <div className='w-full'>
-          {
-            contactsText.map((element, index) => (
-              <div className='p-5' key={index}>
-                <div className='w-full text-center space-y-2'>
-                  <label htmlFor={`#${element.label}`} className='font-bold w-4/5 inline-block text-left underline text-2xl'>{element.label}:</label>
-                  <a href={element.link} id={element.label} className='font-semibold w-4/5 inline-block text-left underline decoration-dotted'>{element.value}</a>
-                </div>
-              </div>
-            ))
-          }
-          <div className='w-full p-5 text-center space-x-10'>
-            {
-              contactLogo.map((values, index) => (
-                <div className='w-auto h-auto  inline-block text-center' title={values.label} key={index}>
-                  <Link href={values.link}><Image alt={`codad5 ${values.label}`} src={values.value} /></Link>
-                </div>
-              ))
-            }
-          </div>
-
-        </div>
+        <ContactSection/>
       </DropSection>
       <Footer />
     </div>

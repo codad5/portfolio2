@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className='w-full h-15 bg-slate-600 text-center text-white p-4'>
                     <div>Designed by <a href='https://github.com/codad5' id="footername" className='underline decoration-dotted font-bold'>Codad5</a></div>
                     <div><Typewriter
-                    words={['Read', 'Code', 'Repeat!', 'Eat', 'Sleep', 'Thanks']}
+                    words={['Read', 'Code',  'Eat', 'Sleep','Repeat!', 'Thanks']}
                         loop={false}
                         cursor
                         cursorStyle='_'

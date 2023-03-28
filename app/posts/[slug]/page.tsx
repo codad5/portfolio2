@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound, usePathname, useRouter } from 'next/navigation'
-import { text } from "stream/consumers";
 import ShareButton from "@/app/components/shareButton";
 
 export const generateStaticParams = () => {
@@ -22,7 +21,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
     const { title, date, description, tags, image } = postdata
     return {
         title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
-        description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
+        description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
         generator: 'Next.js',
         applicationName: 'Codad5',
         referrer: 'origin-when-cross-origin',
@@ -39,7 +38,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
         },
         openGraph: {
             title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
-            description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
+            description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
             url: 'https://codad5.me',
             siteName: 'Codad5: A Software Enginner',
             phoneNumbers: ['+234 814 257 2488'],
@@ -66,7 +65,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
         twitter: {
             card: 'app',
             site: '@codad5',
-            description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
+            description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
             title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
             creator: '@codad5_',
             images :  image ?? 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
@@ -81,12 +80,12 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             },
         },
         robots: {
-            index: false,
+            index: true,
             follow: true,
             nocache: true,
             googleBot: {
                 index: true,
-                follow: false,
+                follow: true,
                 noimageindex: true,
                 'max-video-preview': -1,
                 'max-image-preview': 'large',
