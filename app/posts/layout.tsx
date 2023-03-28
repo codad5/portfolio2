@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import '@/app/globals.css'
 import Footer from '../components/footer'
+import ContactSection from '../components/sections/contact'
 
 export const metadata = {
   title: 'Chibueze Michael Aniezeofor - Codad5',
-  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
+  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
   generator: 'Next.js',
   applicationName: 'Codad5',
   referrer: 'origin-when-cross-origin',
@@ -21,7 +22,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'CHibeze Michael Aniezeofor - Codad5',
-    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exicting project.',
+    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
     url: 'https://codad5.me',
     phoneNumbers: ['+234 814 257 2488'],
     siteName: 'Codad5: A Software Enginner',
@@ -43,12 +44,12 @@ export const metadata = {
     type: 'website',
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
     nocache: true,
     googleBot: {
       index: true,
-      follow: false,
+      follow: true,
       noimageindex: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
@@ -91,6 +92,10 @@ export default function RootLayout({
             
           </div>
         </main>
+        <hr/>
+        <section>
+          <ContactSection />
+        </section>
         <Footer />
       </body>
     </html>
