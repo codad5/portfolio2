@@ -34,7 +34,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
         formatDetection: {
             email: true,
             address: false,
-            telephone: false,
+            telephone: true,
         },
         openGraph: {
             title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
