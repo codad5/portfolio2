@@ -51,7 +51,7 @@ export const projects: projectsDetails[] = [
       },
       children:(
         <div>
-          This is a Frontend tools (library) that helps convert currencynet based off user location ,
+          This is a Frontend tools (library) that helps convert currencynet based off user location ,g
           <br/>
           <br/>
           <h5 className="font-bold">let use this test cases : </h5>
