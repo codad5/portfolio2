@@ -58,7 +58,7 @@ export const projects: projectsDetails[] = [
           <ul className="list-disc">
             <li>A developer from indian develops a website with <b>Indian Rupes (INR) </b> </li>
             <li>But a citizen of Uniteds States finds it difficult to understand the currency</li>
-            <li>Yes he could simply go to <a className="underline italic font-semibold">google.com</a> to convert these currency but thats a bad user experience</li>
+            <li>Yes he could simply go to <a className="underline italic font-semibold" href="https://google.com">google.com</a> to convert these currency but thats a bad user experience</li>
             <li>Then the developer can decides to implement <b>Currencynet</b>, This would help to convert the currency (to USD for US citizens) in real time with out the developer or users to convert it them selves</li>
             <li>Best part is that it works for more than <b>100+ countries</b> in the world.</li>
           </ul>
