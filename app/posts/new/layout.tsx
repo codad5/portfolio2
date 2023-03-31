@@ -20,29 +20,6 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  openGraph: {
-    title: 'CHibeze Michael Aniezeofor - Codad5',
-    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
-    url: 'https://codad5.me',
-    phoneNumbers: ['+234 814 257 2488'],
-    siteName: 'Codad5: A Software Enginner',
-    images: [
-      {
-        url: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
-        width: 800,
-        height: 600,
-        alt: 'Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE',
-      },
-      {
-        url: 'https://avatars.githubusercontent.com/u/66634814?v=41',
-        width: 1800,
-        height: 1600,
-        alt: 'Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE',
-      },
-    ],
-    locale: 'en-US',
-    type: 'website',
-  },
   robots: {
     index: false,
     follow: false,
