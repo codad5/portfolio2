@@ -63,21 +63,10 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             type: 'article',
         },
         twitter: {
-            card: 'app',
-            site: '@codad5',
-            description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
-            title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
+            site: '@codad5_',
             creator: '@codad5_',
-            images :  image ?? 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
             creatorId: '1283149384872599553',
-            app: {
-                name: 'Codad5',
-                id: {
-                    iphone: 'twitter://user?screen_name=codad5_',
-                    ipad: 'twitter://user?screen_name=codad5_',
-                    googleplay: 'twitter://user?screen_name=codad5_',
-                },
-            },
+            
         },
         robots: {
             index: true,

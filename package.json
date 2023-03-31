@@ -14,6 +14,7 @@
     "@types/node": "18.15.3",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "bcrypt": "^5.1.0",
     "currencynet": "^2.0.8",
     "domkeybinder": "^1.0.8",
     "flowbite": "^1.6.4",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@types/bcrypt": "^5.0.0",
     "@types/react-highlight": "^0.12.5",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
