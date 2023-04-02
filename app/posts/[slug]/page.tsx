@@ -7,6 +7,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound, usePathname, useRouter } from 'next/navigation'
 import ShareButton from "@/app/components/shareButton";
+import BlogPost from "@/app/components/BlogPost";
+import 'highlight.js/styles/atom-one-dark-reasonable.css'
+
 
 export const generateStaticParams = () => {
     const posts = getPostsAndMetadata();
@@ -106,19 +109,9 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
     return (
         <div className="w-full text-left">
             <ShareButton title={title} description={description} />
-            <h1 className="text-3xl font-black py-3">{title ?? slug}</h1>
-            <div>Date : {date}</div>
-            {tags  ? <div> Tags : {tags}</div> : '' }
-            {image ? 
-            // <div className="">
-            // a div to hold the image with padding
-            <div className="w-full max-h-80 object-scale-down p-4">
-                    <img src={image} alt={`${tags} ${description}`} className="w-full max-h-80 object-scale-down"/>
-            </div> : ''}
-            {/* tailwind topography article tag */}
-            <article className="prose prose-base prose-zinc sm:prose lg:prose-lg xl:prose-xl w-full">  
-            <Markdown>{content}</Markdown>
-            </article>
+            <BlogPost title={title} slug={slug} date={date} tags={tags} image={image} description={description}>
+                {content}
+            </BlogPost>
         </div>
     )
 }
