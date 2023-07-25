@@ -1,9 +1,11 @@
 import { getPostContent, getPostMetadata, getPostsAndMetadata } from "@/app/helpers/post";
-import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import { postsType } from "@/app/components/types";
-import Link from "next/link";
 import { Metadata } from "next";
+import { notFound } from 'next/navigation'
+import ShareButton from "@/app/components/shareButton";
+import BlogPost from "@/app/components/BlogPost";
+import 'highlight.js/styles/atom-one-dark-reasonable.css'
 import Image from "next/image";
 import { notFound, usePathname, useRouter } from 'next/navigation'
 import ShareButton from "@/app/components/shareButton";
