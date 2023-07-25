@@ -40,6 +40,37 @@ export const projects: projectsDetails[] = [
       )
     },
     {
+      name:'U-secret (Next.js)',
+      main_lang:'Typescript (Next.js)',
+      type:'fullstack',
+      tags:['messaging service'],
+      links:{
+        github:'https://github.com/codad5/usecret-node-version',
+        website:'https://usecret.codad5.me'
+      },
+      children: (
+        <div>
+          This is a rewrite of U-secret (Node.js) in Next.js, that helps to recieve anonymous message from friends and family.
+          <br/>
+          In this rewrite i also added google auth as part of the auth process.
+        </div>
+      )
+    }, 
+    {
+      name: "Fli",
+      type: 'dev',
+      main_lang : 'rust',
+      tags: ['rust', 'dev'],
+      links: {
+        github: "https://github.com/codad5/fli",
+      },
+      children: (
+        <div>
+          This is a cli parser built with rust , inspired by commander.js (javascript) 
+        </div>
+      )
+    },
+    {
       name: "CurrrencyNet",
       type:'dev',
       tags:['currency', 'javascript', 'library', 'api'],
@@ -110,7 +141,7 @@ export const projects: projectsDetails[] = [
     )
   },
   {
-    name : "Laravel Banking API........",
+    name : "Laravel Banking API",
     type : 'backend',
     main_lang:'PHP (laravel)',
     tags:['laravel', 'php', 'api'],
@@ -174,7 +205,7 @@ export const projects: projectsDetails[] = [
     tags:['messaging service'],
     links:{
       github:'https://github.com/codad5/usecret-node-version',
-      website:'https://helpful-cuff-links-deer.cyclic.app/home'
+      website:'https://usecret.cyclic.app'
     },
     children: (
       <div>
