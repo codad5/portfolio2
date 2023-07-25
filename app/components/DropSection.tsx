@@ -1,7 +1,5 @@
 // 'use client';
-import { Accordion, AccordionHeader, AccordionBody } from '@material-tailwind/react';
-import { MouseEvent, useState } from 'react'
-import {  isBrowser, isMobile } from 'react-device-detect';
+import {  isBrowser } from 'react-device-detect';
 // import { ListenToKey } from '../helpers/keybinder';
 
 
