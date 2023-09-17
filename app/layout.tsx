@@ -2,7 +2,7 @@ import '@/app/globals.css'
 
 export const metadata = {
   title: 'Chibueze Michael Aniezeofor - Codad5',
-  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
+  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student.',
   generator: 'Next.js',
   applicationName: 'Codad5',
   referrer: 'origin-when-cross-origin',
@@ -19,7 +19,7 @@ export const metadata = {
   },
   openGraph: {
     title: 'CHibeze Michael Aniezeofor - Codad5',
-    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
+    description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student.',
     url: 'https://codad5.me',
     phoneNumbers: ['+234 814 257 2488'],
     siteName: 'Codad5: A Software Enginner',
@@ -43,13 +43,13 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: true,
+      noimageindex: false,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview': 'standard',
       'max-snippet': -1,
     },
   },

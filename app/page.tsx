@@ -1,6 +1,5 @@
 
-import { getPosts, getPostsAndMetadata } from "./helpers/post";
-import reactLogo from '@/app/assets/react.svg'
+import { getPostsAndMetadata } from "./helpers/post";
 import GithubLogo from '@/app/assets/Github.svg'
 import LinkedinLogo from '@/app/assets/Linkedin.svg'
 import TwitterLogo from '@/app/assets/Twitter.svg'
@@ -10,15 +9,12 @@ import '@/app/globals.css'
 import DropSection from '@/app/components/DropSection'
 import ProjectCard from '@/app/components/ProjectCard'
 import { projects } from '@/app/components/projects'
-import { animated, useSpring } from '@react-spring/web'
 import WorkCard from '@/app/components/Wordcard'
 //import next image
-import Image from 'next/image'
 import Link from 'next/link';
 import Footer from '@/app/components/footer';
 import dynamic from 'next/dynamic';
 import Intro from '@/app/components/sections/intro'
-import KeyBinder from "domkeybinder";
 import ContactSection from "./components/sections/contact";
 
 const posts = getPostsAndMetadata();
@@ -135,6 +131,11 @@ return (
           <WorkCard title='Listmining.com' timeline='Sept 2021 - Feb 2022' position='Web developer' href='https://listmining.com'>
             <ul className='list-disc'>
               <li>I build and manage the website domain</li>
+            </ul>
+          </WorkCard>
+          <WorkCard title='BomaSchool' timeline='Sept 2021 - Feb 2022' position='Backend developer' href='https://listmining.com'>
+            <ul className='list-disc'>
+              <li></li>
             </ul>
           </WorkCard>
         </div>

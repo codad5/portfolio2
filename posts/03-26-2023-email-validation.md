@@ -2,7 +2,8 @@
 title: 2 accounts, same email. How?
 date: "2023-03-28"
 tags: email, authentication
-description : How i created multiple accounts with the same email address   
+description : How i created multiple accounts with the same email address
+image: https://media.istockphoto.com/id/652327206/photo/verified-green-check-mark-concept.jpg?s=1024x1024&w=is&k=20&c=ZSZ_5keFu4eXaQOIi8_HZwge0UqvgO7PeiTRYw66Pts=
 ---
 
 ## Introduction
