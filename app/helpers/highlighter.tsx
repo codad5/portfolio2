@@ -6,7 +6,7 @@ hljs.autoDetection("markdown")
 
 export default function HighlightHelper(){
     useEffect(() => {
-        hljs.initHighlighting();
+        hljs.highlightAll();
     }, [])
     return null;
 }

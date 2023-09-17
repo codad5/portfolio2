@@ -127,7 +127,7 @@ export const projects: projectsDetails[] = [
         <br/>
         <p>
           <br/>
-          <h6 className="font-bold">Here is a usage of the library (  converting ₦5000(Nigeria Naira) to your country currency :</h6>
+          <span className="font-bold">Here is a usage of the library (  converting ₦5000(Nigeria Naira) to your country currency :</span>
           {/* <div>₦5000 == <CurrencyNet buildCurrency="NGN" value={5000} /> </div> */}
           <br/>
           {/* <details className="jsx" innerHTML={true}>

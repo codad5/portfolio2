@@ -15,8 +15,8 @@ export default function PostLayout() {
                                     <li key={index} className='w-4/5 text-left border-1 py-4'>
                                         <div>
                                             <Link href={`posts/${value.slug}`} className=' text-4xl font-bold antialiased font-mono'>{value.title}</Link>
-                                            <p className='text-sm'>Date: {value.date}</p>
-                                            <p className='text-sm'>Tags: {value.tags}</p>
+                                            <div className='text-sm'>Date: {value.date}</div>
+                                            <div className='text-sm'>Tags: {value.tags}</div>
                                         </div>
 
                                     </li>

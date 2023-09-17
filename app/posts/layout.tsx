@@ -5,7 +5,7 @@ import ContactSection from '../components/sections/contact'
 
 export const metadata = {
   title: 'Chibueze Michael Aniezeofor - Codad5',
-  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
+  description: 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student.',
   generator: 'Next.js',
   applicationName: 'Codad5',
   referrer: 'origin-when-cross-origin',
@@ -72,16 +72,14 @@ export default function RootLayout({
             </h3>
         </header>
         <main id="root" className='min-h-screen'>
-          <div className='w-full text-center'>
-            {/* a paragraph with max width of 80% on large devices but full width on small devices*/}
-            <p className='w-full md:w-4/5 mx-auto text-justify text-lg text-grey-500 p-4 pt-[40px]'>
-              <Link href="/" className="px-4 py-2 bg-mainblue">Back</Link>
-             <article className='py-4'>
-                {children}
-             </article>
-            </p>
-            
-          </div>
+            <div className='w-full text-center'>
+              <p className='w-full md:w-4/5 mx-auto text-justify text-lg text-grey-500 p-4 pt-[40px]'>
+                <Link href="/" className="px-4 py-2 bg-mainblue">Back</Link>
+                <article className='py-4'>
+                    {children}
+                </article>
+              </p>
+            </div>
         </main>
         <hr/>
         <section>

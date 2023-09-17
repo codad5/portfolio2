@@ -133,11 +133,12 @@ return (
               <li>I build and manage the website domain</li>
             </ul>
           </WorkCard>
-          <WorkCard title='BomaSchool' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
+          <WorkCard title='Appsthathelp' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
             <ul className='list-disc'>
               <li>Developed the backend API with Laravel for the android app</li>
               <li>Implemented OneSignal push notification</li>
               <li> Implemented cron job for the app</li>
+              <li>API security and Documentation</li>
             </ul>
           </WorkCard>
         </div>

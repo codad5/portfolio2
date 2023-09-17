@@ -53,15 +53,6 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  icons: {
-    icon: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
-    shortcut: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
-    apple: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg',
-    },
-  },
 }
 export default function RootLayout({
   children,
