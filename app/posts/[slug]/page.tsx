@@ -78,7 +78,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
         robots: {
             index: true,
             follow: true,
-            nocache: true,
+            nocache: false,
             googleBot: {
                 index: true,
                 follow: true,

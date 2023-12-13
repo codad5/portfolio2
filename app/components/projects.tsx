@@ -9,6 +9,22 @@ import Highlight from 'react-highlight'
 
 export const projects: projectsDetails[] = [
     {
+      name: "Google Task Desktop",
+      type: 'desktop',
+      main_lang: 'tauri',
+      tags: ['rust', 'desktop', 'react'],
+      image: 'https://shorturl.at/fntEU',
+      links: {
+        github: "https://github.com/codad5/google-task-tauri",
+        website: 'https://google-task.codad5.me/'
+      },
+      children: (
+        <div>
+          This is an unofficial desktop app for google task built with <b>Tauri</b> (Rust + React.js)
+        </div>
+      )
+    },
+    {
         name: "Keybinder",
         type: 'dev',
         tags: ['typescript', 'chrome'],
