@@ -9,6 +9,7 @@ published: false
 
 ## Introduction
 Tauri is a relative new framework which is used for making cross platform desktop app
+that uses web technologies like html, css and javascript, it is built on top of webview
 
 ## Conclusion
 I hope you enjoyed reading this, and i hope you find it helpful, if you have any questions or suggestions, please feel free to reach out to me on 
