@@ -120,7 +120,7 @@ return (
       </DropSection>
       <DropSection title={"Work"} shortcutSwitches={['W']}>
         <div className='w-full p-3 text-center py-5'>
-          <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
+          <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1Hq0ggN1ItEXV2-Z5aTpRDLzea35D-Tp5/view?usp=sharing'>SEE MY RESUME</a>
         </div>
         <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
           <WorkCard title="Fusion Intelligence" timeline='Oct 2021 - till date' position='Wordpress Plugin Developer' href='https://fusionintel.io/'>
