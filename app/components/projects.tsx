@@ -106,6 +106,21 @@ export const projects: projectsDetails[] = [
       )
     },
     {
+      name:'webpdf',
+      main_lang:'typescript',
+      type:'chrome-ext',
+      image:'https://github.com/codad5/webpdf/raw/master/assets/preview.png',
+      tags:['pdf', 'web-to-pdf'],
+      links: {
+        github:'https://github.com/codad5/webpdf'
+      },
+      children:(
+        <div>
+          This is a chrome extension that helps to convert set of webpages as one PDF
+        </div>
+      )
+    },
+    {
       name:"sanctablog.com",
       main_lang:'wordpress',
       image:Sanctablog.src,
@@ -294,21 +309,6 @@ export const projects: projectsDetails[] = [
     children:(
       <div>
           This is a blog built with PHP laravel
-      </div>
-    )
-  },
-  {
-    name:'webpdf',
-    main_lang:'typescript',
-    type:'chrome-ext',
-    image:'https://github.com/codad5/webpdf/raw/master/assets/preview.png',
-    tags:['pdf', 'web-to-pdf'],
-    links: {
-      github:'https://github.com/codad5/webpdf'
-    },
-    children:(
-      <div>
-        This is a chrome extension that helps to convert set of webpages as one PDF
       </div>
     )
   }
