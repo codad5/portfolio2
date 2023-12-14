@@ -123,6 +123,22 @@ return (
           <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
         </div>
         <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
+          <WorkCard title="Fusion Intelligence" timeline='Oct 2021 - till date' position='Wordpress Plugin Developer' href='https://fusionintel.io/'>
+            <ul className='list-disc'>
+              <li>Developed the wordpress plugin a product of the company <b><a href='https://reachcinema.io/' > Reach Cinema</a></b></li>
+              <li>This plugin helps their customers to easily integrate display their cinema movies and showtime on their website</li>
+              <li>Implemented the plugin with PHP</li>
+              <li>Handle Showtime Booking</li>
+            </ul>
+          </WorkCard>
+          <WorkCard title='Appsthathelp' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
+            <ul className='list-disc'>
+              <li>Developed the backend API with Laravel for the android app</li>
+              <li>Implemented OneSignal push notification</li>
+              <li> Implemented cron job for the app</li>
+              <li>API security and Documentation</li>
+            </ul>
+          </WorkCard>
           <WorkCard title='Sanctablog.com' timeline='Jan 2022 - Dec 2022' position='Web developer' href='https://sanctablog.com'>
             <ul className='list-disc'>
               <li>I build and manage the website domain</li>
@@ -132,14 +148,6 @@ return (
           <WorkCard title='Listmining.com' timeline='Sept 2021 - Feb 2022' position='Web developer' href='https://listmining.com'>
             <ul className='list-disc'>
               <li>I build and manage the website domain</li>
-            </ul>
-          </WorkCard>
-          <WorkCard title='Appsthathelp' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
-            <ul className='list-disc'>
-              <li>Developed the backend API with Laravel for the android app</li>
-              <li>Implemented OneSignal push notification</li>
-              <li> Implemented cron job for the app</li>
-              <li>API security and Documentation</li>
             </ul>
           </WorkCard>
         </div>

@@ -7,6 +7,7 @@ import GTD from '@/app/assets/Google-Task-Desktop.png'
 import UsecretPic from '@/app/assets/usecret.png'
 import UsecretOld from '@/app/assets/usecret-old.png'
 import WemallB from '@/app/assets/wemall-b.png'
+import FLi from '@/app/assets/fli.png'
 
 export const projects: projectsDetails[] = [
     {
@@ -78,6 +79,7 @@ export const projects: projectsDetails[] = [
       type: 'dev',
       main_lang : 'rust',
       tags: ['rust', 'dev'],
+      image: FLi.src,
       links: {
         github: "https://github.com/codad5/fli",
       },
