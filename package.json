@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@material-tailwind/react": "^1.4.2",
     "@react-spring/web": "^9.7.1",
     "@types/node": "18.15.3",
@@ -21,8 +25,10 @@
     "flowbite-react": "^0.4.2",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.7.0",
+    "i": "^0.3.7",
     "markdown-to-jsx": "^7.1.9",
     "next": "13.2.4",
+    "npm": "^10.2.5",
     "react": "18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "18.2.0",

@@ -1,4 +1,7 @@
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import '@/app/globals.css'
+config.autoAddCss = false
 
 export const metadata = {
   title: 'Chibueze Michael Aniezeofor - Codad5',

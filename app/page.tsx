@@ -108,7 +108,7 @@ return (
         </div>
       </DropSection>
       <DropSection title={"Projects"} shortcutSwitches={['P']}>
-        <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-8 mt-5 px-5 py-3'>
           {
             projects.length > 0 ? projects.map((value, index) => (
               <ProjectCard key={index} name={value.name} tags={value.tags} main_lang={value.main_lang} links={value.links} type={value.type} image={value.image}>
