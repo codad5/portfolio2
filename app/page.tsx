@@ -163,7 +163,7 @@ return (
               </div>
               <div className='w-full p-4 text-center grid place-items-center py-9'>
                 <ul className='list-disc w-full md:w-4/5 px-4 text-slate-700'>
-                  {posts.filter((value) => value.published == true).slice(0, 5).map((value, index) => (
+                  {posts.filter((value) => value.published).slice(0, 5).map((value, index) => (
                     <li key={index} className='w-4/5 text-left border-1 py-4'>
                       <div>
                         <Link href={`posts/${value.slug}`} className='underline tracking-tight text-lg antialiased font-mono'>{value.title}</Link>

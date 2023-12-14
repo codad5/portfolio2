@@ -11,7 +11,7 @@ export default function PostLayout() {
                         
                         <div className='w-full p-4 text-center  '>
                             <ul className='list-disc w-full md:w-4/5 text-slate-700'>
-                                {posts.map((value, index) => (
+                                {posts.filter(value => value.published).map((value, index) => (
                                     <li key={index} className='w-4/5 text-left border-1 py-4'>
                                         <div>
                                             <Link href={`posts/${value.slug}`} className=' text-4xl font-bold antialiased font-mono'>{value.title}</Link>
