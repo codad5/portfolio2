@@ -3,11 +3,29 @@ import { projectsDetails } from "./types";
 import Currencynet from '@/app/assets/currencynet.png'
 import Sanctablog from '@/app/assets/sanctablog.jpeg' 
 import WemallF from '@/app/assets/wemall-f.jpeg'
-import { isBrowser } from "react-device-detect";
-import { CurrencyNet } from "currencynet";
-import Highlight from 'react-highlight'
+import GTD from '@/app/assets/Google-Task-Desktop.png'
+import UsecretPic from '@/app/assets/usecret.png'
+import UsecretOld from '@/app/assets/usecret-old.png'
+import WemallB from '@/app/assets/wemall-b.png'
+import FLi from '@/app/assets/fli.png'
 
 export const projects: projectsDetails[] = [
+    {
+      name: "Google Task Desktop",
+      type: 'desktop',
+      main_lang: 'tauri',
+      tags: ['rust', 'desktop', 'react'],
+      image: GTD.src,
+      links: {
+        github: "https://github.com/codad5/google-task-tauri",
+        website: 'https://google-task.codad5.me/'
+      },
+      children: (
+        <div>
+          This is an unofficial desktop app for google task built with <b>Tauri</b> (Rust + React.js)
+        </div>
+      )
+    },
     {
         name: "Keybinder",
         type: 'dev',
@@ -28,7 +46,8 @@ export const projects: projectsDetails[] = [
     {
       name: "Wemall",
       type: 'backend',
-      main_lang : 'php',
+      main_lang: 'php',
+      image: WemallB.src,
       tags: ['php', 'backend'],
       links: {
         github: "https://github.com/codad5/wemall-v2",
@@ -43,7 +62,8 @@ export const projects: projectsDetails[] = [
       name:'U-secret (Next.js)',
       main_lang:'Typescript (Next.js)',
       type:'fullstack',
-      tags:['messaging service'],
+      tags: ['messaging service'],
+      image: UsecretPic.src,
       links:{
         github:'https://github.com/codad5/usecret-node-version',
         website:'https://usecret.codad5.me'
@@ -51,8 +71,6 @@ export const projects: projectsDetails[] = [
       children: (
         <div>
           This is a rewrite of U-secret (Node.js) in Next.js, that helps to recieve anonymous message from friends and family.
-          <br/>
-          In this rewrite i also added google auth as part of the auth process.
         </div>
       )
     }, 
@@ -61,6 +79,7 @@ export const projects: projectsDetails[] = [
       type: 'dev',
       main_lang : 'rust',
       tags: ['rust', 'dev'],
+      image: FLi.src,
       links: {
         github: "https://github.com/codad5/fli",
       },
@@ -74,7 +93,7 @@ export const projects: projectsDetails[] = [
       name: "CurrrencyNet",
       type:'dev',
       tags:['currency', 'javascript', 'library', 'api'],
-      image: Currencynet,
+      image: Currencynet.src,
       main_lang:'javascript',
       links:{
         github:"https://github.com/codad5/currencynet",
@@ -82,24 +101,14 @@ export const projects: projectsDetails[] = [
       },
       children:(
         <div>
-          This is a Frontend tools (library) that helps convert currencynet based off user location ,g
-          <br/>
-          <br/>
-          <h5 className="font-bold">let use this test cases : </h5>
-          <ul className="list-disc">
-            <li>A developer from indian develops a website with <b>Indian Rupes (INR) </b> </li>
-            <li>But a citizen of Uniteds States finds it difficult to understand the currency</li>
-            <li>Yes he could simply go to <a className="underline italic font-semibold" href="https://google.com">google.com</a> to convert these currency but thats a bad user experience</li>
-            <li>Then the developer can decides to implement <b>Currencynet</b>, This would help to convert the currency (to USD for US citizens) in real time with out the developer or users to convert it them selves</li>
-            <li>Best part is that it works for more than <b>100+ countries</b> in the world.</li>
-          </ul>
+          This is a Frontend tools (library) that helps convert currencynet based off user location.
         </div>
       )
     },
     {
       name:"sanctablog.com",
       main_lang:'wordpress',
-      image:Sanctablog,
+      image:Sanctablog.src,
       type:'fullstack',
       tags:['paid', 'blog', 'wordpress'],
       links:{
@@ -115,7 +124,7 @@ export const projects: projectsDetails[] = [
     name: "CurrrencyNet (for React.js)",
     type: 'dev',
     main_lang:'typescript',
-    image:Currencynet,
+    image:Currencynet.src,
     tags: ['javascript', 'library', 'typescript'],
     links: {
       github: "https://github.com/codad5/react-currencynet",
@@ -124,19 +133,6 @@ export const projects: projectsDetails[] = [
     children: (
       <div>
         The React.js based version of Currencynet written in <b>Typescript</b>
-        <br/>
-        <p>
-          <br/>
-          <span className="font-bold">Here is a usage of the library (  converting ₦5000(Nigeria Naira) to your country currency :</span>
-          {/* <div>₦5000 == <CurrencyNet buildCurrency="NGN" value={5000} /> </div> */}
-          <br/>
-          {/* <details className="jsx" innerHTML={true}>
-            <summary>see code</summary>
-            <Highlight className='break-all'>
-              {'<CurrencyNet buildCurrency="NGN" value={5000} />'}
-            </Highlight>
-          </details> */}
-        </p>
       </div>  
     )
   },
@@ -202,9 +198,10 @@ export const projects: projectsDetails[] = [
     name:'U-secret (Node.js)',
     main_lang:'javascript (Express.js)',
     type:'fullstack',
-    tags:['messaging service'],
+    tags: ['messaging service'],
+    image: UsecretOld.src,
     links:{
-      github:'https://github.com/codad5/usecret-node-version',
+      github:'https://github.com/codad5/usecret-node-version/tree/v1',
       website:'https://usecret.cyclic.app'
     },
     children: (
@@ -245,7 +242,7 @@ export const projects: projectsDetails[] = [
     name:"Test Wemall shop (frontend)",
     main_lang: "Javascript (React.js)",
     type:'frontend',
-    image : WemallF,
+    image : WemallF.src,
     tags:['api'],
     links:{
       website:'https://wemall.vercel.app',

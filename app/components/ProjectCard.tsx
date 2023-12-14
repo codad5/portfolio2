@@ -1,7 +1,9 @@
 import { MouseEvent } from "react"
 import { projectsDetails } from "./types"
 import DefaultImage from '@/app/assets/default.jpg'
-import Link from "next/link"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons"
 
 export default function ProjectCard({ name, type, main_lang, links, tags = [], children, image = DefaultImage.src}: projectsDetails)
 {
@@ -11,42 +13,29 @@ export default function ProjectCard({ name, type, main_lang, links, tags = [], c
         backgroundSize:image != (DefaultImage as unknown as string) ? 'contain' : 'cover'
     }
     return (
-        <div className="w-[300px] min-h-[300px] bg-mainblue inline-block relative">
-            {main_lang ? <span className="absolute top-0 right-0 p-2 bg-black text-white z-30">{main_lang}</span> : null }
-            {type ? <span className="bg-black rounded-full px-2 text-white radius-4 absolute top-5 left-4 z-30">{type}</span> : null}
-            <div className={`w-full  bg-cover bg-center relative h-[250px] bg-hero- bg-cover `} style={default_style_main}>
-                <div className="w-full absolute bottom-0 p-4 text-white text-left">
-                    <div className="w-full ">
-                        <div>
-                            <h3 className="inline-block text-2xl p-2 break-words"> {name} </h3>
-                        </div>
-                        <div>
-                            {tags.map((key, index) => (
-                                <span key={index} className="text-sm p-1 lowercase underline text-white hover:text-slate-700 ">
-                                    #{key}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-                { links ?
-                    <div className="w-full p-3 px-5 text-left flex">
-                            {links.github ? (<Link className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.github}>Github</Link>) : null}
-                            {links.website ? (<Link className="inline-block w-1/2 h-full font-bold decoration-dotted  basis-full shrink-1 text-center underline text-lg" href={links.website}>Website</Link>) : null}
-                    </div> : null
-                }
-            <div className="w-full min-h-[50px]">
-            {children ? <details className="w-full text-black h-max text-left px-4 py-3 bg-mainblue" >
-                <summary>About</summary>
-                <article className="p-4">
-                    {children}
-                </article>
-            </details> : null}
-            <div>
-
-            </div>
-            </div>
-        </div>
+        <div className="flex flex-col gap-1.5">
+							<div className="relative w-full border border-neutral-900 aspect-[1.5] overflow-hidden rounded-lg cursor-pointer">
+								<img src={`${image}`} className="w-full h-full hover:scale-125 object-cover object-center transition-all" />
+							</div>
+							<h3 className="text-lg font-bold mt-1 leading-none">{name}</h3>
+							<p className="text-sm">
+								{children}
+                            </p>
+							<div className="flex items-center justify-between mt-auto">
+								{main_lang ? <div className="w-max bg-neutral-900 text-neutral-500 text-[10px] font-medium px-2.5 py-1 rounded drop-shadow-md">{main_lang}</div> : <div />}
+								<div className="flex gap-4 items-center lg:px-1">
+									{links?.website ? (
+										<a href={links.website} target="_blank" className="block w-max text-xs font-medium">
+											<FontAwesomeIcon icon={faExternalLink} size="lg"/>
+										</a>
+									) : null}
+									{links?.github ? (
+										<a href={links.github} target="_blank" className="block w-max text-xs font-medium">
+											<FontAwesomeIcon icon={faGithub} size="lg" />
+										</a>
+									) : null}
+								</div>
+							</div>
+						</div>
     )
 }

@@ -46,13 +46,13 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: true,
+      noimageindex: false,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview': 'standard',
       'max-snippet': -1,
     },
   }

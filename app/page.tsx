@@ -87,6 +87,7 @@ return (
               <li>Express.js</li>
               <li>Laravel</li>
               <li>Rust ( Currently learning )</li>
+              <li>PYTHON ( Currently learning )</li>
               <li>MySQL</li>
               <li>MongoDB</li>
               <li>Unit Testing</li>
@@ -107,7 +108,7 @@ return (
         </div>
       </DropSection>
       <DropSection title={"Projects"} shortcutSwitches={['P']}>
-        <div className='w-full py-[60px] px-5  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center justify-center items-center place-items-center'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8 lg:gap-8 mt-5 px-5 py-3'>
           {
             projects.length > 0 ? projects.map((value, index) => (
               <ProjectCard key={index} name={value.name} tags={value.tags} main_lang={value.main_lang} links={value.links} type={value.type} image={value.image}>
@@ -122,6 +123,22 @@ return (
           <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1gxWPkOWZy0_DG0wKZkn_GvdtCeKYOABO/view?usp=sharing'>SEE MY RESUME</a>
         </div>
         <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
+          <WorkCard title="Fusion Intelligence" timeline='Oct 2021 - till date' position='Wordpress Plugin Developer' href='https://fusionintel.io/'>
+            <ul className='list-disc'>
+              <li>Developed the wordpress plugin a product of the company <b><a href='https://reachcinema.io/' > Reach Cinema</a></b></li>
+              <li>This plugin helps their customers to easily integrate display their cinema movies and showtime on their website</li>
+              <li>Implemented the plugin with PHP</li>
+              <li>Handle Showtime Booking</li>
+            </ul>
+          </WorkCard>
+          <WorkCard title='Appsthathelp' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
+            <ul className='list-disc'>
+              <li>Developed the backend API with Laravel for the android app</li>
+              <li>Implemented OneSignal push notification</li>
+              <li> Implemented cron job for the app</li>
+              <li>API security and Documentation</li>
+            </ul>
+          </WorkCard>
           <WorkCard title='Sanctablog.com' timeline='Jan 2022 - Dec 2022' position='Web developer' href='https://sanctablog.com'>
             <ul className='list-disc'>
               <li>I build and manage the website domain</li>
@@ -131,14 +148,6 @@ return (
           <WorkCard title='Listmining.com' timeline='Sept 2021 - Feb 2022' position='Web developer' href='https://listmining.com'>
             <ul className='list-disc'>
               <li>I build and manage the website domain</li>
-            </ul>
-          </WorkCard>
-          <WorkCard title='Appsthathelp' timeline='July 2023 - till date' position='Backend developer' href='https://play.google.com/store/apps/developer?id=SuccesGirl'>
-            <ul className='list-disc'>
-              <li>Developed the backend API with Laravel for the android app</li>
-              <li>Implemented OneSignal push notification</li>
-              <li> Implemented cron job for the app</li>
-              <li>API security and Documentation</li>
             </ul>
           </WorkCard>
         </div>
@@ -154,7 +163,7 @@ return (
               </div>
               <div className='w-full p-4 text-center grid place-items-center py-9'>
                 <ul className='list-disc w-full md:w-4/5 px-4 text-slate-700'>
-                  {posts.slice(0, 5).map((value, index) => (
+                  {posts.filter((value) => value.published == true).slice(0, 5).map((value, index) => (
                     <li key={index} className='w-4/5 text-left border-1 py-4'>
                       <div>
                         <Link href={`posts/${value.slug}`} className='underline tracking-tight text-lg antialiased font-mono'>{value.title}</Link>
@@ -162,7 +171,6 @@ return (
                         <p className='text-sm'>Date: {value.date}</p>
                         <p className='text-sm'>Tags: {value.tags}</p>
                       </div>
-
                     </li>
                   ))}
                 </ul>

@@ -29,7 +29,8 @@ export const getPostsAndMetadata = () : postsType[] => {
             date: data.date,
             description: data.description,
             tags: data.tags,
-            image: data.image
+            image: data.image,
+            published: [false, 'false'].includes(data.published) ? false : true
         }
     })
 }
