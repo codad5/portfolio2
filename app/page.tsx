@@ -123,7 +123,17 @@ return (
           <a className='inline-block bg-black text-white p-3  border-double border-4 border-white lg:min-w-[350px]' href='https://drive.google.com/file/d/1Hq0ggN1ItEXV2-Z5aTpRDLzea35D-Tp5/view?usp=sharing'>SEE MY RESUME</a>
         </div>
         <div className='w-full text-center p-3 flex flex-col place-items-center justify-center gap-3 py-6'>
-          <WorkCard title="Fusion Intelligence" timeline='Oct 2021 - till date' position='Wordpress Plugin Developer' href='https://fusionintel.io/'>
+          <WorkCard title="Cyberinfomatic" timeline='March 2024 - till date' position='PHP Developer' href='https://cyberinfomatic.com/'>
+            <ul className='list-disc'>
+              <li>Developed the wordpress plugin to display crypto information and widget <b><a href='https://wordpress.org/plugins/ultimate-crypto-widget/' > You can find it here</a></b></li>
+              <li>Also developed the Licensing system of the pro version of the plugin using PHP and Laravel</li>
+              <li>Implemented the plugin with PHP</li>
+              <li>Over 18+ widget type</li>
+              <li>Integrated custom react webpack for better collaboration with non-PHP frontend dev</li>
+              <li>Github can be found <a href="https://github.com/cyberinfomatic/ultimate-crypto-widget">Here</a></li>
+            </ul>
+          </WorkCard>
+          <WorkCard title="Fusion Intelligence" timeline='Oct 2023 - Jan 2024' position='Wordpress Plugin Developer' href='https://fusionintel.io/'>
             <ul className='list-disc'>
               <li>Developed the wordpress plugin a product of the company <b><a href='https://reachcinema.io/' > Reach Cinema</a></b></li>
               <li>This plugin helps their customers to easily integrate display their cinema movies and showtime on their website</li>
