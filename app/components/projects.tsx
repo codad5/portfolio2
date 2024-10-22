@@ -83,7 +83,7 @@ export const projects: projectsDetails[] = [
       image: UsecretPic.src,
       links:{
         github:'https://github.com/codad5/usecret-node-version',
-        website:'https://usecret.codad5.me'
+        website:'https://usecret.xyz'
       },
       children: (
         <div>
