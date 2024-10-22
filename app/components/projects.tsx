@@ -8,6 +8,7 @@ import UsecretPic from '@/app/assets/usecret.png'
 import UsecretOld from '@/app/assets/usecret-old.png'
 import WemallB from '@/app/assets/wemall-b.png'
 import FLi from '@/app/assets/fli.png'
+import Quickcv from '@/app/assets/quickcv.png'
 
 export const projects: projectsDetails[] = [
     {
@@ -23,6 +24,22 @@ export const projects: projectsDetails[] = [
       children: (
         <div>
           This is an unofficial desktop app for google task built with <b>Tauri</b> (Rust + React.js)
+        </div>
+      )
+    },
+    {
+      name: "QuickCv", 
+      type: 'web',
+      main_lang: 'next.js',
+      tags: ['typescript', 'next.js', 'ai'],
+      image: Quickcv.src,
+      links: {
+        github: "https://github.com/codad5/quickcv", 
+        website : "https://quickcv.codad5.me"
+      },
+      children: (
+        <div>
+          This is a web app that helps to generate resume in markdown format using <a href="https://groq.com">Groq API</a> aimed for high ATS score
         </div>
       )
     },
