@@ -4,13 +4,13 @@ export type projectsDetails = {
     name: string,
     type: 'dev' | 'frontend' | 'backend' | 'cloud' | 'command-line' | 'fullstack' | 'chrome-ext' | 'game' | 'desktop' | 'mobile' | 'web' | 'other',
     tags: string[],
-    main_lang ?: string,
+    main_lang?: string,
     image?: string | StaticImageData,
-    links ?: {
-        github ?: string,
-        website ?: string
+    links?: {
+        github?: string,
+        website?: string
     },
-    children ?: JSX.Element
+    children?: JSX.Element|string
 }
 
 export type contactsType = {
