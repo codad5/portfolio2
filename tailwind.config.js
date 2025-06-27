@@ -20,6 +20,7 @@ module.exports = {
     colors: {
       ...colors,
       "mainblue": "#ECF5F8",
+      "darkblue": "rgb(71 85 105 / 90%)",
     },
     backgroundImage: {
       'hero-pattern':

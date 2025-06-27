@@ -112,7 +112,9 @@ return (
           {
             projects.length > 0 ? projects.map((value, index) => (
               <ProjectCard key={index} name={value.name} tags={value.tags} main_lang={value.main_lang} links={value.links} type={value.type} image={value.image}>
-                {value.children}
+                <div className='text-sm'>
+                  {value.children}
+                </div>
               </ProjectCard>
             )) : <h2> No project</h2>
           }
