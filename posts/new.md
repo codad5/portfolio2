@@ -37,7 +37,7 @@ function getTopUsers(users: User[], limit: number): User[] {
   //my slow logic takes 4 seconds to complete for 1000 users
 }
 
-function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): User[] {
+function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): SomeOtherData {
   ///some old logic
   const topUsers = getTopUsers(users, limit);
   //some other logic that uses the top users
@@ -68,7 +68,7 @@ function getTopUsersProPlan(users: User[], limit: number): User[] {
   //my fast logic takes 1 second to complete for 1000 users
 }
 
-function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): User[] {
+function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): SomeOtherData {
   ///some old logic
   let topUsers: User[];
   if (currentUser.subscriptionPlan === 'paid') {
@@ -114,7 +114,7 @@ function getTopUsersFreePlan(users: User[], limit: number): User[] {
   // my slow logic takes 4 seconds to complete for 1000 users
 }
 
-function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): User[] {
+function afunctionsThatRequiresMeToGetTopUsers(users: User[], limit: number): SomeOtherData {
   ///some old logic
   const topUsers = getTopUsers(users, limit);
   //some other logic that uses the top users
