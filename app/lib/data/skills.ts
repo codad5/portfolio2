@@ -40,6 +40,7 @@ export const allSkills: string[] = skillCategories.flatMap((cat) => cat.skills);
 // Featured skills for hero/intro
 export const featuredSkills: string[] = [
   'TypeScript',
+  'PHP',  
   'Rust',
   'Node.js',
   'Laravel',

@@ -1,6 +1,7 @@
 'use client';
 
-import { featuredProjects, Project } from '@/app/lib/data/projects';
+import { useState } from 'react';
+import { projects, Project, RELEVANCE_FIELDS, RelevanceField, getProjectsByRelevance } from '@/app/lib/data/projects';
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
@@ -22,6 +23,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         >
           FILE #{String(index + 1).padStart(2, '0')} // {project.type.toUpperCase()}
         </span>
+        {project.stars && (
+          <span 
+            className="font-mono text-xs"
+            style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-accent)' }}
+          >
+            ★{project.stars.toLocaleString()}
+          </span>
+        )}
       </div>
 
       {/* Title */}
@@ -81,6 +90,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 }
 
 export default function Projects() {
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const [selectedField, setSelectedField] = useState<RelevanceField | 'all'>('all');
+
+  const handleFilterChange = (field: RelevanceField | 'all') => {
+    setSelectedField(field);
+    if (field === 'all') {
+      setFilteredProjects(projects);
+    } else {
+      setFilteredProjects(getProjectsByRelevance(field));
+    }
+  };
+
   return (
     <section 
       id="projects"
@@ -89,33 +110,66 @@ export default function Projects() {
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 pb-6">
-          <span 
-            className="font-mono text-sm"
-            style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}
-          >
-            03.
-          </span>
-          <h2 
-            className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-widest"
-            style={{ 
-              fontFamily: 'var(--font-heading)',
-              color: 'var(--color-text-primary)'
-            }}
-          >
-            PROJECT_FILES
-          </h2>
-          <div 
-            className="flex-1"
-            style={{ 
-              borderBottom: '2px dashed var(--color-border)'
-            }}
-          />
+        <div className="flex flex-col gap-4 pb-6">
+          <div className="flex items-center gap-4">
+            <span 
+              className="font-mono text-sm"
+              style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}
+            >
+              03.
+            </span>
+            <h2 
+              className="text-2xl md:text-3xl font-heading font-bold uppercase tracking-widest"
+              style={{ 
+                fontFamily: 'var(--font-heading)',
+                color: 'var(--color-text-primary)'
+              }}
+            >
+              PROJECT_FILES
+            </h2>
+            <div 
+              className="flex-1"
+              style={{ 
+                borderBottom: '2px dashed var(--color-border)'
+              }}
+            />
+          </div>
+
+          {/* Filter */}
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => handleFilterChange('all')}
+              className="px-3 py-1 font-mono text-xs uppercase tracking-wider border-2 transition-colors"
+              style={{ 
+                fontFamily: 'var(--font-mono)',
+                borderColor: selectedField === 'all' ? 'var(--color-accent)' : 'var(--color-border)',
+                backgroundColor: selectedField === 'all' ? 'var(--color-accent)' : 'transparent',
+                color: selectedField === 'all' ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)'
+              }}
+            >
+              [ALL]
+            </button>
+            {RELEVANCE_FIELDS.slice(0, 6).map((field) => (
+              <button
+                key={field.id}
+                onClick={() => handleFilterChange(field.id)}
+                className="px-3 py-1 font-mono text-xs uppercase tracking-wider border-2 transition-colors"
+                style={{ 
+                  fontFamily: 'var(--font-mono)',
+                  borderColor: selectedField === field.id ? 'var(--color-accent)' : 'var(--color-border)',
+                  backgroundColor: selectedField === field.id ? 'var(--color-accent)' : 'transparent',
+                  color: selectedField === field.id ? 'var(--color-bg-primary)' : 'var(--color-text-secondary)'
+                }}
+              >
+                [{field.id.toUpperCase()}]
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {featuredProjects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
@@ -126,7 +180,7 @@ export default function Projects() {
             href="https://github.com/codad5"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-sm uppercase tracking-widest px-6 py-3 border-2 no-underline hover:bg-[var(--color-bg-secondary)]"
+            className="font-mono text-sm uppercase tracking-widest px-6 py-3 border-2 no-underline"
             style={{ 
               fontFamily: 'var(--font-mono)',
               borderColor: 'var(--color-text-primary)',
