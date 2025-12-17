@@ -1,9 +1,10 @@
 'use client';
 
 import { useTheme } from '@/app/providers/theme-provider';
-import { Hero as NewspaperHero, About as NewspaperAbout, Experience as NewspaperExperience, Projects as NewspaperProjects, Blog as NewspaperBlog, Contact as NewspaperContact, Footer as NewspaperFooter } from '@/app/components/themes/newspaper';
-import { Hero as TypewriterHero, About as TypewriterAbout, Experience as TypewriterExperience, Projects as TypewriterProjects, Blog as TypewriterBlog, Contact as TypewriterContact, Footer as TypewriterFooter } from '@/app/components/themes/typewriter';
+import { Hero as NewspaperHero, About as NewspaperAbout, Experience as NewspaperExperience, Projects as NewspaperProjects, Blog as NewspaperBlog, Contact as NewspaperContact } from '@/app/components/themes/newspaper';
+import { Hero as TypewriterHero, About as TypewriterAbout, Experience as TypewriterExperience, Projects as TypewriterProjects, Blog as TypewriterBlog, Contact as TypewriterContact } from '@/app/components/themes/typewriter';
 import { postsType } from '@/app/components/types';
+import Footer from '@/app/components/shared/Footer';
 
 interface ThemedPageProps {
   posts: postsType[];
@@ -21,7 +22,7 @@ export default function ThemedPage({ posts }: ThemedPageProps) {
         <TypewriterProjects />
         <TypewriterBlog posts={posts} />
         <TypewriterContact />
-        <TypewriterFooter />
+        <Footer />
       </>
     );
   }
@@ -35,7 +36,7 @@ export default function ThemedPage({ posts }: ThemedPageProps) {
       <NewspaperProjects />
       <NewspaperBlog posts={posts} />
       <NewspaperContact />
-      <NewspaperFooter />
+      <Footer />
     </>
   );
 }
