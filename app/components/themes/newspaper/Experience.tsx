@@ -1,6 +1,6 @@
 'use client';
 
-import { experiences, Experience } from '@/app/lib/data/experience';
+import { experiences, type Experience } from '@/app/lib/data/experience';
 
 function ExperienceCard({ experience }: { experience: Experience }) {
   return (
@@ -36,7 +36,7 @@ function ExperienceCard({ experience }: { experience: Experience }) {
             )}
           </h3>
           <span 
-            className="text-sm whitespace-nowrap"
+            className="text-sm whitespace-nowrap overflow-hidden text-ellipsis max-w-[40%]"
             style={{ color: 'var(--color-text-muted)' }}
           >
             {experience.timeline}

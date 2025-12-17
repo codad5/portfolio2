@@ -1,6 +1,6 @@
 'use client';
 
-import { experiences, Experience } from '@/app/lib/data/experience';
+import { experiences, type Experience } from '@/app/lib/data/experience';
 
 function ExperienceCard({ experience, index }: { experience: Experience; index: number }) {
   return (
@@ -71,7 +71,7 @@ export default function Experience() {
     >
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center gap-4 pb-6">
+        <div className="flex flex-wrap items-center gap-4 pb-6">
           <span 
             className="font-mono text-sm"
             style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-mono)' }}
