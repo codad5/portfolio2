@@ -13,7 +13,7 @@ import WorkCard from '@/app/components/Wordcard'
 //import next image
 import Link from 'next/link';
 import Footer from '@/app/components/footer';
-import dynamic from 'next/dynamic';
+import AccordionLoader from '@/app/components/AccordionLoader';
 import Intro from '@/app/components/sections/intro'
 import ContactSection from "./components/sections/contact";
 
@@ -50,18 +50,12 @@ const contactLogo: contactsType[] = [
   }
 ]
 
-const LoadAccordion = dynamic(
-  () => {
-    return import("./helpers/accordion");
-  },
-  { ssr: false }
-);
-// LoadAccordion()
+
 export default function(){
 
 return (
   <div className="App w-full h-screen transition-all duration-100" id="accordion-collapse" data-accordion="collapse">
-    <LoadAccordion />
+    <AccordionLoader />
     <div className="accordion h-full w-full flex flex-col relative accordion-main" id="Main">
       <Intro />
       <DropSection title={"About"} display_title={"Chibueze Aniezeofor"} shortcutSwitches={['A']}>

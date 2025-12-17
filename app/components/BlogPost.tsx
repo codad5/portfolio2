@@ -1,3 +1,4 @@
+'use client';
 import Markdown from "markdown-to-jsx";
 import dynamic from "next/dynamic";
 
