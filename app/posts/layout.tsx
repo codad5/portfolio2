@@ -35,7 +35,7 @@ export default function PostsLayout({
 }) {
   return (
     <div 
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col max-w-[100vw] overflow-x-hidden"
       style={{ backgroundColor: 'var(--color-bg-primary)' }}
     >
       {/* Main content */}
