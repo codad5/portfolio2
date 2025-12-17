@@ -18,12 +18,13 @@ export const generateStaticParams = () => {
     }))
 }
 
-export async function generateMetadata({ params, searchParams } : { params:{slug: string}, searchParams : any }) : Promise<Metadata> {
-    const postdata = getPostMetadata(params.slug)
+export async function generateMetadata({ params, searchParams } : { params: Promise<{slug: string}>, searchParams : Promise<any> }) : Promise<Metadata> {
+    const { slug } = await params;
+    const postdata = getPostMetadata(slug)
     if(!postdata) return {};
     const { title, date, description, tags, image } = postdata
     return {
-        title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
+        title: title ? `Codad5 - ${title}` : 'Chibueze Michael Aniezeofor - Codad5',
         description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
         generator: 'Next.js',
         applicationName: 'Codad5',
@@ -40,7 +41,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             telephone: true,
         },
         openGraph: {
-            title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
+            title: title ? `Codad5 - ${title}` : 'Chibueze Michael Aniezeofor - Codad5',
             description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
             url: 'https://codad5.me',
             siteName: 'Codad5: A Software Enginner',
@@ -69,7 +70,7 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
             card: 'summary_large_image',
             site: '@codad5',
             description: description ?? 'Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student, i am open to job and also willing to work on exciting project.',
-            title: `Codad5 - ${title}` ?? 'Chibueze Michael Aniezeofor - Codad5',
+            title: title ? `Codad5 - ${title}` : 'Chibueze Michael Aniezeofor - Codad5',
             creator: '@codad5_',
             images :  [image ?? 'https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg'],
             creatorId: '1283149384872599553',
@@ -91,8 +92,8 @@ export async function generateMetadata({ params, searchParams } : { params:{slug
     }
 }
 
- const PostPage = ({params}:{params:any}) => {
-    const {slug} = params;
+ const PostPage = async ({params}:{params: Promise<{slug: string}>}) => {
+    const { slug } = await params;
     const postContents = getPostContent(slug);
     if(!postContents) notFound()
     const { content, data } = matter(postContents);

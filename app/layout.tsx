@@ -1,5 +1,6 @@
 import { Playfair_Display, Source_Serif_4, Courier_Prime } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from '@/app/providers/theme-provider';
 import '@/app/globals.css';
 
 // Font configurations
@@ -104,10 +105,12 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${sourceSerif.variable} ${courierPrime.variable}`}
     >
       <body>
-        <div id="root">
-          {children}
-          <Analytics />
-        </div>
+        <ThemeProvider>
+          <div id="root">
+            {children}
+            <Analytics />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
