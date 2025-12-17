@@ -7,6 +7,7 @@ import { useTheme } from '@/app/providers/theme-provider';
 export default function Footer() {
   const { theme } = useTheme();
   const currentYear = new Date().getFullYear();
+  const pdfLink = process.env.NEXT_PUBLIC_RESUME_PDF_LINK || 'https://drive.google.com/file/d/1Hq0ggN1ItEXV2-Z5aTpRDLzea35D-Tp5/view?usp=drive_link';
 
   // Typewriter theme style
   if (theme === 'typewriter') {
@@ -54,7 +55,7 @@ export default function Footer() {
 
             {/* Right - Quick nav */}
             <div 
-              className="flex gap-4 font-mono text-xs uppercase tracking-widest"
+              className="flex flex-wrap justify-center gap-4 font-mono text-xs uppercase tracking-widest"
               style={{ fontFamily: 'var(--font-mono)' }}
             >
               <Link
@@ -71,6 +72,22 @@ export default function Footer() {
               >
                 [BLOG]
               </Link>
+              <Link
+                href="/resume"
+                className="no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                [RESUME]
+              </Link>
+              <a 
+                href={pdfLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="no-underline hover:underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                [PDF]
+              </a>
               <a 
                 href="https://github.com/codad5"
                 target="_blank"
@@ -138,7 +155,7 @@ export default function Footer() {
           </div>
 
           {/* Right - Quick links */}
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Link
               href="/"
               className="text-sm uppercase tracking-wider no-underline hover:underline"
@@ -153,6 +170,22 @@ export default function Footer() {
             >
               Blog
             </Link>
+            <Link
+              href="/resume"
+              className="text-sm uppercase tracking-wider no-underline hover:underline"
+              style={{ color: 'var(--color-text-secondary)' }}
+            >
+              Resume
+            </Link>
+            <a
+              href={pdfLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm uppercase tracking-wider no-underline hover:underline"
+              style={{ color: 'var(--color-text-secondary)' }}
+            >
+              PDF
+            </a>
             <a
               href="https://github.com/codad5"
               target="_blank"
