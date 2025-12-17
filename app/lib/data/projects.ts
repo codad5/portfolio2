@@ -97,6 +97,41 @@ export const projects: Project[] = [
     description: 'AI-powered resume builder using Groq API. 90% ATS accuracy with 30s average generation time.',
   },
   {
+    id: 'hard-sync-cli',
+    name: 'Hard-Sync-CLI',
+    type: 'command-line',
+    mainLang: 'Rust',
+    tags: ['rust', 'cli', 'file-sync', 'open-source'],
+    links: {
+      github: 'https://github.com/codad5/hard-sync-cli',
+    },
+    description: 'Fast directory synchronization tool with dry-run, file exclusion, and reverse sync. Written in Rust for performance and reliability.',
+    featured: true,
+  },
+  {
+    id: 'verify-branch-ancestry',
+    name: 'Verify Branch Ancestry',
+    type: 'dev',
+    mainLang: 'Shell/GitHub Actions',
+    tags: ['devops', 'github-actions', 'ci-cd', 'open-source'],
+    links: {
+      github: 'https://github.com/codad5/verify-branch-ancestry',
+    },
+    description: 'GitHub Action enforcing staging-first workflows. Verifies commit ancestry and minimum soak time before production deployment. 6 stars.',
+    featured: true,
+  },
+  {
+    id: 'wptoolkit',
+    name: 'WPToolkit',
+    type: 'dev',
+    mainLang: 'PHP',
+    tags: ['php', 'wordpress', 'framework', 'open-source'],
+    links: {
+      github: 'https://github.com/codad5/wptoolkit',
+    },
+    description: 'Enterprise WordPress development framework with dependency injection, smart caching, and type-safe MetaBox system. Modern architecture for WP.',
+  },
+  {
     id: 'keybinder',
     name: 'Keybinder',
     type: 'dev',
