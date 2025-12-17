@@ -1,8 +1,150 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-.accordion-button:not(.collapsed) {
-    background-color: #ECF5F8;
-    color: black;
+/* ============================================
+   Theme System - CSS Variables
+   ============================================ */
+
+/* Newspaper Theme (Default) */
+:root {
+  /* Colors */
+  --color-bg-primary: #faf8f3;
+  --color-bg-secondary: #f5f1e8;
+  --color-bg-tertiary: #ebe4d4;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6b6b6b;
+  --color-accent: #8b0000;
+  --color-accent-hover: #a50000;
+  --color-border: #d4c5a9;
+  --color-border-light: #e8dcc0;
+  
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+  
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+}
+
+/* Typewriter Theme Override */
+[data-theme="typewriter"] {
+  --color-bg-primary: #f4e8c1;
+  --color-bg-secondary: #e8dbb8;
+  --color-bg-tertiary: #dccfa8;
+  --color-text-primary: #2d2d2d;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #666666;
+  --color-accent: #5c4033;
+  --color-accent-hover: #7a5a45;
+  --color-border: #c4a77d;
+  --color-border-light: #d4bf9d;
+  
+  --font-heading: 'Special Elite', 'Courier New', monospace;
+  --font-body: 'Courier Prime', 'Courier New', monospace;
+  --font-mono: 'Courier Prime', 'Courier New', monospace;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration-style: solid;
+}
+
+/* Code */
+code {
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-secondary);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875em;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+/* Newspaper-specific decorative elements */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.ornament::before,
+.ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-border), transparent);
+}
+
+/* Drop cap for newspaper theme */
+.drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--color-accent);
+  padding-right: var(--space-sm);
+  padding-top: var(--space-xs);
 }

@@ -1,38 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+# Hi, I'm Chibueze Aniezeofor
 
-First, run the development server:
+<hr>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<a href="https://gitroll.io/profile/uGeXJAZTu8nfw12opD99AJtGKmkC3" target="_blank"><img src="https://gitroll.io/api/badges/profiles/v1/uGeXJAZTu8nfw12opD99AJtGKmkC3?refresh=2" alt="GitRoll Profile Badge"/></a>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Coding Time and Activities 
+<a href="https://wakatime.com/@3ab5e86a-11c8-4d0f-8e6f-f5fe5ef0fa4c"><img src="https://wakatime.com/badge/user/3ab5e86a-11c8-4d0f-8e6f-f5fe5ef0fa4c.svg" alt="Total time coded since Mar 23 2022" /></a>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+</div>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=codad5&layout=compact&hide=css,html&langs_count=10" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/wakatime?username=codad5&layout=compact&hide=css,HTML,other&langs_count=10" />
+</div>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 📄 Resume
 
-## Learn More
+View my full resume: [content/resume.md](./content/resume.md)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

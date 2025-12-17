@@ -1,0 +1,337 @@
+Cilbup 🔒
+"Public" reversed — Privacy-first anonymous messaging platform for creators and influencers.
+
+Next.js MongoDB TypeScript License: MIT
+
+🌟 What is Cilbup?
+Cilbup is a platform that helps creators and influencers earn money while helping people get their questions answered — all anonymously. Users can send anonymous messages to creators, and optionally attach a tip to show appreciation or get priority attention.
+
+Key Features
+📨 Anonymous Messaging — Send messages without revealing your identity
+💰 Tip System — Attach tips to messages via Paystack
+📊 Creator Dashboard — Analytics, message management, earnings overview
+🔔 Multi-channel Notifications — Email, WhatsApp, Browser push (OneSignal)
+🔔 Multi-channel Notifications — Email, WhatsApp, Browser push
+⚡ Real-time Updates — Messages appear instantly via Pusher
+🔐 Privacy First — Server-side rendering, secure by design
+⚙️ Comprehensive Settings — Profile, tips, notifications, privacy controls
+🚀 Quick Start
+# Clone repository
+git clone https://github.com/codad5/usecret-node-version.git
+cd usecret-node-version
+
+# Switch to the rewrite branch
+git checkout rewrite/cilbup
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+
+# Run development server
+npm run dev
+Visit http://localhost:3000 to see the app.
+
+📋 Complete Setup Guide
+Prerequisites
+Requirement	Version	Purpose
+Node.js	18.17+	Runtime
+npm	9+	Package manager
+MongoDB	6.0+	Database
+Redis	-	Caching & OTP
+Step 1: Database Setup (MongoDB)
+Option A: MongoDB Atlas (Recommended for production)
+
+Go to MongoDB Atlas
+Create a free account or sign in
+Create a new cluster (free tier available)
+Click "Connect" → "Connect your application"
+Copy the connection string
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/cilbup?retryWrites=true&w=majority
+Option B: Local MongoDB
+
+# macOS
+brew install mongodb-community
+brew services start mongodb-community
+
+# Ubuntu
+sudo apt install mongodb
+sudo systemctl start mongodb
+
+# Connection string
+MONGODB_URI=mongodb://localhost:27017/cilbup
+Step 2: Redis Setup (Upstash)
+Upstash provides a serverless Redis that works great with Next.js.
+
+Go to Upstash Console
+Create a free account
+Create a new Redis database
+Copy the REST credentials
+UPSTASH_REDIS_REST_URL=https://xxxx-xxxx.upstash.io
+UPSTASH_REDIS_REST_TOKEN=AXxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Step 3: Authentication Setup
+NextAuth Secret
+
+Generate a secure random string:
+
+openssl rand -base64 32
+NEXTAUTH_SECRET=your-generated-secret-here
+NEXTAUTH_URL=http://localhost:3000
+Google OAuth (Optional but recommended)
+
+Go to Google Cloud Console
+Create a new project or select existing
+Enable "Google+ API" and "Google Identity"
+Go to "Credentials" → "Create Credentials" → "OAuth client ID"
+Application type: "Web application"
+Add authorized redirect URI: http://localhost:3000/api/auth/callback/google
+Copy Client ID and Secret
+GOOGLE_CLIENT_ID=xxxxxxxxxxxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-xxxxxxxxxxxxxxxxxxxx
+Step 4: Payment Setup (Paystack)
+Paystack handles tips and withdrawals. Here's how to set it up:
+
+Getting Your API Keys
+Go to Paystack Dashboard
+Create an account if you don't have one
+Navigate to Settings → API Keys & Webhooks
+You'll see two sets of keys:
+Test Keys (for development) - Start with sk_test_ and pk_test_
+Live Keys (for production) - Start with sk_live_ and pk_live_
+# Use test keys for development
+PAYSTACK_SECRET_KEY=sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxx
+PAYSTACK_PUBLIC_KEY=pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxx
+Callback URL vs Webhook URL
+Important
+
+Callback URL and Webhook URL serve different purposes:
+
+Feature	Callback URL	Webhook URL
+Purpose	Redirect user after payment	Server-to-server notification
+Triggered	When user completes payment page	When payment status changes
+Reliability	User might close browser	Always delivered (with retries)
+Use case	Show success/failure page to user	Update database, send notifications
+This app uses BOTH:
+
+Callback URL: https://your-domain.com/api/webhooks/paystack/callback - Redirects user after payment
+Webhook URL: https://your-domain.com/api/webhooks/paystack - Receives server notifications
+Configuring Webhooks in Paystack Dashboard
+Go to Settings → API Keys & Webhooks
+Scroll down to Webhook URL
+Enter your webhook URL:
+Local dev (with ngrok): https://xxxx.ngrok.io/api/webhooks/paystack
+Production: https://your-domain.com/api/webhooks/paystack
+Copy the Webhook Secret (click "Show" to reveal it)
+Select these events to receive:
+charge.success - When a tip payment succeeds
+transfer.success - When a withdrawal completes
+transfer.failed - When a withdrawal fails
+PAYSTACK_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxxxx
+Testing Webhooks Locally
+For local development, use ngrok to expose your local server:
+
+# Install ngrok (one-time)
+npm install -g ngrok
+
+# Start your app
+npm run dev
+
+# In another terminal, expose port 3000
+ngrok http 3000
+Use the ngrok URL (e.g., https://abc123.ngrok.io) as your webhook URL in Paystack dashboard.
+
+Complete Paystack Environment Variables
+# ===========================================
+# PAYMENTS (Paystack)
+# ===========================================
+PAYSTACK_SECRET_KEY=sk_test_xxxx        # Your secret key (keep private!)
+PAYSTACK_PUBLIC_KEY=pk_test_xxxx        # Your public key (used client-side)
+PAYSTACK_WEBHOOK_SECRET=whsec_xxxx      # From webhook settings
+Tip
+
+Going Live Checklist:
+
+Complete Paystack's business verification
+Replace test keys with live keys
+Update webhook URL to your production domain
+Test a small real transaction
+Step 5: Real-time Setup (Pusher)
+Go to Pusher Dashboard
+Create a free account
+Create a new Channels app
+Copy the credentials from "App Keys"
+PUSHER_APP_ID=1234567
+PUSHER_KEY=xxxxxxxxxxxxxxxx
+PUSHER_SECRET=xxxxxxxxxxxxxxxx
+PUSHER_CLUSTER=us2
+NEXT_PUBLIC_PUSHER_KEY=xxxxxxxxxxxxxxxx
+NEXT_PUBLIC_PUSHER_CLUSTER=us2
+Step 6: WhatsApp Notifications (Optional)
+Go to Meta for Developers
+Create a WhatsApp Business app
+Get your Access Token and Phone Number ID
+WHATSAPP_ACCESS_TOKEN=EAAxxxxxxxxxxxxxx
+WHATSAPP_PHONE_NUMBER_ID=1234567890
+WHATSAPP_API_VERSION=v18.0
+Step 7: Email Notifications (Optional)
+Using Resend (recommended):
+
+Go to Resend
+Create an account and get API key
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxx
+EMAIL_FROM=noreply@yourdomain.com
+Step 8: Browser Push Notifications (OneSignal - Optional)
+Go to OneSignal Dashboard
+Create a free account
+Create a new Web Push app
+Complete the web configuration wizard
+Copy your App ID and REST API Key from Settings → Keys & IDs
+NEXT_PUBLIC_ONESIGNAL_APP_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ONESIGNAL_REST_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Tip
+
+OneSignal uses external_id to identify users. The app automatically sets this to the user's MongoDB _id when they enable browser notifications.
+
+📝 Complete Environment Variables
+Create a .env.local file with all variables:
+
+# ===========================================
+# DATABASE
+# ===========================================
+MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/cilbup
+
+# ===========================================
+# REDIS (Upstash)
+# ===========================================
+UPSTASH_REDIS_REST_URL=https://xxxx.upstash.io
+UPSTASH_REDIS_REST_TOKEN=AXxxxxxxxxxxxx
+
+# ===========================================
+# AUTHENTICATION
+# ===========================================
+NEXTAUTH_SECRET=your-32-char-secret-here
+NEXTAUTH_URL=http://localhost:3000
+
+# Google OAuth (optional)
+GOOGLE_CLIENT_ID=xxxx.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=GOCSPX-xxxx
+
+# ===========================================
+# PAYMENTS (Paystack)
+# ===========================================
+PAYSTACK_SECRET_KEY=sk_test_xxxx
+PAYSTACK_PUBLIC_KEY=pk_test_xxxx
+PAYSTACK_WEBHOOK_SECRET=whsec_xxxx
+
+# ===========================================
+# REAL-TIME (Pusher)
+# ===========================================
+PUSHER_APP_ID=1234567
+PUSHER_KEY=xxxx
+PUSHER_SECRET=xxxx
+PUSHER_CLUSTER=us2
+NEXT_PUBLIC_PUSHER_KEY=xxxx
+NEXT_PUBLIC_PUSHER_CLUSTER=us2
+
+# ===========================================
+# NOTIFICATIONS (Optional)
+# ===========================================
+# WhatsApp
+WHATSAPP_ACCESS_TOKEN=EAAxxxx
+WHATSAPP_PHONE_NUMBER_ID=1234567890
+WHATSAPP_API_VERSION=v18.0
+
+# Email (Resend)
+RESEND_API_KEY=re_xxxx
+EMAIL_FROM=noreply@yourdomain.com
+
+# Browser Push (OneSignal)
+NEXT_PUBLIC_ONESIGNAL_APP_ID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ONESIGNAL_REST_API_KEY=xxxx
+
+# ===========================================
+# FEATURE FLAGS (all default to true)
+# ===========================================
+ENABLE_TIPS=true
+ENABLE_WHATSAPP=true
+ENABLE_EMAIL_NOTIFICATIONS=true
+ENABLE_BROWSER_NOTIFICATIONS=true
+
+# ===========================================
+# APP CONFIG
+# ===========================================
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_APP_NAME=Cilbup
+🛠️ Development
+# Run development server
+npm run dev
+
+# Run with turbo (faster)
+npm run dev -- --turbo
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Type checking
+npm run typecheck
+
+# Linting
+npm run lint
+📁 Project Structure
+cilbup/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # Auth pages (login, register)
+│   ├── (protected)/         # Protected routes (dashboard)
+│   ├── m/[username]/        # Public message pages
+│   └── api/                 # API routes & webhooks
+├── components/              # React components
+│   ├── ui/                  # Base UI components
+│   └── providers/           # Context providers
+├── lib/                     # Core libraries
+│   ├── db/                  # Database models & connection
+│   ├── auth/                # NextAuth configuration
+│   ├── services/            # External services (Pusher, etc.)
+│   ├── actions/             # Server Actions
+│   ├── validators/          # Zod schemas
+│   └── hooks/               # Custom React hooks
+├── config/                  # App configuration
+└── docs/                    # Documentation
+    ├── PROGRESS.md          # Development progress
+    └── TECHNICAL.md         # Technical documentation
+🔗 API Routes
+Route	Method	Description
+/api/auth/[...nextauth]	*	NextAuth handlers
+/api/auth/register	POST	User registration
+/api/users/check-username	POST	Username availability
+/api/users/complete-profile	POST	Profile completion
+/api/users/update-*	PATCH	Settings updates
+/api/pusher/auth	POST	Pusher auth
+/api/webhooks/paystack	POST	Payment webhooks
+📊 Pages
+Page	Route	Access	Description
+Home	/	Public	Landing page
+Login	/login	Public	Sign in
+Register	/register	Public	Sign up
+Dashboard	/dashboard	Protected	Overview
+Messages	/dashboard/messages	Protected	Inbox
+Earnings	/dashboard/earnings	Protected	Payments
+Settings	/dashboard/settings	Protected	Account
+Admin	/admin	Admin only	Platform stats
+Send Message	/m/[username]	Public	Message form
+🧪 Testing
+# Run tests (coming in Phase 8)
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+📜 License
+MIT © codad5
+
+📚 Documentation
+Progress Tracker - Development progress
+Technical Docs - Architecture details
+Made with ❤️ for creators who value privacy
