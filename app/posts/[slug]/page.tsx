@@ -99,12 +99,9 @@ export async function generateMetadata({ params, searchParams } : { params: Prom
     const { content, data } = matter(postContents);
     const { title, date, image , tags, description} = data as postsType
     return (
-        <div className="w-full text-left">
-            <ShareButton title={title} description={description} />
-            <BlogPost title={title} slug={slug} date={date} tags={tags} image={image} description={description}>
-                {content}
-            </BlogPost>
-        </div>
+        <BlogPost title={title} slug={slug} date={date} tags={tags} image={image} description={description}>
+            {content}
+        </BlogPost>
     )
 }
 
