@@ -1,100 +1,116 @@
-import { config } from '@fortawesome/fontawesome-svg-core'
-import { Analytics } from "@vercel/analytics/react"
-import { Next13NProgress, Link } from "nextjs13-progress";
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import '@/app/globals.css'
-config.autoAddCss = false
+import { Playfair_Display, Source_Serif_4, Courier_Prime } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from '@/app/providers/theme-provider';
+import '@/app/globals.css';
 
+// Font configurations
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-source-serif',
+  weight: ['400', '500', '600', '700'],
+});
+
+const courierPrime = Courier_Prime({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-courier',
+  weight: ['400', '700'],
+});
 
 export const metadata = {
-  title: "Chibueze Michael Aniezeofor - Codad5",
+  title: "Chibueze Aniezeofor | Software Engineer",
   description:
-    "Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student.",
+    "Software Engineer with 6+ years of experience building scalable backend systems, developer tools, and AI-driven products. Passionate about systems architecture and performance optimization.",
   generator: "Next.js",
-  applicationName: "Codad5",
-  themeColor: "#ECF5F8",
-  referrer: "origin-when-cross-origin",
+  applicationName: "Codad5 Portfolio",
+  metadataBase: new URL('https://codad5.me'),
   keywords: [
+    "Chibueze Aniezeofor",
     "codad5",
-    "CHIBUEZE MICHAEL ANIEZEOFOR",
-    "Software Developer",
-    "Engineer",
+    "Software Engineer",
+    "Backend Developer",
+    "TypeScript",
     "PHP",
-    "NODE",
-    "LARAVEL",
-    "REACT",
-    "NEXTJS",
-    "VUEJS",
-    "ANGULAR",
-    "MECHANICAL ENGINEERING",
-    "WEB DEVELOPER",
-    "WEB DESIGNER",
-    "GRAPHIC DESIGNER",
-    "UI/UX DESIGNER",
-    "MOBILE APP DEVELOPER",
-    "MOBILE",
+    "Rust",
+    "Node.js",
+    "Laravel",
+    "Next.js",
+    "AI Developer",
+    "Full Stack Developer",
   ],
-  authors: [{ name: "Chibueze Michael Aniezeofor", url: "https://codad5.me" }],
-  // colorScheme: 'dark',
-  creator: "Chibueze Michael Aniezeofor",
-  publisher: "Chibueze Michael Aniezeofor",
-  alternates: {},
+  authors: [{ name: "Chibueze Aniezeofor", url: "https://codad5.me" }],
+  creator: "Chibueze Aniezeofor",
+  publisher: "Chibueze Aniezeofor",
   formatDetection: {
     email: true,
     address: true,
     telephone: true,
   },
   openGraph: {
-    title: "CHibeze Michael Aniezeofor - Codad5",
+    title: "Chibueze Aniezeofor | Software Engineer",
     description:
-      "Chibueze Michael Aniezeofor is a Nigerian based software developers and also a mechanical engineering student.",
+      "Software Engineer with 6+ years of experience building scalable backend systems, developer tools, and AI-driven products.",
     url: "https://codad5.me",
-    phoneNumbers: ["+234 814 257 2488"],
-    siteName: "Codad5: A Software Enginner",
+    siteName: "Codad5",
     images: [
       {
-        url: "https://pbs.twimg.com/profile_images/1538795825832374273/Dc1NUUr1_400x400.jpg",
+        url: "https://avatars.githubusercontent.com/u/66634814?v=4",
         width: 800,
-        height: 600,
-        alt: "Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE",
-      },
-      {
-        url: "https://avatars.githubusercontent.com/u/66634814?v=41",
-        width: 1800,
-        height: 1600,
-        alt: "Chibueze Michael Aniezeofor | Software Developer | Engineer | PHP | NODE",
+        height: 800,
+        alt: "Chibueze Aniezeofor - Software Engineer",
       },
     ],
     locale: "en-US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chibueze Aniezeofor | Software Engineer",
+    description: "Software Engineer with 6+ years of experience",
+    creator: "@codad5_",
+  },
   robots: {
     index: true,
     follow: true,
-    nocache: false,
     googleBot: {
       index: true,
       follow: true,
-      noimageindex: false,
       "max-video-preview": -1,
-      "max-image-preview": "standard",
+      "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
 };
+
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
+  // Default theme from env or fallback to 'newspaper'
+  const defaultTheme = process.env.NEXT_PUBLIC_THEME || 'newspaper';
+  
   return (
-    <html lang="en">
+    <html 
+      lang="en" 
+      data-theme={defaultTheme}
+      className={`${playfairDisplay.variable} ${sourceSerif.variable} ${courierPrime.variable}`}
+    >
       <body>
-        <Next13NProgress color="red" height={5} />
-        <div id="root">
-          {children}
-          <Analytics />
-        </div>
+        <ThemeProvider>
+          <div id="root">
+            {children}
+            <Analytics />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
