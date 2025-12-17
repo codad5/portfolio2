@@ -20,14 +20,25 @@ function ProjectCard({ project }: { project: Project }) {
         >
           {project.type}
         </span>
-        {project.stars && (
-          <span 
-            className="text-xs"
-            style={{ color: 'var(--color-accent)' }}
-          >
-            ★ {project.stars.toLocaleString()}
-          </span>
-        )}
+        {(() => {
+          const metrics = [
+            { type: 'stars', value: project.stars || 0, icon: '★' },
+            { type: 'downloads', value: project.downloads || 0, icon: '↓' },
+            { type: 'users', value: project.users || 0, icon: '👥' },
+          ];
+          const best = metrics.reduce((prev, current) => (current.value > prev.value ? current : prev));
+          
+          if (best.value === 0) return null;
+
+          return (
+            <span 
+              className="text-xs"
+              style={{ color: 'var(--color-accent)' }}
+            >
+              {best.icon} {best.value.toLocaleString()}
+            </span>
+          );
+        })()}
       </div>
 
       {/* Title */}

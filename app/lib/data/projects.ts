@@ -42,6 +42,8 @@ export interface Project {
   description: string;
   featured?: boolean;
   stars?: number;
+  downloads?: number;
+  users?: number;
   // Relevance scores for each field (0-10, higher = more relevant)
   // Missing fields treated as 0
   relevance?: Partial<Record<RelevanceField, number>>;
@@ -62,7 +64,8 @@ export const projects: Project[] = [
     },
     description: 'Type-safe CLI library for Rust inspired by commander.js. 12,000+ downloads on crates.io with zero-cost abstractions.',
     featured: true,
-    stars: 12000,
+    stars: 4,
+    downloads: 12000,
     relevance: {
       rust: 10,
       systems: 9,
@@ -82,6 +85,7 @@ export const projects: Project[] = [
     },
     description: 'High-performance PDF extraction service with Tesseract and Ollama OCR. Async queue-based processing with RabbitMQ.',
     featured: true,
+    stars: 11,
     relevance: {
       rust: 10,
       backend: 10,
@@ -102,6 +106,7 @@ export const projects: Project[] = [
     },
     description: 'Fast directory synchronization tool with dry-run, file exclusion, and reverse sync. Written in Rust for performance and reliability.',
     featured: true,
+    stars: 1,
     relevance: {
       rust: 10,
       systems: 9,
@@ -164,7 +169,7 @@ export const projects: Project[] = [
     },
     description: 'Cross-platform desktop app for Google Tasks using Tauri. 1,000+ users with 30% productivity improvement.',
     featured: true,
-    stars: 1000,
+    stars: 18,
     relevance: {
       rust: 9,
       typescript: 7,

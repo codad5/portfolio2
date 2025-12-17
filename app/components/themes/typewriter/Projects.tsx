@@ -23,14 +23,25 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         >
           FILE #{String(index + 1).padStart(2, '0')} // {project.type.toUpperCase()}
         </span>
-        {project.stars && (
-          <span 
-            className="font-mono text-xs"
-            style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-accent)' }}
-          >
-            ★{project.stars.toLocaleString()}
-          </span>
-        )}
+        {(() => {
+          const metrics = [
+            { type: 'stars', value: project.stars || 0, label: '★' },
+            { type: 'downloads', value: project.downloads || 0, label: 'DL:' },
+            { type: 'users', value: project.users || 0, label: 'USR:' },
+          ];
+          const best = metrics.reduce((prev, current) => (current.value > prev.value ? current : prev));
+          
+          if (best.value === 0) return null;
+
+          return (
+            <span 
+              className="font-mono text-xs"
+              style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-accent)' }}
+            >
+              {best.label} {best.value.toLocaleString()}
+            </span>
+          );
+        })()}
       </div>
 
       {/* Title */}

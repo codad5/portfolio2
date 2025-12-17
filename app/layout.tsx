@@ -104,7 +104,7 @@ export default function RootLayout({
       data-theme={defaultTheme}
       className={`${playfairDisplay.variable} ${sourceSerif.variable} ${courierPrime.variable}`}
     >
-      <body>
+      <body className="max-w-[100vw] overflow-x-hidden">
         <ThemeProvider>
           <div id="root">
             {children}

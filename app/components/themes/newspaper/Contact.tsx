@@ -123,7 +123,7 @@ export default function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-3 border hover:bg-[var(--color-bg-tertiary)] transition-colors no-underline"
+                  className="flex items-center justify-between p-3 border hover:bg-(--color-bg-tertiary) transition-colors no-underline"
                   style={{ 
                     borderColor: 'var(--color-border-light)',
                     color: 'var(--color-text-primary)'
