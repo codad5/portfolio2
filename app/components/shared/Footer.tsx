@@ -112,6 +112,88 @@ export default function Footer() {
     );
   }
 
+  // Creative theme style
+  if (theme === 'creative') {
+    return (
+      <footer 
+        className="w-full px-6 lg:px-12 py-8"
+        style={{ 
+          backgroundColor: 'var(--color-bg-secondary)',
+          borderTop: '1px solid var(--color-border)'
+        }}
+      >
+        <div className="max-w-6xl mx-auto flex flex-col gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            {/* Left - Branding */}
+            <div className="flex items-center gap-4">
+              <Link 
+                href="/"
+                className="text-xl font-bold italic no-underline"
+                style={{ 
+                  fontFamily: 'var(--font-heading)',
+                  color: 'var(--color-accent-blue)'
+                }}
+              >
+                Codad5
+              </Link>
+              <span 
+                className="text-sm"
+                style={{ color: 'var(--color-text-muted)' }}
+              >
+                © {currentYear} Chibueze Aniezeofor
+              </span>
+            </div>
+
+            {/* Center - Theme */}
+            <div className="flex items-center gap-3">
+              <span 
+                className="text-sm"
+                style={{ color: 'var(--color-text-muted)' }}
+              >
+                Theme:
+              </span>
+              <ThemeSwitcher />
+            </div>
+
+            {/* Right - Quick links */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/"
+                className="text-sm no-underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Home
+              </Link>
+              <Link
+                href="/posts"
+                className="text-sm no-underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/resume"
+                className="text-sm no-underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                Resume
+              </Link>
+              <a
+                href="https://github.com/codad5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm no-underline"
+                style={{ color: 'var(--color-text-secondary)' }}
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   // Default: Newspaper theme style
   return (
     <footer 
