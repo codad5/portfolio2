@@ -56,6 +56,34 @@
   --font-mono: 'Courier Prime', 'Courier New', monospace;
 }
 
+/* Creative Theme (Bento/Portfolio style) */
+[data-theme="creative"] {
+  /* Light cream background */
+  --color-bg-primary: #faf9f6;
+  --color-bg-secondary: #ffffff;
+  --color-bg-tertiary: #f5f3ef;
+  
+  /* Text colors using main color */
+  --color-text-primary: #2c3e50;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #718096;
+  
+  /* Custom accent colors */
+  --color-accent: #d35400;           /* Orange - primary CTA */
+  --color-accent-hover: #e67e22;     /* Lighter orange on hover */
+  --color-accent-secondary: #3e5337; /* Muted green */
+  --color-accent-blue: #2c3e50;      /* Dark blue */
+  
+  /* Borders */
+  --color-border: #e2e0dc;
+  --color-border-light: #f0eeea;
+  
+  /* Typography - Serif headings + Sans-serif body */
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
 /* ============================================
    Base Styles
    ============================================ */
