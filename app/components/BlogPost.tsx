@@ -224,6 +224,21 @@ export default function BlogPost({title, slug, date, tags, image, description, c
                     background: var(--color-bg-tertiary);
                     color: #3c2415;
                 }
+
+                /* Code theme for creative (light bg) */
+                [data-theme="creative"] .hljs {
+                    background: var(--color-bg-tertiary);
+                    color: #2c3e50;
+                }
+
+                /* Creative theme specific styling */
+                [data-theme="creative"] .blog-content pre {
+                    border-radius: 0.75rem;
+                }
+
+                [data-theme="creative"] .blog-content :not(pre) > code {
+                    border-radius: 0.375rem;
+                }
             `}</style>
         </main>
     )
