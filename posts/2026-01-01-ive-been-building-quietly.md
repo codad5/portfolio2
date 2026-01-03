@@ -25,7 +25,7 @@ I'm a software engineer. I also study Mechanical Engineering at the University o
 
 I don't see these as conflicting paths. Engineering is engineering. I care less about titles and more about outcomes — *what gets built, how it's built, and why it matters*.
 
-This is not a success story. It's a **still-building** one.
+This is not a success story. It's a **still-building** one -- and I’m okay with that.
 
 ---
 
@@ -75,7 +75,7 @@ Repeat.
 
 No Instagram. No TikTok. Just YouTube and curiosity.
 
-This obsession cost me academically — my WAEC result could've been better. But at the time, my bigger fear was graduating broke and abandoning all those ideas.
+This obsession cost me academically — my WAEC result could've been better, and I knew it. But at the time, my bigger fear was graduating broke and abandoning all those ideas.
 
 Then my dad asked:
 
