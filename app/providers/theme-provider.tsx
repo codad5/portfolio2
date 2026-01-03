@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { ThemeType, DEFAULT_THEME, getThemeById } from '@/app/lib/theme';
-import ThemePicker from '@/app/components/shared/ThemePicker';
+import ThemeBubble from '@/app/components/shared/ThemeBubble';
 
 interface ThemeContextType {
   theme: ThemeType;
@@ -25,19 +25,21 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       setThemeState(getThemeById(stored));
       setIsFirstVisit(false);
     } else {
-      // No theme stored = first time visitor
+      // No theme stored = first time visitor, use default and show bubble tooltip
       setIsFirstVisit(true);
+      // Set default theme immediately
+      document.documentElement.setAttribute('data-theme', DEFAULT_THEME);
     }
     setMounted(true);
   }, []);
 
   // Apply theme to document
   useEffect(() => {
-    if (mounted && !isFirstVisit) {
+    if (mounted) {
       document.documentElement.setAttribute('data-theme', theme);
       localStorage.setItem(THEME_STORAGE_KEY, theme);
     }
-  }, [theme, mounted, isFirstVisit]);
+  }, [theme, mounted]);
 
   const setTheme = (newTheme: ThemeType) => {
     setThemeState(newTheme);
@@ -50,10 +52,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setIsFirstVisit(false);
   };
 
-  // Prevent flash of wrong theme - but still apply default for SSR/crawlers
+  // For SSR and crawlers, render children with default theme
   if (!mounted) {
-    // For SSR and crawlers, render children with default theme
-    // This ensures content is always indexable
     return (
       <ThemeContext.Provider value={{ theme: DEFAULT_THEME, setTheme: () => {} }}>
         {children}
@@ -61,11 +61,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     );
   }
 
-  // Always render content, show theme picker as overlay for first-time visitors
+  // Render content with floating theme bubble
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      {isFirstVisit && <ThemePicker onSelectThemeAction={handleThemeSelect} />}
       {children}
+      <ThemeBubble 
+        isFirstVisit={isFirstVisit} 
+        onSelectThemeAction={handleThemeSelect} 
+      />
     </ThemeContext.Provider>
   );
 }
@@ -77,4 +80,5 @@ export function useTheme() {
   }
   return context;
 }
+
 
