@@ -13,13 +13,6 @@ export const getPostsAndMetadata = () : postsType[] => {
     const markdownFiles = files.filter((fn) => fn.endsWith('.md'))
     
     return markdownFiles
-    .sort((a, b) => {
-        const aTime = fs.statSync(`posts/${a}`).mtime.getTime()
-        const bTime = fs.statSync(`posts/${b}`).mtime.getTime()
-        // return bTime - aTime
-        // the newest post will be first
-        return bTime - aTime
-    })
     .map((fn) => {
         const fileContent = fs.readFileSync(`posts/${fn}`, 'utf-8')
         const { data } = matter(fileContent)
@@ -33,6 +26,13 @@ export const getPostsAndMetadata = () : postsType[] => {
             published: [false, 'false'].includes(data.published) ? false : true
         }
     })
+    // Sort by date from frontmatter (newest first)
+    .sort((a, b) => {
+        const aDate = a.date ? new Date(a.date).getTime() : 0
+        const bDate = b.date ? new Date(b.date).getTime() : 0
+        return bDate - aDate
+    })
+    
 }
 
 
