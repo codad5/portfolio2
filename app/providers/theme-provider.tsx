@@ -50,18 +50,21 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setIsFirstVisit(false);
   };
 
-  // Prevent flash of wrong theme
+  // Prevent flash of wrong theme - but still apply default for SSR/crawlers
   if (!mounted) {
-    return null;
+    // For SSR and crawlers, render children with default theme
+    // This ensures content is always indexable
+    return (
+      <ThemeContext.Provider value={{ theme: DEFAULT_THEME, setTheme: () => {} }}>
+        {children}
+      </ThemeContext.Provider>
+    );
   }
 
-  // Show theme picker for first-time visitors
-  if (isFirstVisit) {
-    return <ThemePicker onSelectThemeAction={handleThemeSelect} />;
-  }
-
+  // Always render content, show theme picker as overlay for first-time visitors
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
+      {isFirstVisit && <ThemePicker onSelectThemeAction={handleThemeSelect} />}
       {children}
     </ThemeContext.Provider>
   );
