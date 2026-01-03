@@ -162,14 +162,15 @@ export default function ThemePicker({ onSelectThemeAction }: ThemePickerProps) {
         className="hidden lg:flex flex-1 items-center justify-center p-12"
         style={{ backgroundColor: '#0a0a0b' }}
       >
-        <div className="w-full max-w-lg aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+        <div className="w-full max-w-2xl aspect-video rounded-2xl overflow-hidden shadow-2xl">
           {selectedTheme.previewImage && !imageError[selectedTheme.id] ? (
             <Image
               src={selectedTheme.previewImage}
               alt={`${selectedTheme.name} preview`}
               width={800}
               height={600}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
+              style={{ backgroundColor: selectedTheme.colors.bg }}
               onError={() => setImageError(prev => ({ ...prev, [selectedTheme.id]: true }))}
               priority
             />
