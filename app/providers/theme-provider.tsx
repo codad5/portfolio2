@@ -23,23 +23,21 @@ export function ThemeProvider({
   const [isFirstVisit, setIsFirstVisit] = useState(false);
 
   // Sync with localStorage on mount (for legacy or fallback)
+  // This runs ONLY once when the component mounts in the browser
   useEffect(() => {
     const stored = localStorage.getItem(THEME_STORAGE_KEY) as ThemeType | null;
     
-    // If we have a stored theme and it differs from what the server gave us,
-    // we might want to prioritize it (migration case).
-    // However, if the server read a cookie, we should stick with that to avoid FOUC.
-    // The only case to migrate is if the server used the default because the cookie was missing.
+    // Check if we need to migrate from localStorage (legacy user)
+    // We only migrate IF the stored theme exists and is different from the initial state
     if (stored && stored !== theme) {
       setThemeState(getThemeById(stored));
       setIsFirstVisit(false);
-    } else if (!stored && !mounted) {
-      // If no storage and we haven't mounted yet, it might be a first visit
-      // Note: we check !mounted to only do this once
+    } else if (!stored) {
       setIsFirstVisit(true);
     }
     setMounted(true);
-  }, [theme, mounted]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Apply theme to document and persist when it changes
   useEffect(() => {
