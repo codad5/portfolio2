@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import ThemePicker from './ThemePicker';
 import { ThemeType } from '@/app/lib/theme';
+import { useTheme } from '@/app/providers/theme-provider';
 
 interface ThemeBubbleProps {
   isFirstVisit: boolean;
@@ -14,6 +15,7 @@ const TOOLTIP_DISMISSED_KEY = 'theme-tooltip-dismissed';
 export default function ThemeBubble({ isFirstVisit, onSelectThemeAction }: ThemeBubbleProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
+  const { theme } = useTheme();
 
   // Show tooltip on first visit
   useEffect(() => {
@@ -57,7 +59,7 @@ export default function ThemeBubble({ isFirstVisit, onSelectThemeAction }: Theme
             onClick={() => setIsOpen(false)}
           />
           {/* Picker */}
-          <ThemePicker onSelectThemeAction={handleThemeSelect} />
+          <ThemePicker onSelectThemeAction={handleThemeSelect} currentThemeId={theme} />
         </div>
       )}
 

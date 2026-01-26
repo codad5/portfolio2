@@ -1,6 +1,8 @@
 import { Playfair_Display, Source_Serif_4, Courier_Prime } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react";
+import { cookies } from 'next/headers';
 import { ThemeProvider } from '@/app/providers/theme-provider';
+import { DEFAULT_THEME, ThemeType, THEME_COOKIE_NAME, getThemeById } from '@/app/lib/theme';
 import '@/app/globals.css';
 
 // Font configurations
@@ -90,22 +92,23 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Default theme from env or fallback to 'newspaper'
-  const defaultTheme = process.env.NEXT_PUBLIC_THEME || 'newspaper';
+  const cookieStore = await cookies();
+  const themeValue = cookieStore.get(THEME_COOKIE_NAME)?.value || '';
+  const theme = getThemeById(themeValue);
   
   return (
     <html 
       lang="en" 
-      data-theme={defaultTheme}
+      data-theme={theme}
       className={`${playfairDisplay.variable} ${sourceSerif.variable} ${courierPrime.variable}`}
     >
       <body className="max-w-[100vw] overflow-x-hidden">
-        <ThemeProvider>
+        <ThemeProvider initialTheme={theme}>
           <div id="root">
             {children}
             <Analytics />
