@@ -1,20 +1,26 @@
 import fs from 'fs';
+import path from 'path';
 import matter from 'gray-matter';
 import { postsType } from '../components/types';
+
+const POSTS_PATH = path.join(process.cwd(), 'posts');
+
 export const getPosts = () => {
-    const files = fs.readdirSync('posts')
+    if (!fs.existsSync(POSTS_PATH)) return []
+    const files = fs.readdirSync(POSTS_PATH)
     const markdownFiles = files.filter((fn) => fn.endsWith('.md'))
     const slugs = markdownFiles.map((fn) => fn.replace('.md', ''))
     return slugs
 }
 
 export const getPostsAndMetadata = () : postsType[] => {
-    const files = fs.readdirSync('posts')
+    if (!fs.existsSync(POSTS_PATH)) return []
+    const files = fs.readdirSync(POSTS_PATH)
     const markdownFiles = files.filter((fn) => fn.endsWith('.md'))
     
     return markdownFiles
     .map((fn) => {
-        const fileContent = fs.readFileSync(`posts/${fn}`, 'utf-8')
+        const fileContent = fs.readFileSync(path.join(POSTS_PATH, fn), 'utf-8')
         const { data } = matter(fileContent)
         return {
             slug: fn.replace('.md', ''),
@@ -37,8 +43,9 @@ export const getPostsAndMetadata = () : postsType[] => {
 
 
 export const getPostMetadata = (slug : string): postsType|false => {
-    if (!fs.existsSync(`posts/${slug}.md`)) return false;
-    const fileContent = fs.readFileSync(`posts/${slug}.md`, 'utf-8')
+    const filePath = path.join(POSTS_PATH, `${slug}.md`);
+    if (!fs.existsSync(filePath)) return false;
+    const fileContent = fs.readFileSync(filePath, 'utf-8')
     const { data, content } = matter(fileContent)
     return {
         slug: slug.replace('.md', ''),
@@ -52,7 +59,6 @@ export const getPostMetadata = (slug : string): postsType|false => {
 
 
 export const getPostContent = (slug: any) => {
-    //get file contents
-    
-    return fs.existsSync(`posts/${slug}.md`) ? fs.readFileSync(`posts/${slug}.md`, 'utf-8') : null;
+    const filePath = path.join(POSTS_PATH, `${slug}.md`);
+    return fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf-8') : null;
 }
