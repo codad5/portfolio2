@@ -37,7 +37,7 @@ function DefaultPreview({ theme }: { theme: ThemeConfig }) {
 
 export default function ThemePicker({ onSelectThemeAction, currentThemeId }: ThemePickerProps) {
   const [selectedTheme, setSelectedTheme] = useState<ThemeConfig>(
-    THEMES.find(t => t.id === currentThemeId) || THEMES[0]
+    THEMES.find(t => t.id === currentThemeId) ?? THEMES[0]
   );
   const [imageError, setImageError] = useState<Record<string, boolean>>({});
 
