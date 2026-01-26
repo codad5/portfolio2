@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 interface ThemePickerProps {
   onSelectThemeAction: (theme: ThemeType) => void;
+  currentThemeId: ThemeType;
 }
 
 // Default preview component when no image is available
@@ -34,8 +35,10 @@ function DefaultPreview({ theme }: { theme: ThemeConfig }) {
   );
 }
 
-export default function ThemePicker({ onSelectThemeAction }: ThemePickerProps) {
-  const [selectedTheme, setSelectedTheme] = useState<ThemeConfig>(THEMES[0]);
+export default function ThemePicker({ onSelectThemeAction, currentThemeId }: ThemePickerProps) {
+  const [selectedTheme, setSelectedTheme] = useState<ThemeConfig>(
+    THEMES.find(t => t.id === currentThemeId) || THEMES[0]
+  );
   const [imageError, setImageError] = useState<Record<string, boolean>>({});
 
   const handleSelect = (theme: ThemeConfig) => {
