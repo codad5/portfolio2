@@ -1,8 +1,8 @@
 import { Playfair_Display, Source_Serif_4, Courier_Prime } from 'next/font/google';
 import { Analytics } from "@vercel/analytics/react";
 import { cookies } from 'next/headers';
-import { ThemeProvider, THEME_COOKIE_NAME } from '@/app/providers/theme-provider';
-import { DEFAULT_THEME, ThemeType } from '@/app/lib/theme';
+import { ThemeProvider } from '@/app/providers/theme-provider';
+import { DEFAULT_THEME, ThemeType, THEME_COOKIE_NAME, getThemeById } from '@/app/lib/theme';
 import '@/app/globals.css';
 
 // Font configurations
@@ -98,8 +98,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
-  const themeValue = cookieStore.get(THEME_COOKIE_NAME)?.value as ThemeType;
-  const theme = themeValue || DEFAULT_THEME;
+  const themeValue = cookieStore.get(THEME_COOKIE_NAME)?.value || '';
+  const theme = getThemeById(themeValue);
   
   return (
     <html 

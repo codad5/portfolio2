@@ -1,5 +1,8 @@
 export type ThemeType = 'newspaper' | 'typewriter' | 'creative';
 
+export const THEME_COOKIE_NAME = 'portfolio-theme';
+export const THEME_STORAGE_KEY = 'portfolio-theme';
+
 export interface ThemeConfig {
   id: ThemeType;
   name: string;
